@@ -48,10 +48,14 @@
             --chat--color-secondary: #FFFFFF !important; 
             --chat--header--background: #1C1C1C !important; 
             --chat--header--color: #FBF8F0 !important; 
+            
             --chat--message--user--background: #334155 !important; 
             --chat--message--user--color: #ffffff !important;
-            --chat--message--bot--background: #F4F4F4 !important; 
+            
+            /* CORRECCIÓN: Fondo más oscuro para que la burbuja del bot sea visible */
+            --chat--message--bot--background: #E2E8F0 !important; 
             --chat--message--bot--color: #1C1C1C !important;
+            
             --chat--toggle--background: #1C1C1C !important;
             --chat--toggle--size: 56px; 
             --chat--toggle--border-radius: 50% !important;
@@ -72,8 +76,8 @@
         /* --- ANIMACIONES SUAVES --- */
         .reveal-element {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(30px); /* Reducido un poco para móvil */
+            transition: opacity 1.0s cubic-bezier(0.22, 1, 0.36, 1), transform 1.0s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: opacity, transform;
         }
 
@@ -98,6 +102,9 @@
             color: var(--text-main);
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .btn-premium:active {
+            transform: translateY(0); /* Feedback táctil */
         }
 
         .btn-outline {
@@ -134,26 +141,26 @@
 <body class="antialiased relative">
 
     <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="fixed w-full z-50 bg-[#FBF8F0]/90 backdrop-blur-md border-b border-black/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex justify-between items-center h-24">
+    <nav class="fixed w-full z-50 bg-[#FBF8F0]/95 backdrop-blur-md border-b border-black/5 transition-all duration-300 shadow-sm md:shadow-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20 md:h-24">
                 <!-- Logo -->
-                <a href="#" class="flex items-center gap-4 group shrink-0">
+                <a href="#" class="flex items-center gap-3 md:gap-4 group shrink-0">
                     <img src="logo.jpg" 
                          alt="Stratiums Logo" 
-                         class="h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                         class="h-8 md:h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                          id="main-logo"
                     >
-                    <div id="logo-placeholder" class="hidden items-center justify-center h-10 w-10 bg-black text-white font-serif font-bold text-xl rounded-full">S</div>
+                    <div id="logo-placeholder" class="hidden items-center justify-center h-8 w-8 md:h-10 md:w-10 bg-black text-white font-serif font-bold text-lg md:text-xl rounded-full">S</div>
                     
                     <div class="flex flex-col justify-center">
-                        <span class="text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
-                        <span class="text-[0.6rem] font-sans font-medium text-gray-500 tracking-[0.25em] uppercase leading-none mt-1.5">Corporation</span>
+                        <span class="text-base md:text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
+                        <span class="text-[0.55rem] md:text-[0.6rem] font-sans font-medium text-gray-500 tracking-[0.25em] uppercase leading-none mt-1">Corporation</span>
                     </div>
                 </a>
 
                 <!-- Menú Escritorio -->
-                <div class="hidden md:flex items-center space-x-10">
+                <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
                     <a href="#conceptos" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Conceptos</a>
                     <a href="#enfoque" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Enfoque</a>
                     <a href="#filosofia" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Filosofía</a>
@@ -171,44 +178,44 @@
                 </div>
 
                 <!-- Botón Menú Móvil -->
-                <button id="mobile-menu-btn" class="md:hidden text-black p-2 focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <button id="mobile-menu-btn" class="md:hidden text-black p-2 focus:outline-none -mr-2">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
         
         <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#FBF8F0] border-t border-black/5 p-6 space-y-6 shadow-xl absolute w-full left-0 top-24 z-40">
-            <a href="#conceptos" class="block text-xl font-serif text-black py-2 border-b border-black/5">Conceptos</a>
-            <a href="#enfoque" class="block text-xl font-serif text-black py-2 border-b border-black/5">Enfoque</a>
-            <a href="#filosofia" class="block text-xl font-serif text-black py-2 border-b border-black/5">Filosofía</a>
-            <a href="#soluciones" class="block text-xl font-serif text-black py-2 border-b border-black/5">Servicios</a>
-            <a href="mailto:contacto@stratiums.com" class="block text-xl font-serif text-black py-2 border-b border-black/5">Correo</a>
-            <button id="btn-legal-mobile" class="block text-left text-xl font-serif text-black py-2 w-full focus:outline-none border-b border-black/5">Legal</button>
-            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="block w-full text-center btn-premium py-4 rounded-lg mt-4">Agendar Llamada</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FBF8F0] border-t border-black/5 p-6 space-y-6 shadow-2xl absolute w-full left-0 top-20 z-40 transition-all">
+            <a href="#conceptos" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50">Conceptos</a>
+            <a href="#enfoque" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50">Enfoque</a>
+            <a href="#filosofia" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50">Filosofía</a>
+            <a href="#soluciones" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50">Servicios</a>
+            <a href="mailto:contacto@stratiums.com" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50">Correo</a>
+            <button id="btn-legal-mobile" class="block w-full text-left text-lg font-serif text-black py-3 border-b border-black/5 focus:outline-none active:bg-gray-50">Legal</button>
+            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="block w-full text-center btn-premium py-4 rounded-lg mt-6 shadow-md">Agendar Llamada</a>
         </div>
     </nav>
 
     <!-- SECCIÓN HERO -->
-    <section class="min-h-screen flex items-center relative pt-32 pb-20">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
-            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                <div class="text-left space-y-10">
+    <section class="min-h-screen flex items-center relative pt-28 pb-16 md:pt-32 md:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+                <div class="text-left space-y-8 md:space-y-10">
                     
-                    <h1 class="reveal-element text-5xl sm:text-6xl lg:text-7xl font-serif text-black leading-[1.1]">
+                    <h1 class="reveal-element text-4xl sm:text-5xl lg:text-7xl font-serif text-black leading-[1.1] tracking-tight">
                         Automatización de Procesos con <br>
                         <span class="italic text-gray-600">Inteligencia Artificial.</span>
                     </h1>
                     
-                    <p class="reveal-element delay-100 text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed font-light">
+                    <p class="reveal-element delay-100 text-base md:text-xl text-gray-600 max-w-xl leading-relaxed font-light">
                         Diseñamos la estructura digital para que su negocio funcione sin supervisión humana. Recupere el 30% de su tiempo con sistemas de cero errores impulsados por IA.
                     </p>
                     
-                    <div class="reveal-element delay-200 flex flex-col sm:flex-row gap-5 pt-4">
-                        <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium inline-flex justify-center items-center px-10 py-4 text-base font-medium rounded-lg">
+                    <div class="reveal-element delay-200 flex flex-col sm:flex-row gap-4 md:gap-5 pt-2">
+                        <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium inline-flex justify-center items-center px-8 py-4 text-base font-medium rounded-lg shadow-sm">
                             Auditoría Gratuita
                         </a>
-                        <a href="#conceptos" class="btn-outline inline-flex justify-center items-center px-10 py-4 font-medium rounded-lg">
+                        <a href="#conceptos" class="btn-outline inline-flex justify-center items-center px-8 py-4 font-medium rounded-lg">
                             Entender Más
                         </a>
                     </div>
@@ -246,75 +253,75 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: CONCEPTOS CLAVE -->
-    <section id="conceptos" class="py-24 md:py-32 bg-white border-y border-black/5">
-        <div class="max-w-5xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
+    <!-- SECCIÓN: CONCEPTOS CLAVE -->
+    <section id="conceptos" class="py-16 md:py-32 bg-white border-y border-black/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-12 md:mb-16">
                 <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Educación</span>
-                <h2 class="reveal-element delay-100 text-3xl md:text-4xl font-serif text-black mt-6 mb-4">
-                    Desmitificando la Automatización
+                <h2 class="reveal-element delay-100 text-3xl md:text-4xl font-serif text-black mt-4 md:mt-6 mb-4">
+                    ¿Qué es automatizar?
                 </h2>
-                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light">
+                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light text-sm md:text-base">
                     Entender la tecnología es el primer paso para dominarla. Aquí explicamos la diferencia entre lo viejo y lo nuevo.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="reveal-element space-y-6">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div class="reveal-element space-y-4 md:space-y-6">
                     <h3 class="text-xl font-serif text-black">¿Qué es realmente?</h3>
                     <p class="text-gray-600 leading-relaxed text-sm font-light">
                         La automatización no es solo programar tareas simples. Es la capacidad de un sistema digital de ejecutar flujos de trabajo completos que antes requerían intervención humana. En Stratiums, creamos ecosistemas donde la información se mueve, se procesa y genera acciones por sí misma.
                     </p>
-                    <ul class="space-y-3 text-sm text-gray-800 font-medium">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span> Antiguo: Copiar y pegar datos manualmente.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full"></span> Nuevo: Tus sistemas (CRM, ERP) hablan en tiempo real.</li>
+                    <ul class="space-y-3 text-sm text-gray-800 font-medium bg-gray-50 p-4 rounded-lg md:bg-transparent md:p-0">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full flex-shrink-0"></span> Antiguo: Copiar y pegar datos manualmente.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span> Nuevo: Tus sistemas (CRM, ERP) hablan en tiempo real.</li>
                     </ul>
                 </div>
                 
-                <div class="reveal-element delay-100 space-y-6">
+                <div class="reveal-element delay-100 space-y-4 md:space-y-6">
                     <h3 class="text-xl font-serif text-black">El Rol de la Inteligencia Artificial</h3>
                     <p class="text-gray-600 leading-relaxed text-sm font-light">
                         La IA es el componente que añade la <strong>capacidad de decisión</strong>. Sin IA, una automatización solo sigue reglas fijas. Con IA, el sistema aprende y decide.
                     </p>
-                    <ul class="space-y-3 text-sm text-gray-800 font-medium">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span> Clásico: Enviar un email si el pago falla.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full"></span> Stratiums: Analizar el motivo, clasificar el riesgo y decidir la mejor acción.</li>
+                    <ul class="space-y-3 text-sm text-gray-800 font-medium bg-gray-50 p-4 rounded-lg md:bg-transparent md:p-0">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full flex-shrink-0"></span> Clásico: Enviar un email si el pago falla.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span> Stratiums: Analizar el motivo, clasificar el riesgo y decidir la mejor acción.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: ENFOQUE -->
-    <section id="enfoque" class="py-24 md:py-32 bg-[#FBF8F0]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-20">
+    <!-- SECCIÓN: ENFOQUE -->
+    <section id="enfoque" class="py-16 md:py-32 bg-[#FBF8F0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-12 md:mb-20">
                 <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Nuestro Enfoque</span>
-                <h2 class="reveal-element delay-100 text-3xl md:text-5xl font-serif text-black mt-6 mb-6">
+                <h2 class="reveal-element delay-100 text-3xl md:text-5xl font-serif text-black mt-4 md:mt-6 mb-4 md:mb-6">
                     De la Inercia a la Eficiencia
                 </h2>
-                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light">
+                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light text-sm md:text-base">
                     No vendemos software; diseñamos una arquitectura operativa basada en tres pilares fundamentales.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-10">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-10">
                 <!-- Pilar 1 -->
-                <div class="reveal-element p-10 bg-white rounded-xl border border-black/5 shadow-sm">
-                    <div class="text-4xl font-serif text-black/10 mb-6">01</div>
-                    <h3 class="text-xl font-serif text-black mb-4">Diagnóstico e Ingeniería</h3>
+                <div class="reveal-element p-6 md:p-10 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-serif text-black/10 mb-4 md:mb-6">01</div>
+                    <h3 class="text-lg md:text-xl font-serif text-black mb-3 md:mb-4">Diagnóstico e Ingeniería</h3>
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Utilizamos análisis de datos avanzados para mapear y auditar cada proceso. Identificamos los puntos de fricción donde el ROI de la automatización será máximo.</p>
                 </div>
                 <!-- Pilar 2 -->
-                <div class="reveal-element delay-100 p-10 bg-white rounded-xl border border-black/5 shadow-sm">
-                    <div class="text-4xl font-serif text-black/10 mb-6">02</div>
-                    <h3 class="text-xl font-serif text-black mb-4">Orquestación de Sistemas</h3>
+                <div class="reveal-element delay-100 p-6 md:p-10 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-serif text-black/10 mb-4 md:mb-6">02</div>
+                    <h3 class="text-lg md:text-xl font-serif text-black mb-3 md:mb-4">Orquestación de Sistemas</h3>
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Construimos el "cerebro" de tu operación. Integramos aplicaciones y flujos de trabajo donde la IA toma decisiones y ejecuta con precisión matemática.</p>
                 </div>
                 <!-- Pilar 3 -->
-                <div class="reveal-element delay-200 p-10 bg-white rounded-xl border border-black/5 shadow-sm">
-                    <div class="text-4xl font-serif text-black/10 mb-6">03</div>
-                    <h3 class="text-xl font-serif text-black mb-4">Garantía y Escalabilidad</h3>
+                <div class="reveal-element delay-200 p-6 md:p-10 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl md:text-4xl font-serif text-black/10 mb-4 md:mb-6">03</div>
+                    <h3 class="text-lg md:text-xl font-serif text-black mb-3 md:mb-4">Garantía y Escalabilidad</h3>
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Monitorizamos el rendimiento de cada flujo para garantizar estabilidad. Si tus operaciones escalan, nuestras automatizaciones escalan contigo.</p>
                 </div>
             </div>
@@ -322,13 +329,13 @@
     </section>
 
     <!-- MANIFIESTO / FILOSOFÍA -->
-    <section id="filosofia" class="py-24 md:py-32 bg-white border-y border-black/5">
-        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+    <section id="filosofia" class="py-16 md:py-32 bg-white border-y border-black/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
             <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Manifiesto</span>
-            <h2 class="reveal-element delay-100 text-3xl md:text-5xl font-serif text-black mt-8 mb-12 leading-tight">
+            <h2 class="reveal-element delay-100 text-2xl md:text-5xl font-serif text-black mt-6 md:mt-8 mb-8 md:mb-12 leading-tight">
                 El valor reside en el tiempo recuperado, <br class="hidden md:block"> <span class="italic text-gray-500">no en la tarea ejecutada.</span>
             </h2>
-            <div class="reveal-element delay-200 prose prose-lg mx-auto text-gray-600 leading-relaxed font-light">
+            <div class="reveal-element delay-200 prose prose-lg mx-auto text-gray-600 leading-relaxed font-light text-sm md:text-lg">
                 <p class="mb-8">
                     Stratiums Corporation nace para crear un tejido empresarial más ágil, limpio y resistente a la fricción cotidiana. 
                     Nuestra labor no es solo "automatizar", es <strong>recuperar tu tiempo</strong>. Hilamos datos, aplicaciones y sistemas dispersos 
@@ -339,30 +346,30 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section id="soluciones" class="py-24 md:py-32">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="reveal-element card-premium p-10 rounded-2xl bg-white">
-                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-8">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <section id="soluciones" class="py-16 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="reveal-element card-premium p-6 md:p-10 rounded-2xl bg-white">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6 md:mb-8">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-serif text-black mb-4">Automatización de Procesos</h3>
+                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Automatización de Procesos</h3>
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Arquitecturas de flujo que conectan tus herramientas para que dejes de copiar y pegar datos manualmente.</p>
                 </div>
 
-                <div class="reveal-element delay-100 card-premium p-10 rounded-2xl bg-white">
-                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-8">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="reveal-element delay-100 card-premium p-6 md:p-10 rounded-2xl bg-white">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6 md:mb-8">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-serif text-black mb-4">Sistemas Zero-Error</h3>
+                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Sistemas Zero-Error</h3>
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Eliminamos el factor humano. Procesos financieros y operativos impulsados por IA que se ejecutan con perfección.</p>
                 </div>
 
-                <div class="reveal-element delay-200 card-premium p-10 rounded-2xl bg-white">
-                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-8">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                <div class="reveal-element delay-200 card-premium p-6 md:p-10 rounded-2xl bg-white">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6 md:mb-8">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-serif text-black mb-4">Transparencia Total</h3>
+                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Transparencia Total</h3>
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Paneles de control en tiempo real. No vendemos cajas negras; construimos sistemas que puedes auditar.</p>
                 </div>
             </div>
@@ -370,35 +377,35 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="py-24 md:py-32 bg-white border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <section id="contacto" class="py-16 md:py-32 bg-white border-t border-black/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
                 <div class="reveal-element">
-                    <h2 class="text-4xl md:text-6xl font-serif text-black mb-8">Hablemos de <br> <span class="italic text-gray-500">Eficiencia.</span></h2>
-                    <p class="text-gray-600 text-lg font-light mb-12 leading-relaxed max-w-md">
+                    <h2 class="text-3xl md:text-6xl font-serif text-black mb-6 md:mb-8">Hablemos de <br> <span class="italic text-gray-500">Eficiencia.</span></h2>
+                    <p class="text-gray-600 text-base md:text-lg font-light mb-8 md:mb-12 leading-relaxed max-w-md">
                         ¿Listo para dejar de perder tiempo en tareas repetitivas? Agenda una llamada de descubrimiento de 30 minutos.
                     </p>
                     
-                    <div class="space-y-6">
-                        <a href="mailto:contacto@stratiums.com" class="flex items-center gap-6 group">
-                            <span class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
+                    <div class="space-y-4 md:space-y-6">
+                        <a href="mailto:contacto@stratiums.com" class="flex items-center gap-4 md:gap-6 group bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
+                            <span class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black group-hover:bg-black group-hover:text-white transition-all bg-white">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </span>
-                            <span class="text-lg text-black font-medium">contacto@stratiums.com</span>
+                            <span class="text-base md:text-lg text-black font-medium break-all">contacto@stratiums.com</span>
                         </a>
-                        <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 group">
-                            <span class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#0077b5] group-hover:text-[#0077b5] transition-all">
+                        <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 md:gap-6 group bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
+                            <span class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#0077b5] group-hover:text-[#0077b5] transition-all bg-white">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.265-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </span>
-                            <span class="text-lg text-black font-medium">LinkedIn</span>
+                            <span class="text-base md:text-lg text-black font-medium">LinkedIn</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="reveal-element delay-100 bg-[#F4F1E8] p-10 rounded-2xl text-center">
-                    <h3 class="text-2xl font-serif text-black mb-4">Reserva tu espacio</h3>
-                    <p class="text-gray-600 mb-8 font-light text-sm">Selecciona el horario que mejor te convenga.</p>
-                    <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium w-full py-4 block rounded-lg font-medium">
+                <div class="reveal-element delay-100 bg-[#F4F1E8] p-8 md:p-10 rounded-2xl text-center shadow-sm">
+                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Reserva tu espacio</h3>
+                    <p class="text-gray-600 mb-6 md:mb-8 font-light text-sm">Selecciona el horario que mejor te convenga.</p>
+                    <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium w-full py-4 block rounded-lg font-medium shadow-md">
                         Ir al Calendario
                     </a>
                     <p class="text-xs text-gray-400 mt-4">Sin coste. Sin compromiso.</p>
@@ -408,34 +415,39 @@
     </section>
 
     <!-- PIE DE PÁGINA -->
-    <footer class="bg-black text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center md:text-left">
+    <footer class="bg-black text-white py-10 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center md:text-left">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div>
-                    <span class="text-2xl font-serif font-bold tracking-wide">STRATIUMS</span>
+                    <span class="text-xl md:text-2xl font-serif font-bold tracking-wide">STRATIUMS</span>
                     <p class="text-xs mt-2 text-gray-500 tracking-wider uppercase">© 2025 Stratiums Corporation.</p>
                 </div>
                 
-                <div class="flex gap-8 text-sm text-gray-400">
-                    <button id="btn-legal-footer" class="hover:text-white transition-colors">Legal</button>
-                    <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+                <div class="flex gap-6 md:gap-8 text-sm text-gray-400">
+                    <button id="btn-legal-footer" class="hover:text-white transition-colors p-2">Legal</button>
+                    <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors p-2">LinkedIn</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- MODAL LEGAL -->
-    <div id="legal-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center invisible opacity-0 pointer-events-none">
+    <div id="legal-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center invisible opacity-0 pointer-events-none p-4">
         <div id="modal-bg" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-        <div class="modal-content relative bg-[#FBF8F0] w-full max-w-3xl h-[80vh] rounded-xl shadow-2xl overflow-hidden flex flex-col m-6 border border-black/5">
-            <div class="flex justify-between items-center p-6 border-b border-black/5 bg-white">
+        <div class="modal-content relative bg-[#FBF8F0] w-full max-w-3xl h-[85vh] rounded-xl shadow-2xl overflow-hidden flex flex-col border border-black/5">
+            <div class="flex justify-between items-center p-4 md:p-6 border-b border-black/5 bg-white">
                 <h3 class="text-lg font-serif font-bold text-black">Documentación Legal</h3>
-                <button id="btn-close-modal" class="text-gray-400 hover:text-black transition-colors">
+                <button id="btn-close-modal" class="text-gray-400 hover:text-black transition-colors p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            <div class="p-8 overflow-y-auto text-gray-700 text-sm leading-relaxed space-y-8 font-light">
+            <div class="p-6 md:p-8 overflow-y-auto text-gray-700 text-sm leading-relaxed space-y-6 md:space-y-8 font-light">
                 
+                <!-- Aviso de revisión legal -->
+                <div class="bg-yellow-50 border-l-2 border-yellow-400 p-4 mb-4 text-xs text-yellow-800 rounded-r">
+                    <strong>Nota:</strong> Este es un texto provisional. Debe ser revisado por un asesor legal antes de la publicación final.
+                </div>
+
                 <div id="privacidad">
                     <h2 class="text-xl font-serif font-bold text-black mb-3">Política de Privacidad</h2>
                     <p class="text-xs text-gray-500 mb-4">Última actualización: Diciembre 2025</p>
