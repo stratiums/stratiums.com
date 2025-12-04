@@ -6,24 +6,17 @@
     <title>Stratiums Corporation | Automatización e Inteligencia Artificial</title>
     
     <!-- SEGURIDAD Y SEO -->
-    <meta name="description" content="Expertos en Automatización de Procesos e Inteligencia Artificial para empresas. Recupera tu tiempo con arquitecturas de flujo avanzadas.">
+    <meta name="description" content="Expertos en Automatización de Procesos e Inteligencia Artificial para empresas. Recupere el 30% del tiempo de su equipo con sistemas de cero errores impulsados por IA.">
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
     
     <!-- CABECERAS DE SEGURIDAD BLINDADAS -->
-    <!-- 
-        POLÍTICA DE SEGURIDAD DE CONTENIDO (CSP) ESTRICTA:
-        - default-src 'self': Por defecto, solo permite recursos del propio dominio.
-        - connect-src: SOLO permite conexiones a tu servidor n8n específico y al CDN del chat. Bloquea todo lo demás.
-        - img-src: Solo permite imágenes locales.
-        - frame-ancestors 'none': Bloquea que otros sitios incrusten tu web (Anti-Clickjacking).
-    -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
         script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; 
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; 
         font-src https://fonts.gstatic.com; 
-        img-src 'self' data:; 
+        img-src 'self' data: https://placehold.co; 
         connect-src 'self' https://n8n.srv903631.hstgr.cloud https://cdn.jsdelivr.net; 
         frame-ancestors 'none';
         base-uri 'self';
@@ -48,18 +41,20 @@
             --bg-color: #FBF8F0;   /* Crema Lujo */
             --text-main: #111111;  /* Negro casi puro */
             --text-light: #444444; /* Gris oscuro para párrafos */
-            --accent: #5B9DD9;     /* Azul del logo (para detalles sutiles) */
+            --accent: #5B9DD9;     /* Azul del logo */
             
-            /* Chat n8n Personalizado - Minimalista */
-            --chat--color-primary: #111111 !important; /* Negro */
-            --chat--color-secondary: #FBF8F0 !important; /* Crema */
-            --chat--header--background: #111111 !important; /* Cabecera Negra */
-            --chat--header--color: #FBF8F0 !important; /* Texto Crema */
-            --chat--message--user--background: #111111 !important;
+            /* --- CHAT RIVO PERSONALIZACIÓN MINIMALISTA --- */
+            --chat--color-primary: #1C1C1C !important; 
+            --chat--color-secondary: #FFFFFF !important; 
+            --chat--header--background: #1C1C1C !important; 
+            --chat--header--color: #FBF8F0 !important; 
+            --chat--message--user--background: #334155 !important; 
             --chat--message--user--color: #ffffff !important;
-            --chat--message--bot--background: #ffffff !important;
-            --chat--message--bot--color: #111111 !important;
-            --chat--toggle--background: #111111 !important;
+            --chat--message--bot--background: #F4F4F4 !important; 
+            --chat--message--bot--color: #1C1C1C !important;
+            --chat--toggle--background: #1C1C1C !important;
+            --chat--toggle--size: 56px; 
+            --chat--toggle--border-radius: 50% !important;
             --chat--window--border-radius: 12px !important;
         }
 
@@ -149,7 +144,6 @@
                          class="h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                          id="main-logo"
                     >
-                    <!-- Fallback seguro (sin imágenes externas) -->
                     <div id="logo-placeholder" class="hidden items-center justify-center h-10 w-10 bg-black text-white font-serif font-bold text-xl rounded-full">S</div>
                     
                     <div class="flex flex-col justify-center">
@@ -160,9 +154,10 @@
 
                 <!-- Menú Escritorio -->
                 <div class="hidden md:flex items-center space-x-10">
+                    <a href="#conceptos" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Conceptos</a>
+                    <a href="#enfoque" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Enfoque</a>
                     <a href="#filosofia" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Filosofía</a>
-                    <a href="#soluciones" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Soluciones</a>
-                    <a href="#contacto" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Contacto</a>
+                    <a href="#soluciones" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors">Servicios</a>
                     
                     <span class="h-4 w-px bg-gray-300"></span>
 
@@ -184,8 +179,10 @@
         
         <!-- Menú Móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#FBF8F0] border-t border-black/5 p-6 space-y-6 shadow-xl absolute w-full left-0 top-24 z-40">
+            <a href="#conceptos" class="block text-xl font-serif text-black py-2 border-b border-black/5">Conceptos</a>
+            <a href="#enfoque" class="block text-xl font-serif text-black py-2 border-b border-black/5">Enfoque</a>
             <a href="#filosofia" class="block text-xl font-serif text-black py-2 border-b border-black/5">Filosofía</a>
-            <a href="#soluciones" class="block text-xl font-serif text-black py-2 border-b border-black/5">Soluciones</a>
+            <a href="#soluciones" class="block text-xl font-serif text-black py-2 border-b border-black/5">Servicios</a>
             <a href="mailto:contacto@stratiums.com" class="block text-xl font-serif text-black py-2 border-b border-black/5">Correo</a>
             <button id="btn-legal-mobile" class="block text-left text-xl font-serif text-black py-2 w-full focus:outline-none border-b border-black/5">Legal</button>
             <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="block w-full text-center btn-premium py-4 rounded-lg mt-4">Agendar Llamada</a>
@@ -199,31 +196,28 @@
                 <div class="text-left space-y-10">
                     
                     <h1 class="reveal-element text-5xl sm:text-6xl lg:text-7xl font-serif text-black leading-[1.1]">
-                        Cuando el sistema piensa, <br>
-                        <span class="italic text-gray-600">la empresa avanza.</span>
+                        Automatización de Procesos con <br>
+                        <span class="italic text-gray-600">Inteligencia Artificial.</span>
                     </h1>
                     
                     <p class="reveal-element delay-100 text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed font-light">
-                        Desmantelamos la inercia operativa. Sustituimos tareas repetitivas por engranajes digitales de precisión invariable mediante <strong class="text-black font-medium">Inteligencia Artificial</strong> y automatización avanzada.
+                        Diseñamos la estructura digital para que su negocio funcione sin supervisión humana. Recupere el 30% de su tiempo con sistemas de cero errores impulsados por IA.
                     </p>
                     
                     <div class="reveal-element delay-200 flex flex-col sm:flex-row gap-5 pt-4">
                         <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium inline-flex justify-center items-center px-10 py-4 text-base font-medium rounded-lg">
                             Auditoría Gratuita
                         </a>
-                        <a href="#filosofia" class="btn-outline inline-flex justify-center items-center px-10 py-4 font-medium rounded-lg">
-                            Conoce el Método
+                        <a href="#conceptos" class="btn-outline inline-flex justify-center items-center px-10 py-4 font-medium rounded-lg">
+                            Entender Más
                         </a>
                     </div>
                 </div>
                 
                 <div class="reveal-element delay-200 relative hidden lg:block">
-                    <!-- Ilustración Abstracta Minimalista -->
                     <div class="relative aspect-square bg-white rounded-full border border-black/5 shadow-[0_40px_80px_rgba(0,0,0,0.05)] flex items-center justify-center p-12">
                         <div class="absolute inset-0 rounded-full border border-black/5 scale-110 opacity-50"></div>
                         <div class="absolute inset-0 rounded-full border border-black/5 scale-125 opacity-30"></div>
-                        
-                        <!-- Contenido de la tarjeta abstracta -->
                         <div class="w-full space-y-6">
                             <div class="flex items-center justify-between text-xs font-mono text-gray-400 tracking-widest uppercase">
                                 <span>Input</span>
@@ -252,10 +246,85 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: CONCEPTOS CLAVE -->
+    <section id="conceptos" class="py-24 md:py-32 bg-white border-y border-black/5">
+        <div class="max-w-5xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Educación</span>
+                <h2 class="reveal-element delay-100 text-3xl md:text-4xl font-serif text-black mt-6 mb-4">
+                    Desmitificando la Automatización
+                </h2>
+                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light">
+                    Entender la tecnología es el primer paso para dominarla. Aquí explicamos la diferencia entre lo viejo y lo nuevo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="reveal-element space-y-6">
+                    <h3 class="text-xl font-serif text-black">¿Qué es realmente?</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm font-light">
+                        La automatización no es solo programar tareas simples. Es la capacidad de un sistema digital de ejecutar flujos de trabajo completos que antes requerían intervención humana. En Stratiums, creamos ecosistemas donde la información se mueve, se procesa y genera acciones por sí misma.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-800 font-medium">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span> Antiguo: Copiar y pegar datos manualmente.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full"></span> Nuevo: Tus sistemas (CRM, ERP) hablan en tiempo real.</li>
+                    </ul>
+                </div>
+                
+                <div class="reveal-element delay-100 space-y-6">
+                    <h3 class="text-xl font-serif text-black">El Rol de la Inteligencia Artificial</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm font-light">
+                        La IA es el componente que añade la <strong>capacidad de decisión</strong>. Sin IA, una automatización solo sigue reglas fijas. Con IA, el sistema aprende y decide.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-800 font-medium">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span> Clásico: Enviar un email si el pago falla.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full"></span> Stratiums: Analizar el motivo, clasificar el riesgo y decidir la mejor acción.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: ENFOQUE -->
+    <section id="enfoque" class="py-24 md:py-32 bg-[#FBF8F0]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-20">
+                <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Nuestro Enfoque</span>
+                <h2 class="reveal-element delay-100 text-3xl md:text-5xl font-serif text-black mt-6 mb-6">
+                    De la Inercia a la Eficiencia
+                </h2>
+                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light">
+                    No vendemos software; diseñamos una arquitectura operativa basada en tres pilares fundamentales.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Pilar 1 -->
+                <div class="reveal-element p-10 bg-white rounded-xl border border-black/5 shadow-sm">
+                    <div class="text-4xl font-serif text-black/10 mb-6">01</div>
+                    <h3 class="text-xl font-serif text-black mb-4">Diagnóstico e Ingeniería</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed font-light">Utilizamos análisis de datos avanzados para mapear y auditar cada proceso. Identificamos los puntos de fricción donde el ROI de la automatización será máximo.</p>
+                </div>
+                <!-- Pilar 2 -->
+                <div class="reveal-element delay-100 p-10 bg-white rounded-xl border border-black/5 shadow-sm">
+                    <div class="text-4xl font-serif text-black/10 mb-6">02</div>
+                    <h3 class="text-xl font-serif text-black mb-4">Orquestación de Sistemas</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed font-light">Construimos el "cerebro" de tu operación. Integramos aplicaciones y flujos de trabajo donde la IA toma decisiones y ejecuta con precisión matemática.</p>
+                </div>
+                <!-- Pilar 3 -->
+                <div class="reveal-element delay-200 p-10 bg-white rounded-xl border border-black/5 shadow-sm">
+                    <div class="text-4xl font-serif text-black/10 mb-6">03</div>
+                    <h3 class="text-xl font-serif text-black mb-4">Garantía y Escalabilidad</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed font-light">Monitorizamos el rendimiento de cada flujo para garantizar estabilidad. Si tus operaciones escalan, nuestras automatizaciones escalan contigo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- MANIFIESTO / FILOSOFÍA -->
     <section id="filosofia" class="py-24 md:py-32 bg-white border-y border-black/5">
         <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-            <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Nuestra Obsesión</span>
+            <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Manifiesto</span>
             <h2 class="reveal-element delay-100 text-3xl md:text-5xl font-serif text-black mt-8 mb-12 leading-tight">
                 El valor reside en el tiempo recuperado, <br class="hidden md:block"> <span class="italic text-gray-500">no en la tarea ejecutada.</span>
             </h2>
@@ -273,8 +342,7 @@
     <section id="soluciones" class="py-24 md:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Tarjeta 1 -->
-                <div class="reveal-element card-premium p-10 rounded-2xl">
+                <div class="reveal-element card-premium p-10 rounded-2xl bg-white">
                     <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-8">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -282,8 +350,7 @@
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Arquitecturas de flujo que conectan tus herramientas para que dejes de copiar y pegar datos manualmente.</p>
                 </div>
 
-                <!-- Tarjeta 2 -->
-                <div class="reveal-element delay-100 card-premium p-10 rounded-2xl">
+                <div class="reveal-element delay-100 card-premium p-10 rounded-2xl bg-white">
                     <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-8">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -291,8 +358,7 @@
                     <p class="text-sm text-gray-600 leading-relaxed font-light">Eliminamos el factor humano. Procesos financieros y operativos impulsados por IA que se ejecutan con perfección.</p>
                 </div>
 
-                <!-- Tarjeta 3 -->
-                <div class="reveal-element delay-200 card-premium p-10 rounded-2xl">
+                <div class="reveal-element delay-200 card-premium p-10 rounded-2xl bg-white">
                     <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-8">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     </div>
@@ -369,28 +435,52 @@
                 </button>
             </div>
             <div class="p-8 overflow-y-auto text-gray-700 text-sm leading-relaxed space-y-8 font-light">
-                <div id="oauth-consent">
-                    <h2 class="text-xl font-serif font-bold text-black mb-3">Consentimiento OAuth2</h2>
-                    <p>Estás a punto de autorizar a <strong>Stratiums</strong> a acceder a tu información para configurar automatizaciones según tu consentimiento.</p>
-                </div>
-                <hr class="border-gray-200">
+                
                 <div id="privacidad">
-                    <h2 class="text-xl font-serif font-bold text-black mb-3">Privacidad</h2>
-                    <p>En Stratiums tomamos muy en serio la privacidad. Solo accedemos a datos necesarios para las automatizaciones solicitadas. No almacenamos mensajes ni archivos críticos.</p>
+                    <h2 class="text-xl font-serif font-bold text-black mb-3">Política de Privacidad</h2>
+                    <p class="text-xs text-gray-500 mb-4">Última actualización: Diciembre 2025</p>
+                    <p class="mb-4">En Stratiums Corporation, nuestra prioridad es garantizar la tranquilidad operativa y la seguridad de la información de nuestros clientes. Actuamos exclusivamente como un procesador de datos en nombre y bajo las instrucciones de usted, el cliente.</p>
+                    
+                    <h4 class="font-bold text-black mt-4 mb-2">1. Recopilación y Uso de Datos</h4>
+                    <p>Solo recopilamos y usamos los datos de las cuentas de terceros (como Google Workspace) cuando es estrictamente necesario para la ejecución de las automatizaciones específicas solicitadas.</p>
+                    <ul class="list-disc pl-5 space-y-1 mb-4 mt-2">
+                        <li><strong>Datos Directos:</strong> Dirección de correo electrónico y detalles de flujos.</li>
+                        <li><strong>Datos de Terceros:</strong> Mediante OAuth, accedemos a calendarios o documentos única y exclusivamente para el propósito de la automatización contratada.</li>
+                    </ul>
+
+                    <h4 class="font-bold text-black mt-4 mb-2">2. Cumplimiento y Seguridad</h4>
+                    <ul class="list-disc pl-5 space-y-1 mb-4">
+                        <li><strong>Uso Limitado:</strong> Stratiums NUNCA utilizará, compartirá, venderá o cederá datos sensibles para marketing o terceros.</li>
+                        <li><strong>Mejora Continua:</strong> Stratiums se reserva el derecho de utilizar datos de ejecución <strong>anonimizados y agregados</strong> (como tasas de éxito) para el entrenamiento interno y mejora de sus arquitecturas de IA. Esta información nunca se vende ni se vincula a un cliente.</li>
+                        <li><strong>Control Total:</strong> Usted puede revocar el acceso en cualquier momento desde el panel de seguridad de Google.</li>
+                    </ul>
                 </div>
+
                 <hr class="border-gray-200">
+
                 <div id="terminos">
-                    <h2 class="text-xl font-serif font-bold text-black mb-3">Términos</h2>
-                    <p>Stratiums ofrece servicios de automatización operados por cuenta de sus clientes. No nos hacemos responsables del mal uso de credenciales compartidas.</p>
+                    <h2 class="text-xl font-serif font-bold text-black mb-3">Términos y Condiciones</h2>
+                    <p class="text-xs text-gray-500 mb-4">Última actualización: Diciembre 2025</p>
+                    
+                    <h4 class="font-bold text-black mt-4 mb-2">1. Objeto del Servicio</h4>
+                    <p>Stratiums diseña, implementa y monitorea arquitecturas de flujo digitales para optimizar la eficiencia operativa mediante lógica de IA.</p>
+
+                    <h4 class="font-bold text-black mt-4 mb-2">2. Responsabilidad</h4>
+                    <ul class="list-disc pl-5 space-y-1 mb-4">
+                        <li>El cliente es responsable de la legalidad de sus datos.</li>
+                        <li>El cliente autoriza el uso de permisos OAuth exclusivamente para los flujos acordados.</li>
+                        <li>Stratiums no es responsable de fallos en APIs de terceros.</li>
+                    </ul>
                 </div>
-                <div class="bg-white p-6 rounded-lg border border-gray-100">
-                    <p class="font-medium text-black">Contacto: <a href="mailto:equipo@stratiums.com" class="underline">equipo@stratiums.com</a></p>
+
+                <div class="bg-white p-6 rounded-lg border border-gray-100 mt-8">
+                    <p class="font-medium text-black">Contacto para Privacidad: <a href="mailto:equipo@stratiums.com" class="underline">equipo@stratiums.com</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT CHATBOT -->
+    <!-- SCRIPT CHATBOT RIVO -->
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
@@ -398,16 +488,14 @@
             webhookUrl: 'https://n8n.srv903631.hstgr.cloud/webhook/660aad3e-ecc6-4cec-852a-6bf20252be44/chat',
             mode: 'window',
             showWelcomeScreen: true,
-            // IMPORTANTE: Asegúrate de que el archivo 'stratos.png' existe en tu repositorio
-            avatarUrl: 'stratos.png', 
             initialMessages: [
-                'Hola, soy Stratos.',
+                'Hola, soy Rivo.',
                 '¿Cómo puedo optimizar tu tiempo hoy?'
             ],
             i18n: {
                 en: {
-                    title: 'Stratos', // SOLO STRATOS
-                    subtitle: '', // SIN SUBTÍTULO
+                    title: 'Rivo', // SOLO RIVO
+                    subtitle: '', 
                     footer: '',
                     getStarted: 'Iniciar consulta',
                     inputPlaceholder: 'Escribe aquí...'
