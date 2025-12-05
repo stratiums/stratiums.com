@@ -5,55 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FBF8F0">
     <title>Stratiums Corporation | Automatización e Inteligencia Artificial</title>
-   
+    
     <!-- SEO & Performance -->
-    <meta name="description" content="Expertos en Automatización de Procesos e IA. Recupera el 30% del tiempo de tu equipo con sistemas de cero errores.">
+    <meta name="description" content="Expertos en Automatización de Procesos e IA. Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   
+    
     <!-- SEGURIDAD: CSP Reforzada -->
     <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
-        font-src https://fonts.gstatic.com;
-        img-src 'self' data: https://placehold.co https://i.postimg.cc;
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; 
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; 
+        font-src https://fonts.gstatic.com; 
+        img-src 'self' data: https://placehold.co https://i.postimg.cc; 
         connect-src 'self' https://n8n.srv903631.hstgr.cloud https://cdn.jsdelivr.net;
     ">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
 
-
     <!-- Tailwind & Estilos Chat -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-   
+    
     <!-- Estilos Críticos -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-        :root{--bg-color:#FBF8F0;--text-main:#111111;--text-light:#444444;--accent:#5B9DD9;--chat--font-family:'Inter',sans-serif!important;--chat--header--background:#111111!important;--chat--header--color:#FFFFFF!important;--chat--header--padding:8px 16px!important;--chat--header--height:52px!important;--chat--color-primary:var(--accent)!important;--chat--color-secondary:#FFFFFF!important;--chat--message--user--background:var(--accent)!important;--chat--message--user--color:#FFFFFF!important;--chat--message--bot--background:#E5E7EB!important;--chat--message--bot--color:#111111!important;--chat--window--width:380px;--chat--window--height:600px;--chat--window--border-radius:12px!important;--chat--toggle--size:60px;--chat--input--background:#FFFFFF!important;--chat--input--border-top:1px solid #E5E7EB!important;--chat--input--height:60px}body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);overflow-x:hidden}h1,h2,h3,h4,.font-serif{font-family:'Playfair Display',serif}
-       
+        :root{
+            --bg-color:#FBF8F0;
+            --text-main:#111111;
+            --text-light:#444444;
+            --accent:#5B9DD9;
+            --chat--font-family:'Inter',sans-serif!important;
+            --chat--header--background:#111111!important;
+            --chat--header--color:#FFFFFF!important;
+            --chat--header--padding:8px 16px!important;
+            --chat--header--height:52px!important;
+            --chat--color-primary:var(--accent)!important;
+            --chat--color-secondary:#FFFFFF!important;
+            --chat--message--user--background:var(--accent)!important;
+            --chat--message--user--color:#FFFFFF!important;
+            --chat--message--bot--background:#E5E7EB!important;
+            --chat--message--bot--color:#111111!important;
+            --chat--window--width:380px;
+            --chat--window--height:600px;
+            --chat--window--border-radius:12px!important;
+            --chat--toggle--size:60px;
+            --chat--input--background:#FFFFFF!important;
+            --chat--input--border-top:1px solid #E5E7EB!important;
+            --chat--input--height:60px
+        }
+        body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);overflow-x:hidden}h1,h2,h3,h4,.font-serif{font-family:'Playfair Display',serif}
+        
         /* SOLUCIÓN AL PROBLEMA DE VISUALIZACIÓN: Contenido visible por defecto */
         .reveal-element {
-            opacity: 1;
+            opacity: 1; 
             transform: translateY(0);
             transition: opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);
         }
-       
+        
         /* Clase añadida por JS para iniciar la animación */
         .reveal-element.pending-reveal {
             opacity: 0;
             transform: translateY(30px);
         }
 
-
         .n8n-chat-widget{transition:transform .3s cubic-bezier(.175,.885,.32,1.275)!important}.n8n-chat-header-title{display:flex!important;align-items:center!important}.btn-premium{background-color:var(--text-main);color:#fff;transition:all .4s ease;border:1px solid var(--text-main)}.btn-premium:hover{background-color:transparent;color:var(--text-main);transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.05)}.btn-premium:active{transform:translateY(0)}.btn-outline{background-color:transparent;color:var(--text-main);border:1px solid var(--text-main);transition:all .4s ease}.btn-outline:hover{background-color:var(--text-main);color:#fff}.card-premium{background-color:#fff;border:1px solid rgba(0,0,0,.03);transition:all .5s cubic-bezier(.22,1,.36,1)}@media(hover:hover){.card-premium:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.04);border-color:rgba(0,0,0,.08)}}.modal{transition:opacity .4s ease,visibility .4s ease}.modal-content{transform:scale(.98);transition:transform .4s cubic-bezier(.22,1,.36,1)}.modal.active .modal-content{transform:scale(1)}
+
+        /* SOLUCIÓN AL LOGO DEL CHAT: Forzar el logo como fondo de imagen en el header */
+        /* La etiqueta <title> del widget ya tiene el texto 'Rivo' que queda. */
+        .n8n-chat-header-title::before {
+            content: "";
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 8px;
+            /* Usamos tu logo como fondo */
+            background-image: url('https://i.postimg.cc/y8RYHtfP/logo.png');
+            background-size: 100% 100%;
+            background-color: white; /* Para darle un fondo si el PNG tiene transparencia */
+            padding: 2px;
+            border: 1px solid #ddd;
+        }
     </style>
 </head>
 <body class="antialiased relative">
-
 
     <!-- NAV -->
     <nav class="fixed w-full z-50 bg-[#FBF8F0]/95 backdrop-blur-md border-b border-black/5 transition-all duration-300 shadow-sm md:shadow-none">
@@ -68,7 +106,6 @@
                     </div>
                 </a>
 
-
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
                     <a href="#conceptos" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors" data-target="conceptos">Conceptos</a>
@@ -82,14 +119,13 @@
                     <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium text-sm font-medium px-6 py-3 rounded-lg">Agendar Reunión</a>
                 </div>
 
-
                 <!-- Mobile Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-black p-2 focus:outline-none -mr-2" aria-label="Menú">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
-       
+        
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#FBF8F0] border-t border-black/5 p-6 space-y-6 shadow-2xl absolute w-full left-0 top-20 z-40 transition-all">
             <a href="#conceptos" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50" data-target="conceptos">Conceptos</a>
@@ -101,7 +137,6 @@
             <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="block w-full text-center btn-premium py-4 rounded-lg mt-6 shadow-md">Agendar Llamada</a>
         </div>
     </nav>
-
 
     <!-- HERO -->
     <section class="min-h-screen flex items-center relative pt-28 pb-16 md:pt-32 md:pb-20">
@@ -140,7 +175,6 @@
         </div>
     </section>
 
-
     <!-- CONCEPTOS -->
     <section id="conceptos" class="py-16 md:py-32 bg-white border-y border-black/5">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -176,7 +210,6 @@
         </div>
     </section>
 
-
     <!-- ENFOQUE -->
     <section id="enfoque" class="py-16 md:py-32 bg-[#FBF8F0]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -207,7 +240,6 @@
         </div>
     </section>
 
-
     <!-- FILOSOFÍA -->
     <section id="filosofia" class="py-16 md:py-32 bg-white border-y border-black/5">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
@@ -220,7 +252,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- SERVICIOS -->
     <section id="soluciones" class="py-16 md:py-32">
@@ -251,7 +282,6 @@
         </div>
     </section>
 
-
     <!-- CONTACTO -->
     <section id="contacto" class="py-16 md:py-32 bg-white border-t border-black/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -280,7 +310,6 @@
         </div>
     </section>
 
-
     <!-- FOOTER -->
     <footer class="bg-black text-white py-10 md:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center md:text-left">
@@ -296,7 +325,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- MODAL LEGAL -->
     <div id="legal-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center invisible opacity-0 pointer-events-none p-4" aria-hidden="true">
@@ -346,19 +374,17 @@
         </div>
     </div>
 
-
-    <!-- Script de UI Crítica Integrado -->
+    <!-- Script de UI Crítica Integrado (Ahora garantiza visibilidad) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-           
+            
             // 1. ANIMACIONES DE SCROLL
             const elements = document.querySelectorAll('.reveal-element');
-            // Añadimos la clase de opacidad 0 para iniciar el efecto de animación
+            // Ocultar elementos si JS se carga (para que la animación se vea al hacer scroll)
             elements.forEach(el => el.classList.add('pending-reveal'));
 
-
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+                entries.forEach(entry => { 
                     if (entry.isIntersecting) {
                         entry.target.classList.remove('pending-reveal');
                     } else {
@@ -368,10 +394,7 @@
                 });
             }, { threshold: 0.1 });
 
-
             elements.forEach(el => observer.observe(el));
-
-
 
 
             // 2. MENÚ MÓVIL
@@ -388,22 +411,20 @@
                 });
             }
 
-
             // 3. FALLBACK DE LOGO
             const mainLogo = document.getElementById('main-logo');
             const placeholder = document.getElementById('logo-placeholder');
             if(mainLogo && placeholder){
-                mainLogo.onerror = function() {
-                    this.style.display = 'none';
-                    placeholder.style.display = 'flex';
+                mainLogo.onerror = function() { 
+                    this.style.display = 'none'; 
+                    placeholder.style.display = 'flex'; 
                 };
             }
-
 
             // 4. SCROLL SUAVE SIN HASH
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+                    e.preventDefault(); 
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
@@ -413,37 +434,60 @@
                 });
             });
 
-
             // 5. MODALES LEGALES
             const modal = document.getElementById('legal-modal');
-            const openModal = () => {
+            const openModal = () => { 
                 if(!modal) return;
-                modal.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                modal.classList.remove('invisible', 'opacity-0', 'pointer-events-none'); 
+                modal.classList.add('active'); 
+                document.body.style.overflow = 'hidden'; 
                 modal.setAttribute('aria-hidden', 'false');
             };
-            const closeModal = () => {
+            const closeModal = () => { 
                 if(!modal) return;
-                modal.classList.add('invisible', 'opacity-0', 'pointer-events-none');
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
+                modal.classList.add('invisible', 'opacity-0', 'pointer-events-none'); 
+                modal.classList.remove('active'); 
+                document.body.style.overflow = ''; 
                 modal.setAttribute('aria-hidden', 'true');
             };
-
 
             document.getElementById('btn-legal-footer')?.addEventListener('click', openModal);
             document.getElementById('btn-legal-mobile')?.addEventListener('click', openModal);
             document.getElementById('btn-close-modal')?.addEventListener('click', closeModal);
             document.getElementById('modal-bg')?.addEventListener('click', closeModal);
 
-
             if(['#privacidad', '#terminos'].includes(window.location.hash)) openModal();
         });
     </script>
 
+    <!-- Script Externo Chatbot -->
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-    <!-- Script Externo Chatbot (Mantenido separado) -->
-    <script type="module" src="chatbot.js"></script>
+        // Inicialización segura del chat
+        try {
+            createChat({
+                webhookUrl: 'https://n8n.srv903631.hstgr.cloud/webhook/660aad3e-ecc6-4cec-852a-6bf20252be44/chat',
+                mode: 'window',
+                showWelcomeScreen: true,
+                initialMessages: [
+                    'Hola, soy Rivo, tu asistente de Stratiums Corporation.',
+                    '¿En qué puedo ayudarte hoy?'
+                ],
+                i18n: {
+                    en: {
+                        // El título ahora es SOLO texto. El logo se inyecta con CSS en <style>.
+                        title: 'Rivo',
+                        subtitle: '', 
+                        footer: '',
+                        getStarted: 'Iniciar conversación',
+                        inputPlaceholder: 'Escribe tu consulta...'
+                    }
+                }
+            });
+        } catch (error) {
+            console.warn("El chatbot no pudo cargarse:", error);
+        }
+    </script>
 </body>
 </html>
