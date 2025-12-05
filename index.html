@@ -2,7 +2,7 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="theme-color" content="#FBF8F0">
     <title>Stratiums Corporation | Automatización e Inteligencia Artificial</title>
     
@@ -13,17 +13,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- SEGURIDAD: CSP Reforzada -->
+    <!-- 
+        🛡️ SEGURIDAD REFORZADA 
+    -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self'; 
-        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; 
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; 
-        font-src https://fonts.gstatic.com; 
-        img-src 'self' data: https://placehold.co https://i.postimg.cc; 
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https://placehold.co https://i.postimg.cc;
         connect-src 'self' https://n8n.srv903631.hstgr.cloud https://cdn.jsdelivr.net;
+        frame-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
     ">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
 
     <!-- Tailwind & Estilos Chat -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,49 +40,75 @@
     <!-- Estilos Críticos -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-        :root{
+        
+        :root {
             --bg-color:#FBF8F0;
             --text-main:#111111;
             --text-light:#444444;
             --accent:#5B9DD9;
-            --chat--font-family:'Inter',sans-serif!important;
-            --chat--header--background:#111111!important;
-            --chat--header--color:#FFFFFF!important;
-            --chat--header--padding:8px 16px!important;
-            --chat--header--height:52px!important;
-            --chat--color-primary:var(--accent)!important;
-            --chat--color-secondary:#FFFFFF!important;
-            --chat--message--user--background:var(--accent)!important;
-            --chat--message--user--color:#FFFFFF!important;
-            --chat--message--bot--background:#E5E7EB!important;
-            --chat--message--bot--color:#111111!important;
-            --chat--window--width:380px;
-            --chat--window--height:600px;
-            --chat--window--border-radius:12px!important;
-            --chat--toggle--size:60px;
-            --chat--input--background:#FFFFFF!important;
-            --chat--input--border-top:1px solid #E5E7EB!important;
-            --chat--input--height:60px
+            
+            /* --- VARIABLES FORZADAS DEL CHAT (CSS OVERRIDE) --- */
+            /* Esto obliga a la burbuja a ser NEGRA ignorando cualquier config por defecto */
+            
+            /* Burbuja (Toggle Button) */
+            --chat--toggle--background: #000000 !important;
+            --chat--toggle--hover--background: #333333 !important;
+            --chat--toggle--active--background: #000000 !important;
+            --chat--toggle--color: #F5F5DC !important; /* Icono Beige/Crudo */
+            
+            /* Color Primario General (afecta botones internos también) */
+            --chat--color-primary: #000000 !important;
+            
+            /* Header y Mensajes */
+            --chat--header--background: #000000 !important;
+            --chat--header--color: #FFFFFF !important;
+            
+            --chat--message--user--background: #000000 !important;
+            --chat--message--user--color: #FFFFFF !important;
+            
+            --chat--message--bot--background: #E5E7EB !important;
+            --chat--message--bot--color: #111111 !important;
+            
+            /* Estructura */
+            --chat--font-family: 'Inter', sans-serif !important;
+            --chat--window--border-radius: 12px !important;
+            --chat--header--padding: 14px 16px !important;
+            --chat--window--width: 380px;
+            --chat--window--height: 600px;
         }
+
+        /* 📱 OPTIMIZACIÓN MÓVIL DEL CHAT */
+        @media (max-width: 480px) {
+            :root {
+                --chat--window--width: 90vw !important;
+                --chat--window--height: 80vh !important;
+                --chat--window--right: 5vw !important;
+                --chat--window--bottom: 80px !important;
+            }
+        }
+
         body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);overflow-x:hidden}h1,h2,h3,h4,.font-serif{font-family:'Playfair Display',serif}
         
-        /* SOLUCIÓN AL PROBLEMA DE VISUALIZACIÓN: Contenido visible por defecto */
         .reveal-element {
-            opacity: 1; 
+            opacity: 1;
             transform: translateY(0);
             transition: opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);
         }
         
-        /* Clase añadida por JS para iniciar la animación */
         .reveal-element.pending-reveal {
             opacity: 0;
             transform: translateY(30px);
         }
 
-        .n8n-chat-widget{transition:transform .3s cubic-bezier(.175,.885,.32,1.275)!important}.n8n-chat-header-title{display:flex!important;align-items:center!important}.btn-premium{background-color:var(--text-main);color:#fff;transition:all .4s ease;border:1px solid var(--text-main)}.btn-premium:hover{background-color:transparent;color:var(--text-main);transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.05)}.btn-premium:active{transform:translateY(0)}.btn-outline{background-color:transparent;color:var(--text-main);border:1px solid var(--text-main);transition:all .4s ease}.btn-outline:hover{background-color:var(--text-main);color:#fff}.card-premium{background-color:#fff;border:1px solid rgba(0,0,0,.03);transition:all .5s cubic-bezier(.22,1,.36,1)}@media(hover:hover){.card-premium:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.04);border-color:rgba(0,0,0,.08)}}.modal{transition:opacity .4s ease,visibility .4s ease}.modal-content{transform:scale(.98);transition:transform .4s cubic-bezier(.22,1,.36,1)}.modal.active .modal-content{transform:scale(1)}
+        .n8n-chat-widget{transition:transform .3s cubic-bezier(.175,.885,.32,1.275)!important}
 
-        /* SOLUCIÓN AL LOGO DEL CHAT: Forzar el logo como fondo de imagen en el header */
-        /* La etiqueta <title> del widget ya tiene el texto 'Rivo' que queda. */
+        /* Header Chat Correction */
+        .n8n-chat-header-title {
+            display: flex !important;
+            align-items: center !important;
+            font-size: 1.1rem; 
+        }
+
         .n8n-chat-header-title::before {
             content: "";
             display: inline-block;
@@ -82,13 +116,15 @@
             height: 32px;
             border-radius: 50%;
             margin-right: 8px;
-            /* Usamos tu logo como fondo */
             background-image: url('https://i.postimg.cc/y8RYHtfP/logo.png');
-            background-size: 100% 100%;
-            background-color: white; /* Para darle un fondo si el PNG tiene transparencia */
+            background-size: cover; 
+            background-position: center;
+            background-color: white;
             padding: 2px;
             border: 1px solid #ddd;
         }
+
+        .btn-premium{background-color:var(--text-main);color:#fff;transition:all .4s ease;border:1px solid var(--text-main)}.btn-premium:hover{background-color:transparent;color:var(--text-main);transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.05)}.btn-premium:active{transform:translateY(0)}.btn-outline{background-color:transparent;color:var(--text-main);border:1px solid var(--text-main);transition:all .4s ease}.btn-outline:hover{background-color:var(--text-main);color:#fff}.card-premium{background-color:#fff;border:1px solid rgba(0,0,0,.03);transition:all .5s cubic-bezier(.22,1,.36,1)}@media(hover:hover){.card-premium:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.04);border-color:rgba(0,0,0,.08)}}.modal{transition:opacity .4s ease,visibility .4s ease}.modal-content{transform:scale(.98);transition:transform .4s cubic-bezier(.22,1,.36,1)}.modal.active .modal-content{transform:scale(1)}
     </style>
 </head>
 <body class="antialiased relative">
@@ -384,7 +420,7 @@
             elements.forEach(el => el.classList.add('pending-reveal'));
 
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { 
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.remove('pending-reveal');
                     } else {
@@ -415,16 +451,16 @@
             const mainLogo = document.getElementById('main-logo');
             const placeholder = document.getElementById('logo-placeholder');
             if(mainLogo && placeholder){
-                mainLogo.onerror = function() { 
-                    this.style.display = 'none'; 
-                    placeholder.style.display = 'flex'; 
+                mainLogo.onerror = function() {
+                    this.style.display = 'none';
+                    placeholder.style.display = 'flex';
                 };
             }
 
             // 4. SCROLL SUAVE SIN HASH
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault(); 
+                    e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
@@ -436,18 +472,18 @@
 
             // 5. MODALES LEGALES
             const modal = document.getElementById('legal-modal');
-            const openModal = () => { 
+            const openModal = () => {
                 if(!modal) return;
-                modal.classList.remove('invisible', 'opacity-0', 'pointer-events-none'); 
-                modal.classList.add('active'); 
-                document.body.style.overflow = 'hidden'; 
+                modal.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
                 modal.setAttribute('aria-hidden', 'false');
             };
-            const closeModal = () => { 
+            const closeModal = () => {
                 if(!modal) return;
-                modal.classList.add('invisible', 'opacity-0', 'pointer-events-none'); 
-                modal.classList.remove('active'); 
-                document.body.style.overflow = ''; 
+                modal.classList.add('invisible', 'opacity-0', 'pointer-events-none');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
                 modal.setAttribute('aria-hidden', 'true');
             };
 
@@ -470,6 +506,17 @@
                 webhookUrl: 'https://n8n.srv903631.hstgr.cloud/webhook/660aad3e-ecc6-4cec-852a-6bf20252be44/chat',
                 mode: 'window',
                 showWelcomeScreen: true,
+                
+                // --- CONFIGURACIÓN ESTÉTICA SOLICITADA ---
+                style: {
+                    buttonBackgroundColor: '#000000', // NEGRO
+                    buttonIconColor: '#F5F5DC', // CRUDO / BEIGE
+                    
+                    // Asegurar coherencia visual
+                    userMessageBackgroundColor: '#000000',
+                    userMessageTextColor: '#ffffff',
+                },
+
                 initialMessages: [
                     'Hola, soy Rivo, tu asistente de Stratiums Corporation.',
                     '¿En qué puedo ayudarte hoy?'
@@ -478,7 +525,7 @@
                     en: {
                         // El título ahora es SOLO texto. El logo se inyecta con CSS en <style>.
                         title: 'Rivo',
-                        subtitle: '', 
+                        subtitle: '',
                         footer: '',
                         getStarted: 'Iniciar conversación',
                         inputPlaceholder: 'Escribe tu consulta...'
