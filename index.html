@@ -10,6 +10,20 @@
     <meta name="description" content="Expertos en Automatización de Procesos e IA. Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
+    
+    <!-- 
+        CORRECCIÓN: LOGO VISIBLE ANTES DE ENTRAR (Favicon & Open Graph)
+        Esto asegura que el logo se vea en pestañas, marcadores y al compartir el link en WhatsApp/Redes.
+    -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/y8RYHtfP/logo.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/y8RYHtfP/logo.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Stratiums Corporation | Automatización e Inteligencia Artificial">
+    <meta property="og:description" content="Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
+    <meta property="og:image" content="https://i.postimg.cc/y8RYHtfP/logo.png">
+    <meta property="og:url" content="https://stratiums.com/">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -133,12 +147,20 @@
     <nav class="fixed w-full z-50 bg-[#FBF8F0]/95 backdrop-blur-md border-b border-black/5 transition-all duration-300 shadow-sm md:shadow-none">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex justify-between items-center h-20 md:h-24">
-                <a href="#" class="flex items-center gap-3 md:gap-4 group shrink-0" aria-label="Inicio">
-                    <img src="https://i.postimg.cc/y8RYHtfP/logo.png" alt="Stratiums Logo" class="h-10 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
-                    <div id="logo-placeholder" class="hidden items-center justify-center h-10 w-10 md:h-12 md:w-12 bg-black text-white font-serif font-bold text-xl md:text-2xl rounded-full">S</div>
-                    <div class="flex flex-col justify-center h-10 md:h-12">
-                        <span class="text-base md:text-lg font-serif font-bold text-black tracking-wide leading-none translate-y-1 md:translate-y-1">STRATIUMS</span>
-                        <span class="text-[0.55rem] md:text-[0.6rem] font-sans font-medium text-gray-500 tracking-[0.25em] uppercase leading-none mt-1 -translate-y-1 md:-translate-y-1">Corporation</span>
+                <a href="#" class="flex items-center gap-2 md:gap-4 group shrink-0" aria-label="Inicio">
+                    <!-- 
+                        CORRECCIÓN MÓVIL: Ajuste de tamaño de logo (h-8 para móvil) y eliminación de translate en móvil 
+                    -->
+                    <img src="https://i.postimg.cc/y8RYHtfP/logo.png" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
+                    <div id="logo-placeholder" class="hidden items-center justify-center h-9 w-9 md:h-12 md:w-12 bg-black text-white font-serif font-bold text-xl md:text-2xl rounded-full">S</div>
+                    <div class="flex flex-col justify-center h-9 md:h-12 ml-1">
+                        <!-- 
+                            CORRECCIÓN DE TEXTO MÓVIL:
+                            1. Reducción de text-base a text-sm en móvil para evitar saltos de línea.
+                            2. Eliminación de 'translate-y' que desalineaba el texto.
+                        -->
+                        <span class="text-sm md:text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
+                        <span class="text-[0.5rem] md:text-[0.6rem] font-sans font-medium text-gray-500 tracking-[0.2em] uppercase leading-none mt-0.5 md:mt-1">Corporation</span>
                     </div>
                 </a>
 
