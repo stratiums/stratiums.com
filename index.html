@@ -11,10 +11,7 @@
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
     
-    <!-- 
-        CORRECCIÓN: LOGO VISIBLE ANTES DE ENTRAR (Favicon & Open Graph)
-        Esto asegura que el logo se vea en pestañas, marcadores y al compartir el link en WhatsApp/Redes.
-    -->
+    <!-- Favicon & Open Graph -->
     <link rel="icon" type="image/png" href="https://i.postimg.cc/y8RYHtfP/logo.png">
     <link rel="apple-touch-icon" href="https://i.postimg.cc/y8RYHtfP/logo.png">
     
@@ -28,17 +25,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- 
-        🛡️ SEGURIDAD REFORZADA 
+        🛡️ SEGURIDAD REFORZADA (Chatwoot Permitido)
     -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
-        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net;
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://app.chatwoot.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
         font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https://placehold.co https://i.postimg.cc;
-        connect-src 'self' https://n8n.srv903631.hstgr.cloud https://cdn.jsdelivr.net;
-        frame-src 'self';
+        img-src 'self' data: https://placehold.co https://i.postimg.cc https://app.chatwoot.com;
+        connect-src 'self' https://cdn.jsdelivr.net https://app.chatwoot.com wss://app.chatwoot.com;
+        frame-src 'self' https://app.chatwoot.com;
         object-src 'none';
         base-uri 'self';
         form-action 'self';
@@ -47,9 +44,8 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
 
-    <!-- Tailwind & Estilos Chat -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     
     <!-- Estilos Críticos -->
     <style>
@@ -60,45 +56,6 @@
             --text-main:#111111;
             --text-light:#444444;
             --accent:#5B9DD9;
-            
-            /* --- VARIABLES FORZADAS DEL CHAT (CSS OVERRIDE) --- */
-            /* Esto obliga a la burbuja a ser NEGRA ignorando cualquier config por defecto */
-            
-            /* Burbuja (Toggle Button) */
-            --chat--toggle--background: #000000 !important;
-            --chat--toggle--hover--background: #333333 !important;
-            --chat--toggle--active--background: #000000 !important;
-            --chat--toggle--color: #F5F5DC !important; /* Icono Beige/Crudo */
-            
-            /* Color Primario General (afecta botones internos también) */
-            --chat--color-primary: #000000 !important;
-            
-            /* Header y Mensajes */
-            --chat--header--background: #000000 !important;
-            --chat--header--color: #FFFFFF !important;
-            
-            --chat--message--user--background: #000000 !important;
-            --chat--message--user--color: #FFFFFF !important;
-            
-            --chat--message--bot--background: #E5E7EB !important;
-            --chat--message--bot--color: #111111 !important;
-            
-            /* Estructura */
-            --chat--font-family: 'Inter', sans-serif !important;
-            --chat--window--border-radius: 12px !important;
-            --chat--header--padding: 14px 16px !important;
-            --chat--window--width: 380px;
-            --chat--window--height: 600px;
-        }
-
-        /* 📱 OPTIMIZACIÓN MÓVIL DEL CHAT */
-        @media (max-width: 480px) {
-            :root {
-                --chat--window--width: 90vw !important;
-                --chat--window--height: 80vh !important;
-                --chat--window--right: 5vw !important;
-                --chat--window--bottom: 80px !important;
-            }
         }
 
         body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);overflow-x:hidden}h1,h2,h3,h4,.font-serif{font-family:'Playfair Display',serif}
@@ -114,30 +71,6 @@
             transform: translateY(30px);
         }
 
-        .n8n-chat-widget{transition:transform .3s cubic-bezier(.175,.885,.32,1.275)!important}
-
-        /* Header Chat Correction */
-        .n8n-chat-header-title {
-            display: flex !important;
-            align-items: center !important;
-            font-size: 1.1rem; 
-        }
-
-        .n8n-chat-header-title::before {
-            content: "";
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            margin-right: 8px;
-            background-image: url('https://i.postimg.cc/y8RYHtfP/logo.png');
-            background-size: cover; 
-            background-position: center;
-            background-color: white;
-            padding: 2px;
-            border: 1px solid #ddd;
-        }
-
         .btn-premium{background-color:var(--text-main);color:#fff;transition:all .4s ease;border:1px solid var(--text-main)}.btn-premium:hover{background-color:transparent;color:var(--text-main);transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.05)}.btn-premium:active{transform:translateY(0)}.btn-outline{background-color:transparent;color:var(--text-main);border:1px solid var(--text-main);transition:all .4s ease}.btn-outline:hover{background-color:var(--text-main);color:#fff}.card-premium{background-color:#fff;border:1px solid rgba(0,0,0,.03);transition:all .5s cubic-bezier(.22,1,.36,1)}@media(hover:hover){.card-premium:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.04);border-color:rgba(0,0,0,.08)}}.modal{transition:opacity .4s ease,visibility .4s ease}.modal-content{transform:scale(.98);transition:transform .4s cubic-bezier(.22,1,.36,1)}.modal.active .modal-content{transform:scale(1)}
     </style>
 </head>
@@ -148,17 +81,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex justify-between items-center h-20 md:h-24">
                 <a href="#" class="flex items-center gap-2 md:gap-4 group shrink-0" aria-label="Inicio">
-                    <!-- 
-                        CORRECCIÓN MÓVIL: Ajuste de tamaño de logo (h-8 para móvil) y eliminación de translate en móvil 
-                    -->
                     <img src="https://i.postimg.cc/y8RYHtfP/logo.png" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
                     <div id="logo-placeholder" class="hidden items-center justify-center h-9 w-9 md:h-12 md:w-12 bg-black text-white font-serif font-bold text-xl md:text-2xl rounded-full">S</div>
                     <div class="flex flex-col justify-center h-9 md:h-12 ml-1">
-                        <!-- 
-                            CORRECCIÓN DE TEXTO MÓVIL:
-                            1. Reducción de text-base a text-sm en móvil para evitar saltos de línea.
-                            2. Eliminación de 'translate-y' que desalineaba el texto.
-                        -->
                         <span class="text-sm md:text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
                         <span class="text-[0.5rem] md:text-[0.6rem] font-sans font-medium text-gray-500 tracking-[0.2em] uppercase leading-none mt-0.5 md:mt-1">Corporation</span>
                     </div>
@@ -213,7 +138,7 @@
                         <a href="#conceptos" class="btn-outline inline-flex justify-center items-center px-8 py-4 font-medium rounded-lg" data-target="conceptos">Entender Más</a>
                     </div>
                 </div>
-                <!-- Visual Abstracto -->
+                <!-- Visual Abstracto (Oculto en móvil/tablet para limpieza visual) -->
                 <div class="reveal-element delay-200 relative hidden lg:block">
                     <div class="relative aspect-square bg-white rounded-full border border-black/5 shadow-[0_40px_80px_rgba(0,0,0,0.05)] flex items-center justify-center p-12">
                         <div class="absolute inset-0 rounded-full border border-black/5 scale-110 opacity-50"></div>
@@ -340,36 +265,9 @@
         </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-16 md:py-32 bg-white border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
-                <div class="reveal-element">
-                    <h2 class="text-3xl md:text-6xl font-serif text-black mb-6 md:mb-8">Hablemos de <br> <span class="italic text-gray-500">Eficiencia.</span></h2>
-                    <p class="text-gray-600 text-base md:text-lg font-light mb-8 md:mb-12 leading-relaxed max-w-md">¿Listo para dejar de perder tiempo en tareas repetitivas? Agenda una llamada de descubrimiento de 30 minutos.</p>
-                    <div class="space-y-4 md:space-y-6">
-                        <a href="mailto:contacto@stratiums.com" class="flex items-center gap-4 md:gap-6 group bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
-                            <span class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-black group-hover:bg-black group-hover:text-white transition-all bg-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></span>
-                            <span class="text-base md:text-lg text-black font-medium break-all">contacto@stratiums.com</span>
-                        </a>
-                        <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 md:gap-6 group bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
-                            <span class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#0077b5] group-hover:text-[#0077b5] transition-all bg-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.265-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></span>
-                            <span class="text-base md:text-lg text-black font-medium">LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="reveal-element delay-100 bg-[#F4F1E8] p-8 md:p-10 rounded-2xl text-center shadow-sm">
-                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Reserva tu espacio</h3>
-                    <p class="text-gray-600 mb-6 md:mb-8 font-light text-sm">Selecciona el horario que mejor te convenga.</p>
-                    <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium w-full py-4 block rounded-lg font-medium shadow-md">Ir al Calendario</a>
-                    <p class="text-xs text-gray-400 mt-4">Sin coste. Sin compromiso.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
-    <footer class="bg-black text-white py-10 md:py-16">
+    <!-- pb-24 en móvil para que el chat no tape los enlaces -->
+    <footer class="bg-black text-white py-10 pb-24 md:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center md:text-left">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div>
@@ -385,9 +283,10 @@
     </footer>
 
     <!-- MODAL LEGAL -->
+    <!-- Ajustado w-[92vw] para móvil para que no toque bordes -->
     <div id="legal-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center invisible opacity-0 pointer-events-none p-4" aria-hidden="true">
         <div id="modal-bg" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-        <div class="modal-content relative bg-[#FBF8F0] w-full max-w-3xl h-[85vh] rounded-xl shadow-2xl overflow-hidden flex flex-col border border-black/5">
+        <div class="modal-content relative bg-[#FBF8F0] w-[92vw] md:w-full max-w-3xl h-[85vh] rounded-xl shadow-2xl overflow-hidden flex flex-col border border-black/5">
             <div class="flex justify-between items-center p-4 md:p-6 border-b border-black/5 bg-white">
                 <h3 class="text-lg font-serif font-bold text-black">Documentación Legal</h3>
                 <button id="btn-close-modal" class="text-gray-400 hover:text-black transition-colors p-2" aria-label="Cerrar">
@@ -432,7 +331,7 @@
         </div>
     </div>
 
-    <!-- Script de UI Crítica Integrado (Ahora garantiza visibilidad) -->
+    <!-- Script de UI Crítica Integrado -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
@@ -518,45 +417,22 @@
         });
     </script>
 
-    <!-- Script Externo Chatbot -->
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-        // Inicialización segura del chat
-        try {
-            createChat({
-                webhookUrl: 'https://n8n.srv903631.hstgr.cloud/webhook/660aad3e-ecc6-4cec-852a-6bf20252be44/chat',
-                mode: 'window',
-                showWelcomeScreen: true,
-                
-                // --- CONFIGURACIÓN ESTÉTICA SOLICITADA ---
-                style: {
-                    buttonBackgroundColor: '#000000', // NEGRO
-                    buttonIconColor: '#F5F5DC', // CRUDO / BEIGE
-                    
-                    // Asegurar coherencia visual
-                    userMessageBackgroundColor: '#000000',
-                    userMessageTextColor: '#ffffff',
-                },
-
-                initialMessages: [
-                    'Hola, soy Rivo, tu asistente de Stratiums Corporation.',
-                    '¿En qué puedo ayudarte hoy?'
-                ],
-                i18n: {
-                    en: {
-                        // El título ahora es SOLO texto. El logo se inyecta con CSS en <style>.
-                        title: 'Rivo',
-                        subtitle: '',
-                        footer: '',
-                        getStarted: 'Iniciar conversación',
-                        inputPlaceholder: 'Escribe tu consulta...'
-                    }
-                }
-            });
-        } catch (error) {
-            console.warn("El chatbot no pudo cargarse:", error);
+    <!-- Script Chatbot (Chatwoot) -->
+    <!-- Mantenido dentro del archivo para optimizar la carga crítica inicial -->
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'A7doYQ7RPtQLAsfyCobUh3Ze',
+            baseUrl: BASE_URL
+          })
         }
+      })(document,"script");
     </script>
 </body>
 </html>
