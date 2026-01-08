@@ -11,14 +11,14 @@
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
     
-    <!-- Favicon & Open Graph -->
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/y8RYHtfP/logo.png">
-    <link rel="apple-touch-icon" href="https://i.postimg.cc/y8RYHtfP/logo.png">
+    <!-- Favicon & Open Graph (CORREGIDO: Apuntando a logo.jpg local) -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stratiums Corporation | Automatización e Inteligencia Artificial">
     <meta property="og:description" content="Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
-    <meta property="og:image" content="https://i.postimg.cc/y8RYHtfP/logo.png">
+    <meta property="og:image" content="logo.jpg">
     <meta property="og:url" content="https://stratiums.com/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
         script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://app.chatwoot.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
         font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https://placehold.co https://i.postimg.cc https://app.chatwoot.com;
+        img-src 'self' data: https://placehold.co https://app.chatwoot.com;
         connect-src 'self' https://cdn.jsdelivr.net https://app.chatwoot.com wss://app.chatwoot.com;
         frame-src 'self' https://app.chatwoot.com;
         object-src 'none';
@@ -81,7 +81,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex justify-between items-center h-20 md:h-24">
                 <a href="#" class="flex items-center gap-2 md:gap-4 group shrink-0" aria-label="Inicio">
-                    <img src="https://i.postimg.cc/y8RYHtfP/logo.png" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
+                    <!-- CORREGIDO: src apuntando a logo.jpg local -->
+                    <img src="logo.jpg" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
+                    <!-- Placeholder visible si falla la carga -->
                     <div id="logo-placeholder" class="hidden items-center justify-center h-9 w-9 md:h-12 md:w-12 bg-black text-white font-serif font-bold text-xl md:text-2xl rounded-full">S</div>
                     <div class="flex flex-col justify-center h-9 md:h-12 ml-1">
                         <span class="text-sm md:text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
@@ -436,4 +438,3 @@
 </script>
 </body>
 </html>
-
