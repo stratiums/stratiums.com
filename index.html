@@ -11,38 +11,42 @@
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
     
-    <!-- Favicon & Open Graph (CORREGIDO: Apuntando a logo.jpg local) -->
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="apple-touch-icon" href="logo.jpg">
+    <!-- Favicon & Open Graph -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stratiums Corporation | Automatización e Inteligencia Artificial">
     <meta property="og:description" content="Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
-    <meta property="og:image" content="logo.jpg">
+    <meta property="og:image" content="logo.png">
     <meta property="og:url" content="https://stratiums.com/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- 
-        🛡️ SEGURIDAD REFORZADA (Chatwoot Permitido)
+        🛡️ CIBERSEGURIDAD 2026 (Hardened)
+        - Strict CSP: Solo permite dominios esenciales (Chatwoot, Google Fonts, Tailwind).
+        - HTTPS Forzado: upgrade-insecure-requests.
+        - Anti-Clickjacking: X-Frame-Options DENY.
     -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
-        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://app.chatwoot.com;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://app.chatwoot.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
         font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https://placehold.co https://app.chatwoot.com;
-        connect-src 'self' https://cdn.jsdelivr.net https://app.chatwoot.com wss://app.chatwoot.com;
+        img-src 'self' data: https://app.chatwoot.com;
+        connect-src 'self' https://app.chatwoot.com wss://app.chatwoot.com;
         frame-src 'self' https://app.chatwoot.com;
         object-src 'none';
         base-uri 'self';
         form-action 'self';
+        upgrade-insecure-requests;
     ">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()">
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -81,9 +85,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex justify-between items-center h-20 md:h-24">
                 <a href="#" class="flex items-center gap-2 md:gap-4 group shrink-0" aria-label="Inicio">
-                    <!-- CORREGIDO: src apuntando a logo.jpg local -->
-                    <img src="logo.jpg" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
-                    <!-- Placeholder visible si falla la carga -->
+                    <img src="logo.png" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
+                    <!-- Fallback seguro -->
                     <div id="logo-placeholder" class="hidden items-center justify-center h-9 w-9 md:h-12 md:w-12 bg-black text-white font-serif font-bold text-xl md:text-2xl rounded-full">S</div>
                     <div class="flex flex-col justify-center h-9 md:h-12 ml-1">
                         <span class="text-sm md:text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
@@ -274,7 +277,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div>
                     <span class="text-xl md:text-2xl font-serif font-bold tracking-wide">STRATIUMS</span>
-                    <p class="text-xs mt-2 text-gray-500 tracking-wider uppercase">© 2025 Stratiums Corporation.</p>
+                    <p class="text-xs mt-2 text-gray-500 tracking-wider uppercase">© 2026 Stratiums Corporation.</p>
                 </div>
                 <div class="flex gap-6 md:gap-8 text-sm text-gray-400">
                     <button id="btn-legal-footer" class="hover:text-white transition-colors p-2">Legal</button>
@@ -298,7 +301,7 @@
             <div class="p-6 md:p-8 overflow-y-auto text-gray-700 text-sm leading-relaxed space-y-6 md:space-y-8 font-light">
                 <div id="privacidad">
                     <h2 class="text-xl font-serif font-bold text-black mb-3">Política de Privacidad</h2>
-                    <p class="text-xs text-gray-500 mb-4">Última actualización: Diciembre 2025</p>
+                    <p class="text-xs text-gray-500 mb-4">Última actualización: Enero 2026</p>
                     <p class="mb-4">En Stratiums Corporation, nuestra prioridad es garantizar la tranquilidad operativa y la seguridad de la información de nuestros clientes. Actuamos exclusivamente como un procesador de datos en nombre y bajo las instrucciones tuyas, el cliente.</p>
                     <h4 class="font-bold text-black mt-4 mb-2">1. Recopilación y Uso de Datos</h4>
                     <p>Solo recopilamos y usamos los datos de las cuentas de terceros (como Google Workspace) cuando es estrictamente necesario para la ejecución de las automatizaciones específicas solicitadas.</p>
@@ -316,7 +319,7 @@
                 <hr class="border-gray-200">
                 <div id="terminos">
                     <h2 class="text-xl font-serif font-bold text-black mb-3">Términos y Condiciones</h2>
-                    <p class="text-xs text-gray-500 mb-4">Última actualización: Diciembre 2025</p>
+                    <p class="text-xs text-gray-500 mb-4">Última actualización: Enero 2026</p>
                     <h4 class="font-bold text-black mt-4 mb-2">1. Objeto del Servicio</h4>
                     <p>Stratiums diseña, implementa y monitorea arquitecturas de flujo digitales para optimizar la eficiencia operativa mediante lógica de IA.</p>
                     <h4 class="font-bold text-black mt-4 mb-2">2. Responsabilidad</h4>
