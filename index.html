@@ -770,31 +770,7 @@
                     <div><div class="rev-name">Beatriz Fuentes</div><div class="rev-role">Socia gerente · Despacho jurídico</div></div>
                 </div>
             </div>
-        </div>
-    
-        <div class="rev-controls rv d4">
-            <button class="rev-btn" id="rev-prev" aria-label="Anterior">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button class="rev-btn" id="rev-next" aria-label="Siguiente">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
-            <div class="rev-dots" id="rev-dots"></div>
-        </div>
-    </section>
-    
-    <!-- ── STREAMING_CHUNK: Rendering bottom CTA band... ── -->
-    <!-- CTA -->
-    <section class="cta-band">
-        <div class="cta-in">
-            <h2 class="cta-h2 rv">30 minutos pueden cambiar cómo opera tu empresa.</h2>
-            <p class="cta-sub rv d1">Auditoría gratuita. Sin compromiso. Te decimos exactamente qué automatizaríamos y cuánto tiempo recuperarías.</p>
-            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-white rv d2">Reservar mi auditoría gratuita <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-    </section>
-    
-    <!-- ── STREAMING_CHUNK: Rendering footer... ── -->
-    <!-- FOOTER -->
+    <!-- ── FOOTER ── -->
     <footer>
         <div class="foot-in">
             <div>
@@ -802,43 +778,67 @@
                 <div class="foot-copy">© 2026 Stratiums Corporation. Todos los derechos reservados.</div>
             </div>
             <div class="foot-ls">
-                <button class="fl" id="legal-foot">Legal</button>
+                <button class="fl" id="legal-foot">Legal & Privacidad</button>
                 <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="fl">LinkedIn</a>
                 <a href="mailto:equipo@stratiums.com" class="fl">equipo@stratiums.com</a>
             </div>
         </div>
     </footer>
     
-    <!-- ── STREAMING_CHUNK: Creating Modal Legal windows... ── -->
-    <!-- MODAL LEGAL -->
+    <!-- ── MODAL LEGAL ── -->
     <div class="modal-ov" id="legal-modal" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="modal-box">
             <div class="modal-hd">
-                <span class="modal-ttl">Documentación Legal</span>
+                <span class="modal-ttl">Garantías Jurídicas e Institucionales</span>
                 <button class="modal-cl" id="modal-cl" aria-label="Cerrar"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button>
             </div>
             <div class="modal-bd">
-                <h2>Política de Privacidad</h2>
-                <div class="m-mono">ÚLTIMA ACTUALIZACIÓN · ENERO 2026</div>
-                <p>En Stratiums Corporation, nuestra prioridad es garantizar la seguridad de la información de nuestros clientes. Actuamos exclusivamente como procesador de datos bajo tus instrucciones.</p>
-                <h4>1. Recopilación y Uso de Datos</h4>
-                <p>Solo recopilamos datos de cuentas de terceros cuando es necesario para las automatizaciones contratadas.</p>
-                <ul><li>Datos Directos: correo electrónico y detalles de flujos.</li><li>Datos de Terceros: mediante OAuth, solo para el propósito acordado.</li></ul>
-                <h4>2. Cumplimiento y Seguridad</h4>
-                <ul><li>Stratiums NUNCA compartirá ni venderá datos sensibles a terceros.</li><li>Podemos usar datos de ejecución anonimizados para mejorar nuestros sistemas. Nunca se vinculan a un cliente.</li><li>Puedes revocar el acceso en cualquier momento desde tu panel de Google.</li></ul>
+                <h2>Política de Privacidad y Protección de Datos (RGPD)</h2>
+                <div class="m-mono">CUMPLIMIENTO DE MARCOS RGPD (UE) Y LOPDGDD ESPAÑOLA · JUNIO 2026</div>
+                <p>En <strong>Stratiums Corporation</strong>, la confidencialidad, la seguridad técnica y la gobernanza de la información son prioridades absolutas. De acuerdo con el Reglamento General de Protección de Datos (Reglamento UE 2016/679) y la Ley Orgánica 3/2018 (LOPDGDD), nuestra relación jurídica principal con el cliente se constituye bajo la figura de <strong>Encargado del Tratamiento (Art. 28 del RGPD)</strong>, asumiendo el cliente el papel de Responsable del Tratamiento.</p>
+                
+                <h4>1. Minimización de Datos e Integraciones API (OAuth)</h4>
+                <p>Nuestras arquitecturas de automatización operan estrictamente bajo el principio de minimización de datos en memoria:</p>
+                <ul>
+                    <li><strong>Políticas de Uso Limitado de Google:</strong> Declaramos explícitamente que la transferencia, tratamiento y almacenamiento de los datos obtenidos de las APIs de Google por parte de Stratiums cumplen rigurosamente con la política de <em>Google API Services User Data Policy</em>, incluyendo las restricciones de uso limitado (Limited Use requirements).</li>
+                    <li><strong>Conexiones Seguras:</strong> Todos los flujos y llamadas a APIs se ejecutan a través de canales cifrados TLS 1.3. Los tokens de autenticación de su ERP, CRM o base de datos se almacenan en repositorios encriptados con cifrado AES-256.</li>
+                </ul>
+
+                <h4>2. Declaración de Cumplimiento de la Ley de IA de la UE (EU AI Act)</h4>
+                <p>Stratiums Corporation diseña sistemas transparentes y éticos adaptados al marco normativo vigente:</p>
+                <ul>
+                    <li><strong>Evaluación de Riesgo:</strong> Nuestros agentes autónomos de decisión se clasifican como sistemas de <em>Riesgo Mínimo o Nulo</em>. No empleamos algoritmos orientados a la vigilancia masiva, puntuación social o manipulación de la conducta humana.</li>
+                    <li><strong>Garantía de Supervisión Humana:</strong> Toda automatización compleja basada en modelos de lenguaje masivo (LLMs) incorpora un sistema de registro lógico (audit log) que detalla el razonamiento secuencial del sistema para que pueda ser revisado o anulado en cualquier momento por su equipo.</li>
+                </ul>
+
                 <div class="m-hr"></div>
-                <h2>Términos y Condiciones</h2>
-                <div class="m-mono">ÚLTIMA ACTUALIZACIÓN · ENERO 2026</div>
-                <h4>1. Objeto del Servicio</h4>
-                <p>Stratiums diseña, implementa y monitorea arquitecturas de flujo digitales para optimizar la eficiencia operativa mediante IA.</p>
-                <h4>2. Responsabilidad</h4>
-                <ul><li>El cliente es responsable de la legalidad de sus datos.</li><li>El cliente autoriza el uso de permisos OAuth exclusivamente para los flujos acordados.</li><li>Stratiums no es responsable de fallos en APIs de terceros.</li></ul>
-                <div class="m-cbox"><strong>Contacto:</strong> <a href="mailto:equipo@stratiums.com">equipo@stratiums.com</a></div>
+
+                <h2>Términos de Servicio y Acuerdos de Nivel (SLA)</h2>
+                <div class="m-mono">CONDICIONES OPERATIVAS · JUNIO 2026</div>
+                
+                <h4>1. Delimitación de Propiedad Intelectual</h4>
+                <p>El diseño de cada flujo se rige por un marco de transparencia:</p>
+                <ul>
+                    <li>El cliente retiene la propiedad absoluta sobre sus datos de negocio, lógica comercial e información procesada a lo largo del flujo.</li>
+                    <li>Stratiums Corporation conserva la propiedad intelectual de sus motores de integración propietarios, algoritmos y plantillas genéricas de automatización diseñadas por nuestra firma.</li>
+                </ul>
+                
+                <h4>2. Garantías de Disponibilidad y SLA</h4>
+                <p>Establecemos unos límites claros de mutua responsabilidad:</p>
+                <ul>
+                    <li><strong>Disponibilidad de Orquestación:</strong> Nos comprometemos a mantener un uptime del 99.9% en nuestra infraestructura de monitorización y servidores de ejecución de tareas.</li>
+                    <li><strong>Límites de Terceras Partes:</strong> No asumimos responsabilidad alguna por fallos operativos, restricciones de cuotas (rate-limiting) o interrupciones imprevistas del servicio originadas por proveedores externos ajenos a nuestro control directo (por ejemplo, caídas repentinas de Microsoft Azure, OpenAI, Salesforce o Google Cloud).</li>
+                </ul>
+
+                <div class="m-cbox font-sans">
+                    <strong>Cumplimiento Normativo y Privacidad:</strong><br>
+                    <a href="mailto:equipo@stratiums.com">equipo@stratiums.com</a><br>
+                    Stratiums Corporation, Barcelona, España.
+                </div>
             </div>
         </div>
     </div>
     
-    <!-- ── STREAMING_CHUNK: Integrating Chatwoot widget... ── -->
     <!-- CHATWOOT -->
     <script>
     (function(d,t){
