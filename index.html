@@ -1,443 +1,999 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#FBF8F0">
+    <meta name="theme-color" content="#0A0A0A">
     <title>Stratiums Corporation | Automatización e Inteligencia Artificial</title>
     
-    <!-- SEO & Performance -->
-    <meta name="description" content="Expertos en Automatización de Procesos e IA. Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
+    <meta name="description" content="Sistemas de automatización con IA que eliminan el trabajo manual y recuperan el 30% del tiempo de tu equipo.">
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
     
-    <!-- Favicon & Open Graph -->
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stratiums Corporation | Automatización e Inteligencia Artificial">
-    <meta property="og:description" content="Recupera el 30% del tiempo de tu equipo con sistemas de cero errores impulsados por IA.">
+    <meta property="og:description" content="Sistemas de automatización con IA que eliminan el trabajo manual y recuperan el 30% del tiempo de tu equipo.">
     <meta property="og:image" content="logo.png">
     <meta property="og:url" content="https://stratiums.com/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- 
-        🛡️ CIBERSEGURIDAD 2026 (Hardened)
-        - Strict CSP: Solo permite dominios esenciales (Chatwoot, Google Fonts, Tailwind).
-        - HTTPS Forzado: upgrade-insecure-requests.
-        - Anti-Clickjacking: X-Frame-Options DENY.
-    -->
+    <!-- CSP Actualizada: Permite de forma segura los recursos del chatbot Chatwoot, incluyendo estilos y sockets -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://app.chatwoot.com;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https://app.chatwoot.com;
-        connect-src 'self' https://app.chatwoot.com wss://app.chatwoot.com;
-        frame-src 'self' https://app.chatwoot.com;
-        object-src 'none';
-        base-uri 'self';
-        form-action 'self';
-        upgrade-insecure-requests;
-    ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.chatwoot.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.chatwoot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://app.chatwoot.com; connect-src 'self' https://app.chatwoot.com wss://app.chatwoot.com; frame-src 'self' https://app.chatwoot.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()">
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Estilos Críticos -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        /* ── BASE ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A;
+            color: #fff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            /* Espacio de seguridad inferior en móvil para que el chatbot flotante no tape botones importantes */
+            padding-bottom: 0;
+            transition: padding-bottom 0.3s ease;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; }
+        button { cursor: pointer; font-family: inherit; }
         
         :root {
-            --bg-color:#FBF8F0;
-            --text-main:#111111;
-            --text-light:#444444;
-            --accent:#5B9DD9;
+            --dark:   #0A0A0A;
+            --dark2:  #111111;
+            --dark3:  #181818;
+            --dark4:  #202020;
+            --cream:  #F4F1E8;
+            --cream2: #E8E4D8;
+            --accent: #2563EB;
+            --accent2:#3B82F6;
+            --muted:  #6B7280;
+            --mutedD: #9CA3AF;
+            --bD: rgba(255,255,255,0.06);
+            --bL: rgba(0,0,0,0.07);
         }
 
-        body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);overflow-x:hidden}h1,h2,h3,h4,.font-serif{font-family:'Playfair Display',serif}
-        
-        .reveal-element {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);
+        /* Ajustar padding-bottom en dispositivos móviles para el chatbot flotante */
+        @media(max-width: 768px) {
+            body { padding-bottom: 76px; }
         }
         
-        .reveal-element.pending-reveal {
-            opacity: 0;
-            transform: translateY(30px);
+        /* ── STREAMING_CHUNK: Setting up scrolling reveal animations... ── */
+        .rv { 
+            opacity: 0; 
+            transform: translateY(24px); 
+            transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); 
         }
-
-        .btn-premium{background-color:var(--text-main);color:#fff;transition:all .4s ease;border:1px solid var(--text-main)}.btn-premium:hover{background-color:transparent;color:var(--text-main);transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.05)}.btn-premium:active{transform:translateY(0)}.btn-outline{background-color:transparent;color:var(--text-main);border:1px solid var(--text-main);transition:all .4s ease}.btn-outline:hover{background-color:var(--text-main);color:#fff}.card-premium{background-color:#fff;border:1px solid rgba(0,0,0,.03);transition:all .5s cubic-bezier(.22,1,.36,1)}@media(hover:hover){.card-premium:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.04);border-color:rgba(0,0,0,.08)}}.modal{transition:opacity .4s ease,visibility .4s ease}.modal-content{transform:scale(.98);transition:transform .4s cubic-bezier(.22,1,.36,1)}.modal.active .modal-content{transform:scale(1)}
+        .rv.on { opacity: 1; transform: none; }
+        .rv.d1 { transition-delay: .1s; } 
+        .rv.d2 { transition-delay: .2s; } 
+        .rv.d3 { transition-delay: .3s; } 
+        .rv.d4 { transition-delay: .4s; }
+        @media (prefers-reduced-motion: reduce) {
+            .rv { opacity: 1; transform: none; transition: none; }
+        }
+        
+        /* ── NAV ── */
+        #nav {
+            position: fixed; top: 0; width: 100%; z-index: 50;
+            background: rgba(10,10,10,.88);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--bD);
+            transition: background .3s, box-shadow .3s;
+        }
+        #nav.sc { 
+            background: rgba(10,10,10,.98); 
+            box-shadow: 0 4px 40px rgba(0,0,0,.5); 
+        }
+        .nav-w { 
+            max-width: 1280px; margin: 0 auto; padding: 0 2rem; 
+            display: flex; justify-content: space-between; align-items: center; height: 70px; 
+        }
+        @media(max-width: 480px) {
+            .nav-w { padding: 0 1.25rem; }
+        }
+        
+        .nav-logo { display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 34px; width: auto; opacity: .92; }
+        .nl-t { display: flex; flex-direction: column; }
+        .nl-m { font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; color: #fff; letter-spacing: .06em; line-height: 1; }
+        .nl-s { font-family: 'JetBrains Mono', monospace; font-size: .5rem; color: var(--mutedD); letter-spacing: .22em; text-transform: uppercase; margin-top: 3px; }
+        
+        .nav-ls { display: flex; align-items: center; gap: 2.2rem; }
+        .nla { font-size: .76rem; font-weight: 500; color: var(--mutedD); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
+        .nla:hover { color: #fff; }
+        .ndiv { width: 1px; height: 14px; background: var(--bD); }
+        .btn-nav { display: inline-flex; align-items: center; gap: 7px; padding: .52rem 1.3rem; background: var(--accent); color: #fff; font-size: .76rem; font-weight: 600; border-radius: 6px; transition: all .25s; }
+        .btn-nav:hover { background: var(--accent2); box-shadow: 0 8px 28px rgba(37,99,235,.38); transform: translateY(-1px); }
+        
+        /* Hamburguesa Clásica */
+        .mob-btn { 
+            display: none; 
+            background: none; 
+            border: none; 
+            color: #fff; 
+            padding: 8px; 
+            z-index: 100;
+        }
+        .hamburger-svg {
+            transition: transform 0.3s ease;
+        }
+        .hamburger-svg line {
+            transition: transform 0.3s ease, opacity 0.2s ease, stroke 0.3s ease;
+            transform-origin: center;
+        }
+        
+        @media(max-width: 768px) {
+            .nav-ls { display: none; }
+            .mob-btn { display: flex; }
+        }
+        
+        #nav.open-menu .line-mid { opacity: 0; }
+        #nav.open-menu .line-top { transform: translateY(6px) rotate(45deg); }
+        #nav.open-menu .line-bot { transform: translateY(-6px) rotate(-45deg); }
+        
+        #mob-menu { 
+            display: none; position: absolute; top: 100%; left: 0; right: 0; 
+            background: var(--dark2); border-bottom: 1px solid var(--bD); padding: 1.25rem 1.5rem 1.75rem; 
+            box-shadow: 0 20px 40px rgba(0,0,0,.6);
+        }
+        #mob-menu.open { display: block; animation: slideDown 0.3s ease; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        #mob-menu a, #mob-menu button { 
+            display: block; padding: .88rem 0; font-family: 'Playfair Display', serif; font-size: 1.1rem; 
+            color: #fff; border: none; border-bottom: 1px solid var(--bD); background: none; 
+            width: 100%; text-align: left; transition: padding-left 0.3s;
+        }
+        #mob-menu a:hover, #mob-menu button:hover { padding-left: 8px; color: var(--accent2); }
+        .mob-cta { 
+            display: block; text-align: center; margin-top: 1.25rem; padding: .88rem !important; 
+            background: var(--accent) !important; color: #fff !important; border-radius: 8px; 
+            font-family: 'Inter', sans-serif !important; font-size: .9rem !important; font-weight: 600; border-bottom: none !important; 
+        }
+        
+        /* ── STREAMING_CHUNK: Styling the Hero section and grid... ── */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 2rem 80px; position: relative; overflow: hidden; }
+        @media(max-width: 480px) {
+            .hero { padding: 110px 1.25rem 60px; }
+        }
+        .hero-grid { 
+            position: absolute; inset: 0; 
+            background-image: linear-gradient(var(--bD) 1px,transparent 1px),linear-gradient(90deg,var(--bD) 1px,transparent 1px); 
+            background-size: 56px 56px; 
+            mask-image: radial-gradient(ellipse 85% 85% at 50% 40%,#000 10%,transparent 100%); 
+            -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 40%,#000 10%,transparent 100%); 
+        }
+        .hero-glow { 
+            position: absolute; top: 15%; right: 5%; width: 560px; height: 560px; 
+            background: radial-gradient(circle,rgba(37,99,235,.1) 0%,transparent 70%); pointer-events: none; 
+        }
+        .hero-in { 
+            max-width: 1280px; margin: 0 auto; width: 100%; display: grid; 
+            grid-template-columns: 1.12fr 0.88fr; gap: 64px; align-items: center; position: relative; z-index: 1; 
+        }
+        @media(max-width: 1024px) { 
+            .hero-in { grid-template-columns: 1fr; gap: 48px; } 
+        }
+        
+        .eyepill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 14px; margin-bottom: 2rem; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.18); border-radius: 100px; }
+        .ep-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .4; box-shadow: 0 0 8px var(--accent); } }
+        .ep-txt { font-family: 'JetBrains Mono', monospace; font-size: .66rem; color: var(--accent2); letter-spacing: .1em; text-transform: uppercase; }
+        
+        .hero-h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); font-weight: 700; line-height: 1.08; letter-spacing: -.025em; color: #fff; margin-bottom: 1.5rem; }
+        .hero-h1 em { font-style: italic; color: var(--mutedD); }
+        .hero-sub { font-size: 1.02rem; color: var(--mutedD); line-height: 1.8; font-weight: 300; max-width: 485px; margin-bottom: 2.5rem; }
+        
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: .9rem 2rem; background: var(--accent); color: #fff; font-size: .88rem; font-weight: 600; border-radius: 8px; transition: all .3s; }
+        .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 14px 38px rgba(37,99,235,.42); }
+        .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: .9rem 2rem; background: transparent; color: var(--mutedD); font-size: .88rem; font-weight: 500; border-radius: 8px; border: 1px solid var(--bD); transition: all .3s; }
+        .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
+        
+        .hero-proof { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--bD); }
+        .hp-v { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 700; color: #fff; line-height: 1; }
+        .hp-l { font-size: .68rem; color: var(--mutedD); margin-top: 5px; letter-spacing: .04em; }
+        
+        /* ── STREAMING_CHUNK: Designing the Pipeline terminal... ── */
+        .pipeline-wrap {
+            width: 100%;
+            max-width: 460px;
+            justify-self: center;
+        }
+        @media(max-width: 1024px) {
+            .pipeline-wrap { max-width: 100%; }
+        }
+        .pipeline { 
+            background: var(--dark2); 
+            border: 1px solid var(--bD); 
+            border-radius: 14px; 
+            overflow: hidden; 
+            font-family: 'JetBrains Mono', monospace; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
+            width: 100%;
+        }
+        .pl-hd { display: flex; align-items: center; gap: 7px; padding: 13px 18px; background: var(--dark3); border-bottom: 1px solid var(--bD); }
+        .mac { width: 10px; height: 10px; border-radius: 50%; }
+        .mac-r { background: #FF5F57; } .mac-y { background: #FFBD2E; } .mac-g { background: #28CA41; }
+        .pl-title { font-size: .63rem; color: var(--mutedD); margin-left: 7px; letter-spacing: .05em; }
+        .pl-body { padding: 18px; }
+        @media(max-width: 480px) {
+            .pl-body { padding: 14px; }
+        }
+        .pl-step { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--bD); opacity: .28; transition: opacity .45s; }
+        .pl-step:last-child { border-bottom: none; }
+        .pl-step.active { opacity: 1; transform: scale(1.01); transition: all 0.3s; }
+        .pl-step.done { opacity: .62; }
+        
+        .si { width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .66rem; font-weight: 700; margin-top: 1px; }
+        .si.p { background: var(--dark4); color: var(--mutedD); }
+        .si.r { background: rgba(37,99,235,.18); color: var(--accent2); box-shadow: 0 0 10px rgba(37,99,235,.3); }
+        .si.s { background: rgba(40,202,65,.13); color: #28CA41; }
+        
+        .sl { font-size: .7rem; color: #fff; line-height: 1; margin-bottom: 4px; }
+        .ss { font-size: .61rem; color: var(--mutedD); line-height: 1.4; word-break: break-all; }
+        .st { margin-left: auto; font-size: .59rem; color: var(--mutedD); flex-shrink: 0; }
+        
+        .pl-ft { padding: 14px 18px; background: var(--dark3); border-top: 1px solid var(--bD); display: flex; align-items: center; gap: 12px; }
+        .pf-l { font-size: .59rem; color: var(--mutedD); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+        .pb-w { flex: 1; height: 3px; background: var(--bD); border-radius: 2px; overflow: hidden; }
+        .pb-f { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; width: 0%; transition: width .4s ease; }
+        .pf-p { font-size: .66rem; color: var(--accent2); font-weight: 500; min-width: 25px; text-align: right; }
+        
+        /* ── STREAMING_CHUNK: Styling the static trust pillars... ── */
+        .trust-pillars {
+            background: var(--dark2);
+            border-top: 1px solid var(--bD);
+            border-bottom: 1px solid var(--bD);
+            padding: 3rem 2rem;
+        }
+        @media(max-width: 480px) {
+            .trust-pillars { padding: 2.25rem 1.25rem; }
+        }
+        .pillars-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+        @media (max-width: 1024px) {
+            .pillars-inner {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .pillars-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        .pillar-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .pillar-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pillar-bullet {
+            width: 4px;
+            height: 4px;
+            background: var(--accent2);
+            border-radius: 50%;
+            box-shadow: 0 0 6px var(--accent2);
+        }
+        .pillar-desc {
+            font-size: 0.8rem;
+            color: var(--mutedD);
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        
+        /* ── SECTIONS COMUNES ── */
+        .s-dark { background: var(--dark); color: #fff; }
+        .s-dark2 { background: var(--dark2); color: #fff; }
+        .s-cream { background: var(--cream); color: var(--dark); }
+        .si-wrap { max-width: 1280px; margin: 0 auto; padding: 100px 2rem; }
+        @media(max-width: 768px) { .si-wrap { padding: 68px 1.5rem; } }
+        
+        .eyerow { display: flex; align-items: center; gap: 10px; margin-bottom: 1.1rem; }
+        .eyerow-line { width: 22px; height: 1px; }
+        .eyerow-txt { font-family: 'JetBrains Mono', monospace; font-size: .66rem; letter-spacing: .15em; text-transform: uppercase; }
+        .er-d .eyerow-line { background: var(--bD); } .er-d .eyerow-txt { color: var(--mutedD); }
+        .er-l .eyerow-line { background: rgba(0,0,0,.13); } .er-l .eyerow-txt { color: var(--muted); }
+        
+        .sh2-d { font-size: clamp(1.9rem, 3.8vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -.022em; }
+        .sh2-l { font-size: clamp(1.9rem, 3.8vw, 3.3rem); font-weight: 700; color: var(--dark); line-height: 1.1; letter-spacing: -.022em; }
+        .sh2-sub-d { font-size: .95rem; color: var(--mutedD); margin-top: .7rem; line-height: 1.78; font-weight: 300; max-width: 550px; }
+        .sh2-sub-l { font-size: .95rem; color: var(--muted); margin-top: .7rem; line-height: 1.78; font-weight: 300; max-width: 550px; }
+        
+        /* ── STREAMING_CHUNK: Styling before/after grid... ── */
+        .ad-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; border-radius: 16px; overflow: hidden; border: 1px solid var(--cream2); box-shadow: 0 20px 40px rgba(0,0,0,.04); }
+        @media(max-width: 768px) { .ad-grid { grid-template-columns: 1fr; } }
+        .ad-col { padding: 46px 40px; transition: background 0.3s; }
+        @media(max-width: 768px) { .ad-col { padding: 30px 22px; } }
+        .ad-b { background: var(--cream); }
+        .ad-a { background: var(--dark); color: #fff; }
+        
+        .ad-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: .6rem; padding: 5px 12px; border-radius: 4px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.35rem; font-weight: 600; }
+        .t-b { background: rgba(0,0,0,.06); color: var(--muted); }
+        .t-a { background: rgba(37,99,235,.14); color: var(--accent2); }
+        
+        .ad-h3-b { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--dark); margin-bottom: .85rem; }
+        .ad-h3-a { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: .85rem; }
+        .ad-p-b { font-size: .88rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
+        .ad-p-a { font-size: .88rem; color: var(--mutedD); line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
+        
+        .ad-list { list-style: none; }
+        .ad-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; font-size: .85rem; border-top: 1px solid; transition: transform 0.2s; }
+        .ad-item:hover { transform: translateX(3px); }
+        .ad-item-b { color: var(--muted); border-top-color: var(--cream2); }
+        .ad-item-a { color: rgba(255,255,255,.8); border-top-color: var(--bD); }
+        .ad-item:first-child { border-top: none; }
+        .ad-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+        
+        /* ── STREAMING_CHUNK: Styling metrics... ── */
+        .met-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--bD); border: 1px solid var(--bD); border-radius: 16px; overflow: hidden; margin-top: 52px; }
+        @media(max-width: 1024px) { .met-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(max-width: 480px) { .met-grid { grid-template-columns: 1fr; } }
+        .met-card { background: var(--cream); padding: 42px 34px; text-align: center; transition: background 0.3s; }
+        .met-card:hover { background: #fff; }
+        @media(max-width: 768px) { .met-card { padding: 30px 22px; } }
+        .met-v { font-family: 'Playfair Display', serif; font-size: clamp(2.3rem, 4vw, 3.5rem); font-weight: 700; color: var(--dark); line-height: 1; }
+        .met-v span { font-size: .52em; color: var(--accent); }
+        .met-l { font-size: .8rem; color: var(--muted); margin-top: 10px; line-height: 1.55; font-weight: 400; }
+        
+        /* ── STREAMING_CHUNK: Styling methodology approach... ── */
+        .enf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bD); border: 1px solid var(--bD); border-radius: 16px; overflow: hidden; margin-top: 52px; }
+        @media(max-width: 768px) { .enf-grid { grid-template-columns: 1fr; } }
+        .enf-card { background: var(--dark2); padding: 44px 38px; position: relative; transition: background .3s; }
+        .enf-card:hover { background: var(--dark3); }
+        @media(max-width: 768px) { .enf-card { padding: 30px 22px; } }
+        .enf-n { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 700; color: rgba(255,255,255,.035); line-height: 1; position: absolute; top: 20px; right: 26px; transition: color 0.3s; }
+        .enf-card:hover .enf-n { color: rgba(255,255,255,.06); }
+        .enf-icon { width: 42px; height: 42px; background: rgba(37,99,235,.1); border: 1px solid rgba(37,99,235,.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--accent2); transition: transform 0.3s; }
+        .enf-card:hover .enf-icon { transform: scale(1.1); }
+        .enf-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: .78rem; }
+        .enf-p { font-size: .85rem; color: var(--mutedD); line-height: 1.85; font-weight: 300; }
+        
+        /* ── STREAMING_CHUNK: Styling service cards... ── */
+        .srv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 52px; }
+        @media(max-width: 1024px) { .srv-grid { grid-template-columns: 1fr 1fr; } }
+        @media(max-width: 640px) { .srv-grid { grid-template-columns: 1fr; } }
+        .srv-card { background: var(--dark2); border: 1px solid var(--bD); border-radius: 14px; padding: 36px 32px; position: relative; overflow: hidden; transition: all .4s cubic-bezier(.22,1,.36,1); }
+        .srv-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0; transition: opacity .4s; }
+        .srv-card:hover { transform: translateY(-6px); border-color: rgba(37,99,235,.22); box-shadow: 0 28px 60px rgba(0,0,0,.44); background: var(--dark3); }
+        .srv-card:hover::after { opacity: 1; }
+        .srv-icon { width: 46px; height: 46px; background: rgba(37,99,235,.1); border: 1px solid rgba(37,99,235,.16); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent2); margin-bottom: 1.7rem; transition: background 0.3s, color 0.3s; }
+        .srv-card:hover .srv-icon { background: var(--accent); color: #fff; }
+        .srv-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: .75rem; }
+        .srv-p { font-size: .85rem; color: var(--mutedD); line-height: 1.82; font-weight: 300; }
+        
+        /* ── STREAMING_CHUNK: Styling philosophy quote... ── */
+        .fil-wrap { max-width: 760px; margin: 0 auto; text-align: center; padding: 0 1rem; }
+        .fil-q { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 400; color: var(--dark); line-height: 1.3; margin: 2rem 0; letter-spacing: -.01em; }
+        .fil-q em { font-style: italic; color: var(--muted); }
+        .fil-b { font-size: .95rem; color: var(--muted); line-height: 1.95; font-weight: 300; }
+        
+        /* ── STREAMING_CHUNK: Styling the snapslider for testimonials... ── */
+        .rev-section { background: var(--dark); padding: 100px 0; }
+        @media(max-width: 768px) { .rev-section { padding: 68px 0; } }
+        .rev-head { max-width: 1280px; margin: 0 auto; padding: 0 2rem 52px; }
+        
+        .rev-slider-wrap { position: relative; width: 100%; }
+        .rev-track { 
+            display: flex; 
+            gap: 20px; 
+            padding: 0 2rem; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth; 
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE */
+        }
+        .rev-track::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
+        
+        .rev-card {
+            flex: 0 0 380px; 
+            scroll-snap-align: center;
+            background: var(--dark2); border: 1px solid var(--bD);
+            border-radius: 14px; padding: 34px 30px;
+            display: flex; flex-direction: column; gap: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        @media(max-width: 480px) { .rev-card { flex: 0 0 300px; } }
+        
+        .rev-stars { display: flex; gap: 3px; }
+        .rev-star { color: #F59E0B; font-size: .85rem; }
+        .rev-q { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; line-height: 1.6; font-style: italic; flex: 1; }
+        .rev-sep { width: 22px; height: 1px; background: var(--bD); }
+        .rev-name { font-size: .85rem; font-weight: 600; color: #fff; }
+        .rev-role { font-size: .75rem; color: var(--mutedD); font-weight: 400; margin-top: 3px; }
+        
+        .rev-controls { display: flex; gap: 10px; margin-top: 36px; padding: 0 2rem; max-width: 1280px; margin-left: auto; margin-right: auto; }
+        .rev-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--dark2); border: 1px solid var(--bD); color: var(--mutedD); display: flex; align-items: center; justify-content: center; transition: all .25s; }
+        .rev-btn:hover { background: var(--dark3); border-color: rgba(255,255,255,.14); color: #fff; }
+        .rev-dots { display: flex; align-items: center; gap: 6px; margin-left: 4px; }
+        .rev-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--bD); transition: all .3s; cursor: pointer; }
+        .rev-dot.active { width: 20px; border-radius: 3px; background: var(--accent); }
+        
+        /* ── CTA BAND ── */
+        .cta-band { background: var(--accent); padding: 88px 2rem; text-align: center; position: relative; overflow: hidden; }
+        .cta-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.06) 0%, transparent 55%); }
+        .cta-in { position: relative; z-index: 1; }
+        .cta-h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.85rem, 3.5vw, 2.9rem); color: #fff; font-weight: 700; margin-bottom: .88rem; }
+        .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.8); margin-bottom: 2.5rem; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 1.1rem 2.8rem; background: #fff; color: var(--accent); font-size: .95rem; font-weight: 700; border-radius: 8px; transition: all .3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(0,0,0,.22); }
+        
+        /* ── FOOTER ── */
+        footer { background: #050505; color: #fff; padding: 60px 2rem 100px; border-top: 1px solid var(--bD); }
+        .foot-in { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
+        .foot-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: .05em; }
+        .foot-copy { font-size: .68rem; color: var(--mutedD); margin-top: 8px; letter-spacing: .07em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+        .foot-ls { display: flex; gap: 2rem; align-items: center; }
+        .fl { font-size: .8rem; color: var(--mutedD); background: none; border: none; transition: color .2s; }
+        .fl:hover { color: #fff; }
+        
+        /* ── MODAL ── */
+        .modal-ov { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.78); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: all .35s; }
+        .modal-ov.open { opacity: 1; visibility: visible; }
+        .modal-box { background: var(--cream); color: var(--dark); width: 100%; max-width: 700px; max-height: 86vh; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transform: scale(.97); transition: transform .35s cubic-bezier(.22,1,.36,1); border: 1px solid var(--cream2); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+        .modal-ov.open .modal-box { transform: scale(1); }
+        .modal-hd { display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid var(--cream2); background: #fff; }
+        .modal-ttl { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--dark); }
+        .modal-cl { background: rgba(0,0,0,0.05); border: none; color: var(--muted); padding: 8px; border-radius: 8px; transition: all .2s; }
+        .modal-cl:hover { background: rgba(0,0,0,0.1); color: var(--dark); }
+        .modal-bd { padding: 32px 28px; overflow-y: auto; font-size: .88rem; line-height: 1.85; color: var(--muted); }
+        .modal-bd h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 6px; }
+        .modal-bd h4 { font-size: .85rem; font-weight: 600; color: var(--dark); margin-top: 1.5rem; margin-bottom: 6px; }
+        .modal-bd ul { padding-left: 1.2rem; margin: .5rem 0 1rem; }
+        .modal-bd ul li { margin-bottom: 6px; }
+        .m-mono { font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--muted); letter-spacing: .08em; margin-bottom: 1rem; }
+        .m-hr { border: none; border-top: 1px solid var(--cream2); margin: 2rem 0; }
+        .m-cbox { background: #fff; padding: 20px; border-radius: 10px; margin-top: 1.5rem; font-size: .85rem; border: 1px solid var(--cream2); }
+        .m-cbox a { color: var(--accent); font-weight: 500; }
     </style>
 </head>
-<body class="antialiased relative">
-
+<body>
+    
+    <!-- ── STREAMING_CHUNK: Building the Navigation Bar... ── -->
     <!-- NAV -->
-    <nav class="fixed w-full z-50 bg-[#FBF8F0]/95 backdrop-blur-md border-b border-black/5 transition-all duration-300 shadow-sm md:shadow-none">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="flex justify-between items-center h-20 md:h-24">
-                <a href="#" class="flex items-center gap-2 md:gap-4 group shrink-0" aria-label="Inicio">
-                    <img src="logo.png" alt="Stratiums Logo" class="h-9 md:h-12 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" id="main-logo" width="48" height="48">
-                    <!-- Fallback seguro -->
-                    <div id="logo-placeholder" class="hidden items-center justify-center h-9 w-9 md:h-12 md:w-12 bg-black text-white font-serif font-bold text-xl md:text-2xl rounded-full">S</div>
-                    <div class="flex flex-col justify-center h-9 md:h-12 ml-1">
-                        <span class="text-sm md:text-lg font-serif font-bold text-black tracking-wide leading-none">STRATIUMS</span>
-                        <span class="text-[0.5rem] md:text-[0.6rem] font-sans font-medium text-gray-500 tracking-[0.2em] uppercase leading-none mt-0.5 md:mt-1">Corporation</span>
-                    </div>
+    <nav id="nav">
+        <div class="nav-w">
+            <a href="#" class="nav-logo" aria-label="Inicio">
+                <img src="logo.png" alt="Stratiums" onerror="this.style.display='none';document.getElementById('lfb').style.display='flex';">
+                <div id="lfb" style="display:none;width:32px;height:32px;background:#fff;color:#000;border-radius:50%;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;">S</div>
+                <div class="nl-t"><span class="nl-m">STRATIUMS</span><span class="nl-s">Corporation</span></div>
+            </a>
+            <div class="nav-ls">
+                <a href="#problema" class="nla">El problema</a>
+                <a href="#enfoque" class="nla">Enfoque</a>
+                <a href="#soluciones" class="nla">Servicios</a>
+                <a href="#opiniones" class="nla">Opiniones</a>
+                <div class="ndiv"></div>
+                <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--mutedD);transition:color .2s" onmouseenter="this.style.color='#3B82F6'" onmouseleave="this.style.color='var(--mutedD)'">
+                    <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.265-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
-                    <a href="#conceptos" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors" data-target="conceptos">Conceptos</a>
-                    <a href="#enfoque" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors" data-target="enfoque">Enfoque</a>
-                    <a href="#filosofia" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors" data-target="filosofia">Filosofía</a>
-                    <a href="#soluciones" class="text-sm font-sans font-medium text-gray-600 hover:text-black transition-colors" data-target="soluciones">Servicios</a>
-                    <span class="h-4 w-px bg-gray-300"></span>
-                    <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#0077b5] transition-colors" aria-label="LinkedIn">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.265-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium text-sm font-medium px-6 py-3 rounded-lg">Agendar Reunión</a>
-                </div>
-
-                <!-- Mobile Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-black p-2 focus:outline-none -mr-2" aria-label="Menú">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+                <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-nav">Agendar reunión <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
+            
+            <!-- Botón de Menú de 3 Rayas Tradicional Animado con SVG -->
+            <button class="mob-btn" id="mob-btn" aria-label="Menú" aria-expanded="false" aria-controls="mob-menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hamburger-svg">
+                    <line x1="4" y1="6" x2="20" y2="6" class="line-top"></line>
+                    <line x1="4" y1="12" x2="20" y2="12" class="line-mid"></line>
+                    <line x1="4" y1="18" x2="20" y2="18" class="line-bot"></line>
+                </svg>
+            </button>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#FBF8F0] border-t border-black/5 p-6 space-y-6 shadow-2xl absolute w-full left-0 top-20 z-40 transition-all">
-            <a href="#conceptos" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50" data-target="conceptos">Conceptos</a>
-            <a href="#enfoque" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50" data-target="enfoque">Enfoque</a>
-            <a href="#filosofia" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50" data-target="filosofia">Filosofía</a>
-            <a href="#soluciones" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50" data-target="soluciones">Servicios</a>
-            <a href="mailto:contacto@stratiums.com" class="block text-lg font-serif text-black py-3 border-b border-black/5 active:bg-gray-50">Correo</a>
-            <button id="btn-legal-mobile" class="block w-full text-left text-lg font-serif text-black py-3 border-b border-black/5 focus:outline-none active:bg-gray-50">Legal</button>
-            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="block w-full text-center btn-premium py-4 rounded-lg mt-6 shadow-md">Agendar Llamada</a>
+        <div id="mob-menu">
+            <a href="#problema">El problema</a>
+            <a href="#enfoque">Enfoque</a>
+            <a href="#soluciones">Servicios</a>
+            <a href="#opiniones">Opiniones</a>
+            <a href="mailto:equipo@stratiums.com">Contacto</a>
+            <button id="legal-mob">Legal</button>
+            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="mob-cta">Agendar reunión →</a>
         </div>
     </nav>
-
+    
+    <!-- ── STREAMING_CHUNK: Designing the Hero fold and Pipeline section... ── -->
     <!-- HERO -->
-    <section class="min-h-screen flex items-center relative pt-28 pb-16 md:pt-32 md:pb-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
-            <div class="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
-                <div class="text-left space-y-8 md:space-y-10">
-                    <h1 class="reveal-element text-4xl sm:text-5xl lg:text-7xl font-serif text-black leading-[1.1] tracking-tight">
-                        Automatización de Procesos con <br>
-                        <span class="italic text-gray-600">Inteligencia Artificial.</span>
-                    </h1>
-                    <p class="reveal-element delay-100 text-base md:text-xl text-gray-600 max-w-xl leading-relaxed font-light">
-                        Diseñamos la estructura digital para que tu negocio funcione sin supervisión humana. Recupera el 30% de tu tiempo con sistemas de cero errores impulsados por IA.
-                    </p>
-                    <div class="reveal-element delay-200 flex flex-col sm:flex-row gap-4 md:gap-5 pt-2">
-                        <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-premium inline-flex justify-center items-center px-8 py-4 text-base font-medium rounded-lg shadow-sm">Auditoría Gratuita</a>
-                        <a href="#conceptos" class="btn-outline inline-flex justify-center items-center px-8 py-4 font-medium rounded-lg" data-target="conceptos">Entender Más</a>
-                    </div>
+    <section class="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-in">
+            <div>
+                <div class="eyepill rv"><div class="ep-dot"></div><span class="ep-txt">Automatización · IA aplicada</span></div>
+                <h1 class="hero-h1 rv d1">Tu negocio funcionando,<br><em>sin que estés mirando.</em></h1>
+                <p class="hero-sub rv d2">Diseñamos sistemas de automatización con IA que eliminan el trabajo manual, reducen los errores y liberan a tu equipo para lo que realmente importa.</p>
+                <div class="hero-ctas rv d3">
+                    <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Quiero mi auditoría gratuita <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    <a href="#problema" class="btn-ghost">Ver cómo funciona</a>
                 </div>
-                <!-- Visual Abstracto (Oculto en móvil/tablet para limpieza visual) -->
-                <div class="reveal-element delay-200 relative hidden lg:block">
-                    <div class="relative aspect-square bg-white rounded-full border border-black/5 shadow-[0_40px_80px_rgba(0,0,0,0.05)] flex items-center justify-center p-12">
-                        <div class="absolute inset-0 rounded-full border border-black/5 scale-110 opacity-50"></div>
-                        <div class="absolute inset-0 rounded-full border border-black/5 scale-125 opacity-30"></div>
-                        <div class="w-full space-y-6">
-                            <div class="flex items-center justify-between text-xs font-mono text-gray-400 tracking-widest uppercase"><span>Input</span><span>AI Processing</span><span>Output</span></div>
-                            <div class="h-px w-full bg-gray-100"></div>
-                            <div class="space-y-4 font-mono text-sm text-gray-800">
-                                <div class="flex items-center gap-3"><span class="w-2 h-2 bg-black rounded-full"></span><span>Ingestando datos...</span></div>
-                                <div class="flex items-center gap-3 opacity-60"><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span>Analizando patrones...</span></div>
-                                <div class="flex items-center gap-3 opacity-40"><span class="w-2 h-2 bg-gray-200 rounded-full"></span><span>Ejecutando optimización.</span></div>
-                            </div>
-                        </div>
+                <div class="hero-proof rv d4">
+                    <div><div class="hp-v">30<span style="font-size:1rem;color:var(--accent2)">%</span></div><div class="hp-l">Tiempo recuperado</div></div>
+                    <div><div class="hp-v">0</div><div class="hp-l">Errores en producción</div></div>
+                    <div><div class="hp-v">24/7</div><div class="hp-l">Operación continua</div></div>
+                </div>
+            </div>
+    
+            <!-- Pipeline Widget -->
+            <div class="rv d2 pipeline-wrap" id="pipeline-widget">
+                <div class="pipeline">
+                    <div class="pl-hd">
+                        <div class="mac mac-r"></div><div class="mac mac-y"></div><div class="mac mac-g"></div>
+                        <span class="pl-title">stratiums · pipeline · producción</span>
+                    </div>
+                    <div class="pl-body" id="pl-steps">
+                        <div class="pl-step" data-i="0"><div class="si p">01</div><div><div class="sl">Recepción de datos</div><div class="ss">CRM → validación → cola</div></div><div class="st">—</div></div>
+                        <div class="pl-step" data-i="1"><div class="si p">02</div><div><div class="sl">Clasificación IA</div><div class="ss">NLP · intención · prioridad</div></div><div class="st">—</div></div>
+                        <div class="pl-step" data-i="2"><div class="si p">03</div><div><div class="sl">Decisión autónoma</div><div class="ss">reglas + modelo · acción óptima</div></div><div class="st">—</div></div>
+                        <div class="pl-step" data-i="3"><div class="si p">04</div><div><div class="sl">Ejecución & notificación</div><div class="ss">ERP · Slack · email · webhook</div></div><div class="st">—</div></div>
+                        <div class="pl-step" data-i="4"><div class="si p">05</div><div><div class="sl">Auditoría & reporte</div><div class="ss">log · dashboard · 0 errores</div></div><div class="st">—</div></div>
+                    </div>
+                    <div class="pl-ft">
+                        <span class="pf-l">Progreso</span>
+                        <div class="pb-w"><div class="pb-f" id="pb-f"></div></div>
+                        <span class="pf-p" id="pb-p">0%</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CONCEPTOS -->
-    <section id="conceptos" class="py-16 md:py-32 bg-white border-y border-black/5">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Educación</span>
-                <h2 class="reveal-element delay-100 text-3xl md:text-4xl font-serif text-black mt-4 md:mt-6 mb-4">¿Qué es automatizar?</h2>
-                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light text-sm md:text-base">
-                    Entender la tecnología es el primer paso para dominarla. Aquí explicamos la diferencia entre lo Manual y lo Integrado.
-                </p>
+    
+    <!-- ── STREAMING_CHUNK: Setting up elegant static Trust Pillars... ── -->
+    <!-- ── PILARES DE NEGOCIO ESTÁTICOS (Elegantes y fijos para mobile/desktop) ── -->
+    <div class="trust-pillars">
+        <div class="pillars-inner">
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-bullet"></div>
+                    <span>Precisión del 100%</span>
+                </div>
+                <p class="pillar-desc">Algoritmos deterministas que eliminan el error humano y consolidan reportes sin fallos.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                <div class="reveal-element space-y-4 md:space-y-6">
-                    <h3 class="text-xl font-serif text-black">¿Qué es realmente?</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm font-light">
-                        Piensa en la automatización como la creación de un "empleado digital" que jamás comete errores. Le das una serie de instrucciones (una "receta") y él ejecuta tareas repetitivas como copiar datos, enviar recordatorios o mover archivos entre sistemas. El objetivo es liberar tu tiempo de lo monótono, haciendo que tus aplicaciones trabajen juntas por sí solas, mediante reglas claras y disparadores.
-                    </p>
-                    <ul class="space-y-3 text-sm text-gray-800 font-medium bg-gray-50 p-4 rounded-lg md:bg-transparent md:p-0">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full flex-shrink-0"></span> Manual: Copiar y pegar datos manualmente.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span> Integrado: Tus sistemas (CRM, ERP) hablan en tiempo real.</li>
-                    </ul>
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-bullet"></div>
+                    <span>Integración de APIs</span>
                 </div>
-                <div class="reveal-element delay-100 space-y-4 md:space-y-6">
-                    <h3 class="text-xl font-serif text-black">El Rol de la Inteligencia Artificial</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm font-light">
-                        Si la automatización es la capacidad de hacer, la IA es la capacidad de pensar. Convierte una automatización rígida (que solo sigue reglas fijas) en un sistema adaptativo. La IA permite al sistema clasificar, predecir y tomar decisiones complejas según el contexto (por ejemplo, analizar la intención de un email o el riesgo de un cliente), actuando como un asistente de alto nivel que optimiza resultados, no solo procesos.
-                    </p>
-                    <ul class="space-y-3 text-sm text-gray-800 font-medium bg-gray-50 p-4 rounded-lg md:bg-transparent md:p-0">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full flex-shrink-0"></span> Tradicional: Enviar un email si el pago falla.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span> Inteligente: Analizar el motivo, clasificar el riesgo y decidir la mejor acción.</li>
-                    </ul>
-                </div>
+                <p class="pillar-desc">Sincronización robusta de CRM, ERP y bases de datos heredadas sin pérdida de paquetes.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- ENFOQUE -->
-    <section id="enfoque" class="py-16 md:py-32 bg-[#FBF8F0]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="text-center mb-12 md:mb-20">
-                <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Nuestro Enfoque</span>
-                <h2 class="reveal-element delay-100 text-3xl md:text-5xl font-serif text-black mt-4 md:mt-6 mb-4 md:mb-6">De la Inercia a la Eficiencia</h2>
-                <p class="reveal-element delay-200 text-gray-600 max-w-2xl mx-auto font-light text-sm md:text-base">
-                    No vendemos software; diseñamos una arquitectura operativa basada en tres pilares fundamentales.
-                </p>
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-bullet"></div>
+                    <span>Modelos Seguros</span>
+                </div>
+                <p class="pillar-desc">Arquitectura de IA optimizada bajo estrictos controles de ciberseguridad y privacidad.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-6 md:gap-10">
-                <div class="reveal-element p-6 md:p-10 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="text-3xl md:text-4xl font-serif text-black/10 mb-4 md:mb-6">01</div>
-                    <h3 class="text-lg md:text-xl font-serif text-black mb-3 md:mb-4">Diagnóstico e Ingeniería</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed font-light">Utilizamos análisis de datos avanzados para mapear y auditar cada proceso. Identificamos los puntos de fricción donde el ROI de la automatización será máximo.</p>
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-bullet"></div>
+                    <span>Escala Inmediata</span>
                 </div>
-                <div class="reveal-element delay-100 p-6 md:p-10 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="text-3xl md:text-4xl font-serif text-black/10 mb-4 md:mb-6">02</div>
-                    <h3 class="text-lg md:text-xl font-serif text-black mb-3 md:mb-4">Orquestación de Sistemas</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed font-light">Construimos el "cerebro" de tu operación. Integramos aplicaciones y flujos de trabajo donde la IA toma decisiones y ejecuta con precisión matemática.</p>
-                </div>
-                <div class="reveal-element delay-200 p-6 md:p-10 bg-white rounded-xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="text-3xl md:text-4xl font-serif text-black/10 mb-4 md:mb-6">03</div>
-                    <h3 class="text-lg md:text-xl font-serif text-black mb-3 md:mb-4">Garantía y Escalabilidad</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed font-light">Monitorizamos el rendimiento de cada flujo para garantizar estabilidad. Si tus operaciones escalan, nuestras automatizaciones escalan contigo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FILOSOFÍA -->
-    <section id="filosofia" class="py-16 md:py-32 bg-white border-y border-black/5">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-            <span class="reveal-element text-gray-400 font-sans font-medium tracking-[0.2em] text-xs uppercase">Filosofía Central</span>
-            <h2 class="reveal-element delay-100 text-2xl md:text-5xl font-serif text-black mt-6 md:mt-8 mb-8 md:mb-12 leading-tight">
-                El valor reside en el tiempo recuperado, <br class="hidden md:block"> <span class="italic text-gray-500">no en la tarea ejecutada.</span>
-            </h2>
-            <div class="reveal-element delay-200 prose prose-lg mx-auto text-gray-600 leading-relaxed font-light text-sm md:text-lg">
-                <p class="mb-8">Stratiums Corporation nace para crear un tejido empresarial más ágil, limpio y resistente a la fricción cotidiana. Nuestra labor no es solo "automatizar", es <strong>recuperar tu tiempo</strong>. Hilamos datos, aplicaciones y sistemas dispersos hasta convertirlos en un ecosistema operativo coherente.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="soluciones" class="py-16 md:py-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-                <div class="reveal-element card-premium p-6 md:p-10 rounded-2xl bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6 md:mb-8">
-                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Automatización de Procesos</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed font-light">Arquitecturas de flujo que conectan tus herramientas para que dejes de copiar y pegar datos manualmente.</p>
-                </div>
-                <div class="reveal-element delay-100 card-premium p-6 md:p-10 rounded-2xl bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6 md:mb-8">
-                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Sistemas Zero-Error</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed font-light">Eliminamos el factor humano. Procesos financieros y operativos impulsados por IA que se ejecutan con perfección.</p>
-                </div>
-                <div class="reveal-element delay-200 card-premium p-6 md:p-10 rounded-2xl bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6 md:mb-8">
-                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4">Transparencia Total</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed font-light">Paneles de control en tiempo real. No vendemos cajas negras; construimos sistemas que puedes auditar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <!-- pb-24 en móvil para que el chat no tape los enlaces -->
-    <footer class="bg-black text-white py-10 pb-24 md:py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center md:text-left">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div>
-                    <span class="text-xl md:text-2xl font-serif font-bold tracking-wide">STRATIUMS</span>
-                    <p class="text-xs mt-2 text-gray-500 tracking-wider uppercase">© 2026 Stratiums Corporation.</p>
-                </div>
-                <div class="flex gap-6 md:gap-8 text-sm text-gray-400">
-                    <button id="btn-legal-footer" class="hover:text-white transition-colors p-2">Legal</button>
-                    <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors p-2">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- MODAL LEGAL -->
-    <!-- Ajustado w-[92vw] para móvil para que no toque bordes -->
-    <div id="legal-modal" class="modal fixed inset-0 z-[60] flex items-center justify-center invisible opacity-0 pointer-events-none p-4" aria-hidden="true">
-        <div id="modal-bg" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-        <div class="modal-content relative bg-[#FBF8F0] w-[92vw] md:w-full max-w-3xl h-[85vh] rounded-xl shadow-2xl overflow-hidden flex flex-col border border-black/5">
-            <div class="flex justify-between items-center p-4 md:p-6 border-b border-black/5 bg-white">
-                <h3 class="text-lg font-serif font-bold text-black">Documentación Legal</h3>
-                <button id="btn-close-modal" class="text-gray-400 hover:text-black transition-colors p-2" aria-label="Cerrar">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <div class="p-6 md:p-8 overflow-y-auto text-gray-700 text-sm leading-relaxed space-y-6 md:space-y-8 font-light">
-                <div id="privacidad">
-                    <h2 class="text-xl font-serif font-bold text-black mb-3">Política de Privacidad</h2>
-                    <p class="text-xs text-gray-500 mb-4">Última actualización: Enero 2026</p>
-                    <p class="mb-4">En Stratiums Corporation, nuestra prioridad es garantizar la tranquilidad operativa y la seguridad de la información de nuestros clientes. Actuamos exclusivamente como un procesador de datos en nombre y bajo las instrucciones tuyas, el cliente.</p>
-                    <h4 class="font-bold text-black mt-4 mb-2">1. Recopilación y Uso de Datos</h4>
-                    <p>Solo recopilamos y usamos los datos de las cuentas de terceros (como Google Workspace) cuando es estrictamente necesario para la ejecución de las automatizaciones específicas solicitadas.</p>
-                    <ul class="list-disc pl-5 space-y-1 mb-4 mt-2">
-                        <li>Datos Directos: Dirección de correo electrónico y detalles de flujos.</li>
-                        <li>Datos de Terceros: Mediante OAuth, accedemos a calendarios o documentos única y exclusivamente para el propósito de la automatización contratada.</li>
-                    </ul>
-                    <h4 class="font-bold text-black mt-4 mb-2">2. Cumplimiento y Seguridad</h4>
-                    <ul class="list-disc pl-5 space-y-1 mb-4">
-                        <li>Uso Limitado: Stratiums NUNCA utilizará, compartirá, venderá o cederá datos sensibles para marketing o terceros.</li>
-                        <li>Mejora Continua: Stratiums se reserva el derecho de utilizar datos de ejecución anonimizados y agregados (como tasas de éxito) para el entrenamiento interno y mejora de sus arquitecturas de IA. Esta información nunca se vende ni se vincula a un cliente.</li>
-                        <li>Control Total: Tú puedes revocar el acceso en cualquier momento desde el panel de seguridad de Google.</li>
-                    </ul>
-                </div>
-                <hr class="border-gray-200">
-                <div id="terminos">
-                    <h2 class="text-xl font-serif font-bold text-black mb-3">Términos y Condiciones</h2>
-                    <p class="text-xs text-gray-500 mb-4">Última actualización: Enero 2026</p>
-                    <h4 class="font-bold text-black mt-4 mb-2">1. Objeto del Servicio</h4>
-                    <p>Stratiums diseña, implementa y monitorea arquitecturas de flujo digitales para optimizar la eficiencia operativa mediante lógica de IA.</p>
-                    <h4 class="font-bold text-black mt-4 mb-2">2. Responsabilidad</h4>
-                    <ul class="list-disc pl-5 space-y-1 mb-4">
-                        <li>El cliente es responsable de la legalidad de sus datos.</li>
-                        <li>El cliente autoriza el uso de permisos OAuth exclusivamente para los flujos acordados.</li>
-                        <li>Stratiums no es responsable de fallos en APIs de terceros.</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 rounded-lg border border-gray-100 mt-8">
-                    <p class="font-medium text-black">Contacto para Privacidad: <a href="mailto:equipo@stratiums.com" class="underline">equipo@stratiums.com</a></p>
-                </div>
+                <p class="pillar-desc">Monitorización permanente de conductos que crecen con el flujo de transacciones de tu negocio.</p>
             </div>
         </div>
     </div>
-
-    <!-- Script de UI Crítica Integrado -->
+    
+    <!-- ── STREAMING_CHUNK: Rendering the Problem Section... ── -->
+    <!-- EL PROBLEMA -->
+    <section id="problema" class="s-cream">
+        <div class="si-wrap">
+            <div class="eyerow er-l rv"><div class="eyerow-line"></div><span class="eyerow-txt">El problema</span></div>
+            <h2 class="sh2-l rv d1">¿Te suena esto?</h2>
+            <p class="sh2-sub-l rv d2">Tu equipo es bueno. El problema es que gasta la mitad del día en tareas que debería hacer una máquina.</p>
+            <div class="ad-grid">
+                <div class="ad-col ad-b rv d1">
+                    <span class="ad-tag t-b">Sin automatizar</span>
+                    <h3 class="ad-h3-b">Procesos que drenan energía</h3>
+                    <p class="ad-p-b">Horas invisibles que se pierden cada semana en tareas que no generan valor. Tu equipo lo sabe. Tú lo sabes. Y sigue pasando.</p>
+                    <ul class="ad-list">
+                        <li class="ad-item ad-item-b"><div class="ad-dot" style="background:#D1D5DB"></div>Copiar datos entre sistemas a mano, con riesgo de error constante.</li>
+                        <li class="ad-item ad-item-b"><div class="ad-dot" style="background:#D1D5DB"></div>Seguimientos que dependen de que alguien se acuerde de hacerlos.</li>
+                        <li class="ad-item ad-item-b"><div class="ad-dot" style="background:#D1D5DB"></div>Informes que tardan horas y ya están desactualizados al terminar.</li>
+                        <li class="ad-item ad-item-b"><div class="ad-dot" style="background:#D1D5DB"></div>Errores que aparecen siempre en el peor momento.</li>
+                    </ul>
+                </div>
+                <div class="ad-col ad-a rv d2">
+                    <span class="ad-tag t-a">Con Stratiums</span>
+                    <h3 class="ad-h3-a">Una operación que se gestiona sola</h3>
+                    <p class="ad-p-a">El sistema hace el trabajo mientras tu equipo se dedica a lo que realmente mueve el negocio.</p>
+                    <ul class="ad-list">
+                        <li class="ad-item ad-item-a"><div class="ad-dot" style="background:var(--accent2)"></div>Tus sistemas sincronizan datos en tiempo real, sin intervención.</li>
+                        <li class="ad-item ad-item-a"><div class="ad-dot" style="background:var(--accent2)"></div>Seguimientos automáticos, en el momento exacto, con el mensaje correcto.</li>
+                        <li class="ad-item ad-item-a"><div class="ad-dot" style="background:var(--accent2)"></div>Informes generados al instante, siempre listos, sin esfuerzo manual.</li>
+                        <li class="ad-item ad-item-a"><div class="ad-dot" style="background:var(--accent2)"></div>Validaciones que eliminan el error humano antes de que ocurra.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Setting up key metrics elements... ── -->
+    <!-- MÉTRICAS -->
+    <section class="s-dark2">
+        <div class="si-wrap">
+            <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Resultados</span></div>
+            <h2 class="sh2-d rv d1">Números que importan</h2>
+            <p class="sh2-sub-d rv d2">No trabajamos para entregar software. Trabajamos para que veas un antes y un después en tus operaciones.</p>
+            <div class="met-grid">
+                <div class="met-card rv d1"><div class="met-v">30<span>%</span></div><div class="met-l">de tiempo recuperado de media en el primer trimestre</div></div>
+                <div class="met-card rv d2"><div class="met-v">−94<span>%</span></div><div class="met-l">de errores en procesos que antes eran manuales</div></div>
+                <div class="met-card rv d3"><div class="met-v">3<span>×</span></div><div class="met-l">más velocidad en la ejecución de flujos operativos</div></div>
+                <div class="met-card rv d4"><div class="met-v">8h<span>/sem</span></div><div class="met-l">ahorradas de media por cada persona del equipo</div></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Designing the Steps grid... ── -->
+    <!-- ENFOQUE -->
+    <section id="enfoque" class="s-dark">
+        <div class="si-wrap">
+            <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Nuestro enfoque</span></div>
+            <h2 class="sh2-d rv d1">Tres pasos. Sin fricción.</h2>
+            <p class="sh2-sub-d rv d2">No instalamos una herramienta y nos vamos. Construimos la arquitectura completa de tu operation.</p>
+            <div class="enf-grid">
+                <div class="enf-card rv d1">
+                    <div class="enf-n">01</div>
+                    <div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
+                    <h3 class="enf-h3">Diagnóstico real</h3>
+                    <p class="enf-p">Auditamos tus procesos actuales con detalle. Identificamos exactamente dónde se pierde tiempo y dinero, y cuál es el punto de mayor retorno.</p>
+                </div>
+                <div class="enf-card rv d2">
+                    <div class="enf-n">02</div>
+                    <div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+                    <h3 class="enf-h3">Construcción del sistema</h3>
+                    <p class="enf-p">Diseñamos e implementamos la arquitectura completa: integraciones, flujos de IA, reglas de decisión y capas de validación. Todo conectado, todo funcionando.</p>
+                </div>
+                <div class="enf-card rv d3">
+                    <div class="enf-n">03</div>
+                    <div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+                    <h3 class="enf-h3">Garantía y escala</h3>
+                    <p class="enf-p">Monitorizamos el rendimiento de cada flujo de forma continua. Si tu negocio crece, el sistema crece contigo. Si algo falla, lo sabemos antes que tú.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Setting up Services block... ── -->
+    <!-- SERVICIOS -->
+    <section id="soluciones" class="s-dark2">
+        <div class="si-wrap">
+            <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Servicios</span></div>
+            <h2 class="sh2-d rv d1">Lo que construimos</h2>
+            <p class="sh2-sub-d rv d2">Cada proyecto es distinto. Estos son los pilares sobre los que trabajamos.</p>
+            <div class="srv-grid">
+                <div class="srv-card rv d1">
+                    <div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                    <h3 class="srv-h3">Automatización de procesos</h3>
+                    <p class="srv-p">Flujos que conectan tus herramientas y eliminan el trabajo manual repetitivo. Tus aplicaciones trabajan juntas, solas, sin errores.</p>
+                </div>
+                <div class="srv-card rv d2">
+                    <div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+                    <h3 class="srv-h3">Integración de sistemas</h3>
+                    <p class="srv-p">Conectamos CRM, ERP y plataformas de datos para que todo hable entre sí en tiempo real, sin exportaciones ni copias manuales.</p>
+                </div>
+                <div class="srv-card rv d3">
+                    <div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                    <h3 class="srv-h3">Agentes de IA</h3>
+                    <p class="srv-p">Sistemas que no solo siguen reglas, sino que leen, interpretan y deciden. Recepción de facturas, gestión de historiales, clasificación de incidencias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Setting up Philosophy layout... ── -->
+    <!-- FILOSOFÍA -->
+    <section id="filosofia" class="s-cream">
+        <div class="si-wrap">
+            <div class="eyerow er-l rv" style="justify-content:center"><div class="eyerow-line"></div><span class="eyerow-txt">Filosofía</span><div class="eyerow-line"></div></div>
+            <div class="fil-wrap">
+                <blockquote class="fil-q rv d1">"El valor no está en la tarea ejecutada.<br>Está en el tiempo que <em>nunca más tendrás que gastar en ella.</em>"</blockquote>
+                <p class="fil-b rv d2">Stratiums nace con una convicción sencilla: el trabajo no debería depender de que alguien esté mirando. Construimos sistemas que trabajan mientras tu equipo piensa, crea y decide. No vendemos automatización. Devolvemos tiempo.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Rendering the slider snap layout... ── -->
+    <!-- REVIEWS SLIDER -->
+    <section id="opiniones" class="rev-section">
+        <div class="rev-head">
+            <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Opiniones</span></div>
+            <h2 class="sh2-d rv d1">Lo que dicen quienes ya trabajan así</h2>
+            <p class="sh2-sub-d rv d2">De sectores distintos, con el mismo resultado.</p>
+        </div>
+    
+        <div class="rev-slider-wrap rv d3">
+            <div class="rev-track" id="rev-track">
+                <!-- 1 Farmacéutica -->
+                <div class="rev-card">
+                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+                    <p class="rev-q">"Recibíamos facturas de proveedores en tres formatos distintos. Ahora el sistema las lee, las valida y las registra solo. Hemos eliminado casi todos los errores de conciliación."</p>
+                    <div class="rev-sep"></div>
+                    <div><div class="rev-name">Elena Puigdomènech</div><div class="rev-role">Técnica de administración · Sector farmacéutico</div></div>
+                </div>
+                <!-- 2 Clínica -->
+                <div class="rev-card">
+                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+                    <p class="rev-q">"El envío de historiales clínicos entre departamentos era manual y tardaba horas. Ahora ocurre de forma automática en cuanto se actualiza el registro. Nadie tiene que hacer nada."</p>
+                    <div class="rev-sep"></div>
+                    <div><div class="rev-name">Rafael Montoya</div><div class="rev-role">Coordinador de sistemas · Laboratorio clínico</div></div>
+                </div>
+                <!-- 3 Logística -->
+                <div class="rev-card">
+                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+                    <p class="rev-q">"Gestionamos miles de pedidos al mes. La conciliación era un dolor de cabeza semanal. Ahora ocurre sola, y tenemos visibilidad de todo en tiempo real."</p>
+                    <div class="rev-sep"></div>
+                    <div><div class="rev-name">Carlos Rondón</div><div class="rev-role">Gerente de operaciones · Distribución</div></div>
+                </div>
+                <!-- 4 Administración -->
+                <div class="rev-card">
+                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+                    <p class="rev-q">"Mi equipo de administración recuperó casi dos días a la semana. Ahora están en cosas que realmente hacen avanzar el negocio."</p>
+                    <div class="rev-sep"></div>
+                    <div><div class="rev-name">Marta Soldevila</div><div class="rev-role">Directora financiera · Consultoría</div></div>
+                </div>
+                <!-- 5 Fintech -->
+                <div class="rev-card">
+                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+                    <p class="rev-q">"Intentamos hacerlo con un perfil interno antes de contactarlos. No es lo mismo. Stratiums trajo una metodología que no hubiéramos desarrollado solos."</p>
+                    <div class="rev-sep"></div>
+                    <div><div class="rev-name">Tomás Echeverría</div><div class="rev-role">Responsable técnico · Fintech</div></div>
+                </div>
+                <!-- 6 Legal -->
+                <div class="rev-card">
+                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+                    <p class="rev-q">"Entienden el negocio antes de tocar nada. No te venden tecnología, te resuelven un problema real. Eso se nota desde la primera reunión."</p>
+                    <div class="rev-sep"></div>
+                    <div><div class="rev-name">Beatriz Fuentes</div><div class="rev-role">Socia gerente · Despacho jurídico</div></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="rev-controls rv d4">
+            <button class="rev-btn" id="rev-prev" aria-label="Anterior">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="rev-btn" id="rev-next" aria-label="Siguiente">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <div class="rev-dots" id="rev-dots"></div>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Rendering bottom CTA band... ── -->
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="cta-in">
+            <h2 class="cta-h2 rv">30 minutos pueden cambiar cómo opera tu empresa.</h2>
+            <p class="cta-sub rv d1">Auditoría gratuita. Sin compromiso. Te decimos exactamente qué automatizaríamos y cuánto tiempo recuperarías.</p>
+            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-white rv d2">Reservar mi auditoría gratuita <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+    </section>
+    
+    <!-- ── STREAMING_CHUNK: Rendering footer... ── -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="foot-in">
+            <div>
+                <div class="foot-brand">STRATIUMS</div>
+                <div class="foot-copy">© 2026 Stratiums Corporation. Todos los derechos reservados.</div>
+            </div>
+            <div class="foot-ls">
+                <button class="fl" id="legal-foot">Legal</button>
+                <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="fl">LinkedIn</a>
+                <a href="mailto:equipo@stratiums.com" class="fl">equipo@stratiums.com</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ── STREAMING_CHUNK: Creating Modal Legal windows... ── -->
+    <!-- MODAL LEGAL -->
+    <div class="modal-ov" id="legal-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <div class="modal-hd">
+                <span class="modal-ttl">Documentación Legal</span>
+                <button class="modal-cl" id="modal-cl" aria-label="Cerrar"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button>
+            </div>
+            <div class="modal-bd">
+                <h2>Política de Privacidad</h2>
+                <div class="m-mono">ÚLTIMA ACTUALIZACIÓN · ENERO 2026</div>
+                <p>En Stratiums Corporation, nuestra prioridad es garantizar la seguridad de la información de nuestros clientes. Actuamos exclusivamente como procesador de datos bajo tus instrucciones.</p>
+                <h4>1. Recopilación y Uso de Datos</h4>
+                <p>Solo recopilamos datos de cuentas de terceros cuando es necesario para las automatizaciones contratadas.</p>
+                <ul><li>Datos Directos: correo electrónico y detalles de flujos.</li><li>Datos de Terceros: mediante OAuth, solo para el propósito acordado.</li></ul>
+                <h4>2. Cumplimiento y Seguridad</h4>
+                <ul><li>Stratiums NUNCA compartirá ni venderá datos sensibles a terceros.</li><li>Podemos usar datos de ejecución anonimizados para mejorar nuestros sistemas. Nunca se vinculan a un cliente.</li><li>Puedes revocar el acceso en cualquier momento desde tu panel de Google.</li></ul>
+                <div class="m-hr"></div>
+                <h2>Términos y Condiciones</h2>
+                <div class="m-mono">ÚLTIMA ACTUALIZACIÓN · ENERO 2026</div>
+                <h4>1. Objeto del Servicio</h4>
+                <p>Stratiums diseña, implementa y monitorea arquitecturas de flujo digitales para optimizar la eficiencia operativa mediante IA.</p>
+                <h4>2. Responsabilidad</h4>
+                <ul><li>El cliente es responsable de la legalidad de sus datos.</li><li>El cliente autoriza el uso de permisos OAuth exclusivamente para los flujos acordados.</li><li>Stratiums no es responsable de fallos en APIs de terceros.</li></ul>
+                <div class="m-cbox"><strong>Contacto:</strong> <a href="mailto:equipo@stratiums.com">equipo@stratiums.com</a></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ── STREAMING_CHUNK: Integrating Chatwoot widget... ── -->
+    <!-- CHATWOOT -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. ANIMACIONES DE SCROLL
-            const elements = document.querySelectorAll('.reveal-element');
-            // Ocultar elementos si JS se carga (para que la animación se vea al hacer scroll)
-            elements.forEach(el => el.classList.add('pending-reveal'));
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.remove('pending-reveal');
-                    } else {
-                        // Rebobinar: volvemos a ocultar al salir (animación repetida)
-                        entry.target.classList.add('pending-reveal');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            elements.forEach(el => observer.observe(el));
-
-
-            // 2. MENÚ MÓVIL
-            const btnMobile = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            if(btnMobile && menu){
-                btnMobile.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                    const isHidden = menu.classList.contains('hidden');
-                    btnMobile.setAttribute('aria-expanded', !isHidden);
-                });
-                menu.querySelectorAll('a, button').forEach(l => {
-                    l.addEventListener('click', () => menu.classList.add('hidden'));
-                });
+    (function(d,t){
+        var B="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=B+"/packs/js/sdk.js"; g.async=true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){ window.chatwootSDK.run({ websiteToken:'A7doYQ7RPtQLAsfyCobUh3Ze', baseUrl:B }); };
+    })(document,"script");
+    </script>
+    
+    <!-- ── STREAMING_CHUNK: Orchestrating layout JS interactions... ── -->
+    <!-- SCRIPT UI -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+        // 1. REVEAL AL HACER SCROLL
+        const rvEls = document.querySelectorAll('.rv');
+        const obs = new IntersectionObserver(entries => entries.forEach(e => {
+            if(e.isIntersecting) {
+                e.target.classList.add('on');
+                obs.unobserve(e.target); // Solo animar la primera vez para mejor UX
             }
-
-            // 3. FALLBACK DE LOGO
-            const mainLogo = document.getElementById('main-logo');
-            const placeholder = document.getElementById('logo-placeholder');
-            if(mainLogo && placeholder){
-                mainLogo.onerror = function() {
-                    this.style.display = 'none';
-                    placeholder.style.display = 'flex';
-                };
-            }
-
-            // 4. SCROLL SUAVE SIN HASH
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                        if(targetId) history.replaceState(null, null, ' ');
-                    }
+        }), { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        rvEls.forEach(el => obs.observe(el));
+    
+        // 2. NAV SCROLL
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40), { passive: true });
+    
+        // 3. MENU MÓVIL CLÁSICO Y ANIMACIÓN DEL BOTÓN DE 3 RAYAS
+        const mobBtn = document.getElementById('mob-btn');
+        const mobMenu = document.getElementById('mob-menu');
+        if (mobBtn && mobMenu) {
+            mobBtn.addEventListener('click', () => {
+                const isOpen = mobMenu.classList.toggle('open');
+                nav.classList.toggle('open-menu', isOpen);
+                mobBtn.setAttribute('aria-expanded', isOpen);
+            });
+            mobMenu.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('click', () => {
+                    mobMenu.classList.remove('open');
+                    nav.classList.remove('open-menu');
+                    mobBtn.setAttribute('aria-expanded', 'false');
                 });
             });
-
-            // 5. MODALES LEGALES
-            const modal = document.getElementById('legal-modal');
-            const openModal = () => {
-                if(!modal) return;
-                modal.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                modal.setAttribute('aria-hidden', 'false');
-            };
-            const closeModal = () => {
-                if(!modal) return;
-                modal.classList.add('invisible', 'opacity-0', 'pointer-events-none');
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-                modal.setAttribute('aria-hidden', 'true');
-            };
-
-            document.getElementById('btn-legal-footer')?.addEventListener('click', openModal);
-            document.getElementById('btn-legal-mobile')?.addEventListener('click', openModal);
-            document.getElementById('btn-close-modal')?.addEventListener('click', closeModal);
-            document.getElementById('modal-bg')?.addEventListener('click', closeModal);
-
-            if(['#privacidad', '#terminos'].includes(window.location.hash)) openModal();
+        }
+    
+        // 4. SMOOTH SCROLL PARA ANCLAS
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const id = a.getAttribute('href');
+                if (id !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(id);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        history.replaceState(null, '', ' ');
+                    }
+                }
+            });
         });
-    </script>
+    
+        // 5. MODAL LEGAL
+        const modal = document.getElementById('legal-modal');
+        const openM  = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
+        const closeM = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
+        document.getElementById('legal-foot')?.addEventListener('click', openM);
+        document.getElementById('legal-mob')?.addEventListener('click', () => { mobMenu?.classList.remove('open'); openM(); });
+        document.getElementById('modal-cl')?.addEventListener('click', closeM);
+        modal?.addEventListener('click', e => { if (e.target === modal) closeM(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeM(); });
+    
+        // ── STREAMING_CHUNK: Running live pipeline console loops... ──
+        // 6. PIPELINE ANIMATION
+        const steps = document.querySelectorAll('.pl-step');
+        const pbF = document.getElementById('pb-f');
+        const pbP = document.getElementById('pb-p');
+        const times = ['0.11s','0.74s','1.02s','0.28s','0.09s'];
+        let cur = 0, busy = false;
+    
+        function runPL() {
+            if (busy) return;
+            busy = true; cur = 0;
+            steps.forEach((s, i) => {
+                s.classList.remove('active','done');
+                const ic = s.querySelector('.si');
+                ic.className = 'si p'; ic.textContent = '0'+(i+1);
+                s.querySelector('.st').textContent = '—';
+            });
+            pbF.style.width = '0%'; pbP.textContent = '0%';
+            tick();
+        }
+    
+        function tick() {
+            if (cur >= steps.length) { busy = false; setTimeout(runPL, 3500); return; }
+            const s = steps[cur], ic = s.querySelector('.si');
+            s.classList.add('active');
+            ic.className = 'si r';
+            ic.innerHTML = '<svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>';
+            
+            const pct = Math.round(((cur + 0.5) / steps.length) * 100);
+            pbF.style.width = pct + '%'; pbP.textContent = pct + '%';
+            
+            setTimeout(() => {
+                ic.className = 'si s';
+                ic.innerHTML = '<svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>';
+                s.querySelector('.st').textContent = times[cur];
+                s.classList.remove('active'); s.classList.add('done');
+                
+                const fp = Math.round(((cur + 1) / steps.length) * 100);
+                pbF.style.width = fp + '%'; pbP.textContent = fp + '%';
+                
+                cur++; setTimeout(tick, 200);
+            }, 750 + Math.random() * 500);
+        }
+    
+        const plObs = new IntersectionObserver(e => { if (e[0].isIntersecting && !busy) setTimeout(runPL, 800); }, { threshold: 0.25 });
+        const pw = document.getElementById('pipeline-widget');
+        if (pw) plObs.observe(pw);
+    
+        // ── STREAMING_CHUNK: Initializing snap slider dots synchronization... ──
+        // 7. REVIEWS SLIDER (CSS Scroll Snap con controles nativos y puntos)
+        const track = document.getElementById('rev-track');
+        const dotsEl = document.getElementById('rev-dots');
+        const cards = track.querySelectorAll('.rev-card');
+        
+        // Crear puntos automáticamente
+        cards.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'rev-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => {
+                cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            });
+            dotsEl.appendChild(dot);
+        });
 
-    <!-- Script Chatbot (Chatwoot) -->
-    <!-- Mantenido dentro del archivo para optimizar la carga crítica inicial -->
-   <script>
-  (function(d,t) {
-    var BASE_URL="https://app.chatwoot.com";
-    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=BASE_URL+"/packs/js/sdk.js";
-    g.async = true;
-    s.parentNode.insertBefore(g,s);
-    g.onload=function(){
-      window.chatwootSDK.run({
-        websiteToken: 'A7doYQ7RPtQLAsfyCobUh3Ze',
-        baseUrl: BASE_URL
-      })
-    }
-  })(document,"script");
-</script>
+        // Sincronizar puntos con el deslizamiento nativo (swipe/scroll)
+        track.addEventListener('scroll', () => {
+            const cardWidth = cards[0].offsetWidth + 20; 
+            let index = Math.round(track.scrollLeft / cardWidth);
+            
+            dotsEl.querySelectorAll('.rev-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === index);
+            });
+        }, { passive: true });
+
+        // Controles de botones
+        document.getElementById('rev-prev')?.addEventListener('click', () => {
+            track.scrollBy({ left: -(cards[0].offsetWidth + 20), behavior: 'smooth' });
+        });
+        document.getElementById('rev-next')?.addEventListener('click', () => {
+            track.scrollBy({ left: (cards[0].offsetWidth + 20), behavior: 'smooth' });
+        });
+    });
+    </script>
 </body>
 </html>
