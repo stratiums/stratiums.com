@@ -16,22 +16,39 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stratiums Corporation | Automatización e Inteligencia Artificial">
     <meta property="og:description" content="Sistemas de automatización con IA que eliminan el trabajo manual y recuperan el 30% del tiempo de tu equipo.">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="https://stratiums.com/logo.png">
     <meta property="og:url" content="https://stratiums.com/">
     
+    <!-- Schema.org Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stratiums Corporation",
+      "url": "https://stratiums.com",
+      "logo": "https://stratiums.com/logo.png",
+      "foundingDate": "2025-07",
+      "description": "Sistemas de automatización con IA para empresas. Eliminamos el trabajo manual y devolvemos tiempo a tu equipo.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "equipo@stratiums.com",
+        "contactType": "customer service"
+      },
+      "sameAs": ["https://www.linkedin.com/company/stratiums-corporation/"]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- CSP Actualizada: Permite de forma segura los recursos del chatbot Chatwoot, incluyendo estilos y sockets -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.chatwoot.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.chatwoot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://app.chatwoot.com; connect-src 'self' https://app.chatwoot.com wss://app.chatwoot.com; frame-src 'self' https://app.chatwoot.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()">
+    <meta http-equiv="Permissions-Policy" content="content='camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()'">
     
     <style>
-        /* ── BASE ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -40,9 +57,6 @@
             color: #fff;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            /* Espacio de seguridad inferior en móvil para que el chatbot flotante no tape botones importantes */
-            padding-bottom: 0;
-            transition: padding-bottom 0.3s ease;
         }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         a { text-decoration: none; }
@@ -63,12 +77,10 @@
             --bL: rgba(0,0,0,0.07);
         }
 
-        /* Ajustar padding-bottom en dispositivos móviles para el chatbot flotante */
         @media(max-width: 768px) {
             body { padding-bottom: 76px; }
         }
         
-        /* ── STREAMING_CHUNK: Setting up scrolling reveal animations... ── */
         .rv { 
             opacity: 0; 
             transform: translateY(24px); 
@@ -83,7 +95,7 @@
             .rv { opacity: 1; transform: none; transition: none; }
         }
         
-        /* ── NAV ── */
+        /* NAV */
         #nav {
             position: fixed; top: 0; width: 100%; z-index: 50;
             background: rgba(10,10,10,.88);
@@ -99,9 +111,7 @@
             max-width: 1280px; margin: 0 auto; padding: 0 2rem; 
             display: flex; justify-content: space-between; align-items: center; height: 70px; 
         }
-        @media(max-width: 480px) {
-            .nav-w { padding: 0 1.25rem; }
-        }
+        @media(max-width: 480px) { .nav-w { padding: 0 1.25rem; } }
         
         .nav-logo { display: flex; align-items: center; gap: 10px; }
         .nav-logo img { height: 34px; width: auto; opacity: .92; }
@@ -116,7 +126,6 @@
         .btn-nav { display: inline-flex; align-items: center; gap: 7px; padding: .52rem 1.3rem; background: var(--accent); color: #fff; font-size: .76rem; font-weight: 600; border-radius: 6px; transition: all .25s; }
         .btn-nav:hover { background: var(--accent2); box-shadow: 0 8px 28px rgba(37,99,235,.38); transform: translateY(-1px); }
         
-        /* Hamburguesa Clásica */
         .mob-btn { 
             display: none; 
             background: none; 
@@ -125,11 +134,9 @@
             padding: 8px; 
             z-index: 100;
         }
-        .hamburger-svg {
-            transition: transform 0.3s ease;
-        }
+        .hamburger-svg { transition: transform 0.3s ease; }
         .hamburger-svg line {
-            transition: transform 0.3s ease, opacity 0.2s ease, stroke 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.2s ease;
             transform-origin: center;
         }
         
@@ -162,11 +169,9 @@
             font-family: 'Inter', sans-serif !important; font-size: .9rem !important; font-weight: 600; border-bottom: none !important; 
         }
         
-        /* ── STREAMING_CHUNK: Styling the Hero section and grid... ── */
+        /* HERO */
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 2rem 80px; position: relative; overflow: hidden; }
-        @media(max-width: 480px) {
-            .hero { padding: 110px 1.25rem 60px; }
-        }
+        @media(max-width: 480px) { .hero { padding: 110px 1.25rem 60px; } }
         .hero-grid { 
             position: absolute; inset: 0; 
             background-image: linear-gradient(var(--bD) 1px,transparent 1px),linear-gradient(90deg,var(--bD) 1px,transparent 1px); 
@@ -182,9 +187,7 @@
             max-width: 1280px; margin: 0 auto; width: 100%; display: grid; 
             grid-template-columns: 1.12fr 0.88fr; gap: 64px; align-items: center; position: relative; z-index: 1; 
         }
-        @media(max-width: 1024px) { 
-            .hero-in { grid-template-columns: 1fr; gap: 48px; } 
-        }
+        @media(max-width: 1024px) { .hero-in { grid-template-columns: 1fr; gap: 48px; } }
         
         .eyepill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 14px; margin-bottom: 2rem; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.18); border-radius: 100px; }
         .ep-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
@@ -201,114 +204,53 @@
         .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: .9rem 2rem; background: transparent; color: var(--mutedD); font-size: .88rem; font-weight: 500; border-radius: 8px; border: 1px solid var(--bD); transition: all .3s; }
         .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
         
-        .hero-proof { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--bD); }
+        .hero-proof { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--bD); flex-wrap: wrap; }
         .hp-v { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 700; color: #fff; line-height: 1; }
         .hp-l { font-size: .68rem; color: var(--mutedD); margin-top: 5px; letter-spacing: .04em; }
-        
-        /* ── STREAMING_CHUNK: Designing the Pipeline terminal... ── */
-        .pipeline-wrap {
-            width: 100%;
-            max-width: 460px;
-            justify-self: center;
-        }
-        @media(max-width: 1024px) {
-            .pipeline-wrap { max-width: 100%; }
-        }
+
+        /* PIPELINE */
+        .pipeline-wrap { width: 100%; max-width: 460px; justify-self: center; }
+        @media(max-width: 1024px) { .pipeline-wrap { max-width: 100%; } }
         .pipeline { 
-            background: var(--dark2); 
-            border: 1px solid var(--bD); 
-            border-radius: 14px; 
-            overflow: hidden; 
-            font-family: 'JetBrains Mono', monospace; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
-            width: 100%;
+            background: var(--dark2); border: 1px solid var(--bD); border-radius: 14px; 
+            overflow: hidden; font-family: 'JetBrains Mono', monospace; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5); width: 100%;
         }
         .pl-hd { display: flex; align-items: center; gap: 7px; padding: 13px 18px; background: var(--dark3); border-bottom: 1px solid var(--bD); }
         .mac { width: 10px; height: 10px; border-radius: 50%; }
         .mac-r { background: #FF5F57; } .mac-y { background: #FFBD2E; } .mac-g { background: #28CA41; }
         .pl-title { font-size: .63rem; color: var(--mutedD); margin-left: 7px; letter-spacing: .05em; }
         .pl-body { padding: 18px; }
-        @media(max-width: 480px) {
-            .pl-body { padding: 14px; }
-        }
+        @media(max-width: 480px) { .pl-body { padding: 14px; } }
         .pl-step { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--bD); opacity: .28; transition: opacity .45s; }
         .pl-step:last-child { border-bottom: none; }
         .pl-step.active { opacity: 1; transform: scale(1.01); transition: all 0.3s; }
         .pl-step.done { opacity: .62; }
-        
         .si { width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .66rem; font-weight: 700; margin-top: 1px; }
         .si.p { background: var(--dark4); color: var(--mutedD); }
         .si.r { background: rgba(37,99,235,.18); color: var(--accent2); box-shadow: 0 0 10px rgba(37,99,235,.3); }
         .si.s { background: rgba(40,202,65,.13); color: #28CA41; }
-        
         .sl { font-size: .7rem; color: #fff; line-height: 1; margin-bottom: 4px; }
         .ss { font-size: .61rem; color: var(--mutedD); line-height: 1.4; word-break: break-all; }
         .st { margin-left: auto; font-size: .59rem; color: var(--mutedD); flex-shrink: 0; }
-        
         .pl-ft { padding: 14px 18px; background: var(--dark3); border-top: 1px solid var(--bD); display: flex; align-items: center; gap: 12px; }
         .pf-l { font-size: .59rem; color: var(--mutedD); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
         .pb-w { flex: 1; height: 3px; background: var(--bD); border-radius: 2px; overflow: hidden; }
         .pb-f { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; width: 0%; transition: width .4s ease; }
         .pf-p { font-size: .66rem; color: var(--accent2); font-weight: 500; min-width: 25px; text-align: right; }
         
-        /* ── STREAMING_CHUNK: Styling the static trust pillars... ── */
-        .trust-pillars {
-            background: var(--dark2);
-            border-top: 1px solid var(--bD);
-            border-bottom: 1px solid var(--bD);
-            padding: 3rem 2rem;
-        }
-        @media(max-width: 480px) {
-            .trust-pillars { padding: 2.25rem 1.25rem; }
-        }
-        .pillars-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2.5rem;
-        }
-        @media (max-width: 1024px) {
-            .pillars-inner {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        @media (max-width: 600px) {
-            .pillars-inner {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        .pillar-card {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .pillar-header {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .pillar-bullet {
-            width: 4px;
-            height: 4px;
-            background: var(--accent2);
-            border-radius: 50%;
-            box-shadow: 0 0 6px var(--accent2);
-        }
-        .pillar-desc {
-            font-size: 0.8rem;
-            color: var(--mutedD);
-            line-height: 1.5;
-            font-weight: 300;
-        }
+        /* TRUST PILLARS */
+        .trust-pillars { background: var(--dark2); border-top: 1px solid var(--bD); border-bottom: 1px solid var(--bD); padding: 3rem 2rem; }
+        @media(max-width: 480px) { .trust-pillars { padding: 2.25rem 1.25rem; } }
+        .pillars-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+        @media (max-width: 1024px) { .pillars-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; } }
+        @media (max-width: 600px) { .pillars-inner { grid-template-columns: 1fr; gap: 1.5rem; } }
+        .pillar-card { display: flex; flex-direction: column; gap: 8px; }
+        .pillar-header { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+        .pillar-bullet { width: 4px; height: 4px; background: var(--accent2); border-radius: 50%; box-shadow: 0 0 6px var(--accent2); flex-shrink: 0; }
+        .pillar-desc { font-size: 0.8rem; color: var(--mutedD); line-height: 1.5; font-weight: 300; }
         
-        /* ── SECTIONS COMUNES ── */
+        /* SECTIONS */
         .s-dark { background: var(--dark); color: #fff; }
         .s-dark2 { background: var(--dark2); color: #fff; }
         .s-cream { background: var(--cream); color: var(--dark); }
@@ -326,23 +268,20 @@
         .sh2-sub-d { font-size: .95rem; color: var(--mutedD); margin-top: .7rem; line-height: 1.78; font-weight: 300; max-width: 550px; }
         .sh2-sub-l { font-size: .95rem; color: var(--muted); margin-top: .7rem; line-height: 1.78; font-weight: 300; max-width: 550px; }
         
-        /* ── STREAMING_CHUNK: Styling before/after grid... ── */
+        /* BEFORE/AFTER */
         .ad-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; border-radius: 16px; overflow: hidden; border: 1px solid var(--cream2); box-shadow: 0 20px 40px rgba(0,0,0,.04); }
         @media(max-width: 768px) { .ad-grid { grid-template-columns: 1fr; } }
-        .ad-col { padding: 46px 40px; transition: background 0.3s; }
+        .ad-col { padding: 46px 40px; }
         @media(max-width: 768px) { .ad-col { padding: 30px 22px; } }
         .ad-b { background: var(--cream); }
         .ad-a { background: var(--dark); color: #fff; }
-        
         .ad-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: .6rem; padding: 5px 12px; border-radius: 4px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.35rem; font-weight: 600; }
         .t-b { background: rgba(0,0,0,.06); color: var(--muted); }
         .t-a { background: rgba(37,99,235,.14); color: var(--accent2); }
-        
         .ad-h3-b { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--dark); margin-bottom: .85rem; }
         .ad-h3-a { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: .85rem; }
         .ad-p-b { font-size: .88rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
         .ad-p-a { font-size: .88rem; color: var(--mutedD); line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
-        
         .ad-list { list-style: none; }
         .ad-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; font-size: .85rem; border-top: 1px solid; transition: transform 0.2s; }
         .ad-item:hover { transform: translateX(3px); }
@@ -351,7 +290,7 @@
         .ad-item:first-child { border-top: none; }
         .ad-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
         
-        /* ── STREAMING_CHUNK: Styling metrics... ── */
+        /* METRICS */
         .met-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--bD); border: 1px solid var(--bD); border-radius: 16px; overflow: hidden; margin-top: 52px; }
         @media(max-width: 1024px) { .met-grid { grid-template-columns: repeat(2, 1fr); } }
         @media(max-width: 480px) { .met-grid { grid-template-columns: 1fr; } }
@@ -361,8 +300,9 @@
         .met-v { font-family: 'Playfair Display', serif; font-size: clamp(2.3rem, 4vw, 3.5rem); font-weight: 700; color: var(--dark); line-height: 1; }
         .met-v span { font-size: .52em; color: var(--accent); }
         .met-l { font-size: .8rem; color: var(--muted); margin-top: 10px; line-height: 1.55; font-weight: 400; }
+        .met-note { font-size: .68rem; color: var(--muted); margin-top: 6px; font-style: italic; opacity: .7; }
         
-        /* ── STREAMING_CHUNK: Styling methodology approach... ── */
+        /* ENFOQUE */
         .enf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bD); border: 1px solid var(--bD); border-radius: 16px; overflow: hidden; margin-top: 52px; }
         @media(max-width: 768px) { .enf-grid { grid-template-columns: 1fr; } }
         .enf-card { background: var(--dark2); padding: 44px 38px; position: relative; transition: background .3s; }
@@ -375,7 +315,7 @@
         .enf-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: .78rem; }
         .enf-p { font-size: .85rem; color: var(--mutedD); line-height: 1.85; font-weight: 300; }
         
-        /* ── STREAMING_CHUNK: Styling service cards... ── */
+        /* SERVICIOS */
         .srv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 52px; }
         @media(max-width: 1024px) { .srv-grid { grid-template-columns: 1fr 1fr; } }
         @media(max-width: 640px) { .srv-grid { grid-template-columns: 1fr; } }
@@ -388,73 +328,127 @@
         .srv-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: .75rem; }
         .srv-p { font-size: .85rem; color: var(--mutedD); line-height: 1.82; font-weight: 300; }
         
-        /* ── STREAMING_CHUNK: Styling philosophy quote... ── */
+        /* FILOSOFIA */
         .fil-wrap { max-width: 760px; margin: 0 auto; text-align: center; padding: 0 1rem; }
         .fil-q { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 400; color: var(--dark); line-height: 1.3; margin: 2rem 0; letter-spacing: -.01em; }
         .fil-q em { font-style: italic; color: var(--muted); }
         .fil-b { font-size: .95rem; color: var(--muted); line-height: 1.95; font-weight: 300; }
+
+        /* CLIENTES LOGO STRIP */
+        .logos-section { background: var(--dark); border-top: 1px solid var(--bD); border-bottom: 1px solid var(--bD); padding: 2.5rem 2rem; }
+        .logos-inner { max-width: 1280px; margin: 0 auto; }
+        .logos-label { font-family: 'JetBrains Mono', monospace; font-size: .6rem; color: var(--mutedD); letter-spacing: .18em; text-transform: uppercase; text-align: center; margin-bottom: 1.8rem; }
+        .logos-grid { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
+        .logo-pill { 
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 22px; border: 1px solid var(--bD); border-radius: 8px;
+            font-family: 'Playfair Display', serif; font-size: .9rem; font-weight: 700; 
+            color: rgba(255,255,255,.35); letter-spacing: .05em;
+            transition: all .3s;
+        }
+        .logo-pill:hover { color: rgba(255,255,255,.65); border-color: rgba(255,255,255,.12); }
+        .logo-sector { font-family: 'Inter', sans-serif; font-size: .62rem; color: var(--mutedD); font-weight: 300; letter-spacing: .06em; opacity: .7; }
         
-        /* ── STREAMING_CHUNK: Styling the snapslider for testimonials... ── */
+        /* REVIEWS */
         .rev-section { background: var(--dark); padding: 100px 0; }
         @media(max-width: 768px) { .rev-section { padding: 68px 0; } }
         .rev-head { max-width: 1280px; margin: 0 auto; padding: 0 2rem 52px; }
-        
         .rev-slider-wrap { position: relative; width: 100%; }
         .rev-track { 
-            display: flex; 
-            gap: 20px; 
-            padding: 0 2rem; 
-            overflow-x: auto; 
-            scroll-snap-type: x mandatory; 
-            scroll-behavior: smooth; 
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE */
+            display: flex; gap: 20px; padding: 0 2rem; 
+            overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; 
+            scrollbar-width: none; -ms-overflow-style: none;
         }
-        .rev-track::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
-        
+        .rev-track::-webkit-scrollbar { display: none; }
         .rev-card {
-            flex: 0 0 380px; 
-            scroll-snap-align: center;
+            flex: 0 0 380px; scroll-snap-align: center;
             background: var(--dark2); border: 1px solid var(--bD);
             border-radius: 14px; padding: 34px 30px;
             display: flex; flex-direction: column; gap: 1.2rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s;
         }
+        .rev-card:hover { border-color: rgba(37,99,235,.22); }
         @media(max-width: 480px) { .rev-card { flex: 0 0 300px; } }
-        
         .rev-stars { display: flex; gap: 3px; }
         .rev-star { color: #F59E0B; font-size: .85rem; }
         .rev-q { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; line-height: 1.6; font-style: italic; flex: 1; }
         .rev-sep { width: 22px; height: 1px; background: var(--bD); }
         .rev-name { font-size: .85rem; font-weight: 600; color: #fff; }
         .rev-role { font-size: .75rem; color: var(--mutedD); font-weight: 400; margin-top: 3px; }
-        
-        .rev-controls { display: flex; gap: 10px; margin-top: 36px; padding: 0 2rem; max-width: 1280px; margin-left: auto; margin-right: auto; }
-        .rev-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--dark2); border: 1px solid var(--bD); color: var(--mutedD); display: flex; align-items: center; justify-content: center; transition: all .25s; }
+        .rev-controls { display: flex; gap: 10px; margin-top: 36px; padding: 0 2rem; max-width: 1280px; margin-left: auto; margin-right: auto; align-items: center; }
+        .rev-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--dark2); border: 1px solid var(--bD); color: var(--mutedD); display: flex; align-items: center; justify-content: center; transition: all .25s; flex-shrink: 0; }
         .rev-btn:hover { background: var(--dark3); border-color: rgba(255,255,255,.14); color: #fff; }
         .rev-dots { display: flex; align-items: center; gap: 6px; margin-left: 4px; }
         .rev-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--bD); transition: all .3s; cursor: pointer; }
         .rev-dot.active { width: 20px; border-radius: 3px; background: var(--accent); }
+
+        /* CONTACT FORM SECTION */
+        .contact-section { background: var(--dark2); border-top: 1px solid var(--bD); }
+        .contact-inner { max-width: 1280px; margin: 0 auto; padding: 100px 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        @media(max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
+        @media(max-width: 768px) { .contact-inner { padding: 68px 1.5rem; } }
+        .contact-left { }
+        .contact-label { font-family: 'JetBrains Mono', monospace; font-size: .68rem; letter-spacing: .04em; }
+        .contact-tagline { font-size: .95rem; color: var(--mutedD); line-height: 1.7; margin-top: 1rem; font-weight: 300; max-width: 400px; }
+        .contact-info { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+        .contact-info-item { display: flex; align-items: center; gap: 12px; font-size: .85rem; color: var(--mutedD); }
+        .contact-info-dot { width: 6px; height: 6px; background: var(--accent2); border-radius: 50%; flex-shrink: 0; }
+
+        .contact-form { background: var(--dark3); border: 1px solid var(--bD); border-radius: 16px; padding: 40px 36px; }
+        @media(max-width: 480px) { .contact-form { padding: 28px 20px; } }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: .74rem; font-weight: 500; color: var(--mutedD); margin-bottom: 8px; letter-spacing: .04em; text-transform: uppercase; }
+        .form-group input,
+        .form-group select,
+        .form-group textarea { 
+            width: 100%; background: var(--dark4); border: 1px solid rgba(255,255,255,.08); 
+            border-radius: 8px; padding: 12px 16px; color: #fff; font-family: 'Inter', sans-serif; 
+            font-size: .9rem; font-weight: 300; transition: border-color .2s, box-shadow .2s;
+            outline: none; appearance: none; -webkit-appearance: none;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(255,255,255,.22); }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: rgba(37,99,235,.5); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+        .form-group select { cursor: pointer; color: rgba(255,255,255,.7); }
+        .form-group select option { background: var(--dark3); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .btn-submit { 
+            width: 100%; padding: 1rem; background: var(--accent); color: #fff; 
+            font-size: .9rem; font-weight: 600; border: none; border-radius: 8px; 
+            transition: all .3s; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn-submit:hover { background: var(--accent2); box-shadow: 0 12px 32px rgba(37,99,235,.38); transform: translateY(-1px); }
+        .form-privacy { font-size: .7rem; color: var(--mutedD); text-align: center; margin-top: 14px; line-height: 1.5; opacity: .7; }
+        .form-success { display: none; text-align: center; padding: 3rem 2rem; }
+        .form-success.show { display: block; }
+        .form-success-icon { width: 56px; height: 56px; background: rgba(40,202,65,.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
+        .form-success h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; margin-bottom: .5rem; }
+        .form-success p { font-size: .88rem; color: var(--mutedD); line-height: 1.7; }
         
-        /* ── CTA BAND ── */
+        /* CTA BAND */
         .cta-band { background: var(--accent); padding: 88px 2rem; text-align: center; position: relative; overflow: hidden; }
         .cta-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.06) 0%, transparent 55%); }
         .cta-in { position: relative; z-index: 1; }
         .cta-h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.85rem, 3.5vw, 2.9rem); color: #fff; font-weight: 700; margin-bottom: .88rem; }
-        .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.8); margin-bottom: 2.5rem; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.85); margin-bottom: 2.5rem; font-weight: 300; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
         .btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 1.1rem 2.8rem; background: #fff; color: var(--accent); font-size: .95rem; font-weight: 700; border-radius: 8px; transition: all .3s; }
         .btn-white:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(0,0,0,.22); }
+        .cta-note { font-size: .76rem; color: rgba(255,255,255,.55); margin-top: 1.2rem; }
         
-        /* ── FOOTER ── */
-        footer { background: #050505; color: #fff; padding: 60px 2rem 100px; border-top: 1px solid var(--bD); }
+        /* FOOTER */
+        footer { background: #050505; color: #fff; padding: 60px 2rem 40px; border-top: 1px solid var(--bD); }
         .foot-in { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
         .foot-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: .05em; }
         .foot-copy { font-size: .68rem; color: var(--mutedD); margin-top: 8px; letter-spacing: .07em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
-        .foot-ls { display: flex; gap: 2rem; align-items: center; }
+        .foot-ls { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
         .fl { font-size: .8rem; color: var(--mutedD); background: none; border: none; transition: color .2s; }
         .fl:hover { color: #fff; }
         
-        /* ── MODAL ── */
+        /* MODAL */
         .modal-ov { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.78); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: all .35s; }
         .modal-ov.open { opacity: 1; visibility: visible; }
         .modal-box { background: var(--cream); color: var(--dark); width: 100%; max-width: 700px; max-height: 86vh; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transform: scale(.97); transition: transform .35s cubic-bezier(.22,1,.36,1); border: 1px solid var(--cream2); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
@@ -476,7 +470,6 @@
 </head>
 <body>
     
-    <!-- ── STREAMING_CHUNK: Building the Navigation Bar... ── -->
     <!-- NAV -->
     <nav id="nav">
         <div class="nav-w">
@@ -490,14 +483,13 @@
                 <a href="#enfoque" class="nla">Enfoque</a>
                 <a href="#soluciones" class="nla">Servicios</a>
                 <a href="#opiniones" class="nla">Opiniones</a>
+                <a href="#contacto" class="nla">Contacto</a>
                 <div class="ndiv"></div>
                 <a href="https://www.linkedin.com/company/stratiums-corporation/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--mutedD);transition:color .2s" onmouseenter="this.style.color='#3B82F6'" onmouseleave="this.style.color='var(--mutedD)'">
                     <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.265-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
                 <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-nav">Agendar reunión <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
-            
-            <!-- Botón de Menú de 3 Rayas Tradicional Animado con SVG -->
             <button class="mob-btn" id="mob-btn" aria-label="Menú" aria-expanded="false" aria-controls="mob-menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hamburger-svg">
                     <line x1="4" y1="6" x2="20" y2="6" class="line-top"></line>
@@ -511,13 +503,12 @@
             <a href="#enfoque">Enfoque</a>
             <a href="#soluciones">Servicios</a>
             <a href="#opiniones">Opiniones</a>
-            <a href="mailto:equipo@stratiums.com">Contacto</a>
+            <a href="#contacto">Contacto</a>
             <button id="legal-mob">Legal</button>
             <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="mob-cta">Agendar reunión →</a>
         </div>
     </nav>
     
-    <!-- ── STREAMING_CHUNK: Designing the Hero fold and Pipeline section... ── -->
     <!-- HERO -->
     <section class="hero">
         <div class="hero-grid" aria-hidden="true"></div>
@@ -533,12 +524,10 @@
                 </div>
                 <div class="hero-proof rv d4">
                     <div><div class="hp-v">30<span style="font-size:1rem;color:var(--accent2)">%</span></div><div class="hp-l">Tiempo recuperado</div></div>
-                    <div><div class="hp-v">0</div><div class="hp-l">Errores en producción</div></div>
+                    <div><div class="hp-v">−94<span style="font-size:1rem;color:var(--accent2)">%</span></div><div class="hp-l">Errores operativos</div></div>
                     <div><div class="hp-v">24/7</div><div class="hp-l">Operación continua</div></div>
                 </div>
             </div>
-    
-            <!-- Pipeline Widget -->
             <div class="rv d2 pipeline-wrap" id="pipeline-widget">
                 <div class="pipeline">
                     <div class="pl-hd">
@@ -562,42 +551,28 @@
         </div>
     </section>
     
-    <!-- ── STREAMING_CHUNK: Setting up elegant static Trust Pillars... ── -->
-    <!-- ── PILARES DE NEGOCIO ESTÁTICOS (Elegantes y fijos para mobile/desktop) ── -->
+    <!-- TRUST PILLARS -->
     <div class="trust-pillars">
         <div class="pillars-inner">
             <div class="pillar-card">
-                <div class="pillar-header">
-                    <div class="pillar-bullet"></div>
-                    <span>Precisión del 100%</span>
-                </div>
+                <div class="pillar-header"><div class="pillar-bullet"></div><span>Precisión del 100%</span></div>
                 <p class="pillar-desc">Algoritmos deterministas que eliminan el error humano y consolidan reportes sin fallos.</p>
             </div>
             <div class="pillar-card">
-                <div class="pillar-header">
-                    <div class="pillar-bullet"></div>
-                    <span>Integración de APIs</span>
-                </div>
+                <div class="pillar-header"><div class="pillar-bullet"></div><span>Integración de APIs</span></div>
                 <p class="pillar-desc">Sincronización robusta de CRM, ERP y bases de datos heredadas sin pérdida de paquetes.</p>
             </div>
             <div class="pillar-card">
-                <div class="pillar-header">
-                    <div class="pillar-bullet"></div>
-                    <span>Modelos Seguros</span>
-                </div>
-                <p class="pillar-desc">Arquitectura de IA optimizada bajo estrictos controles de ciberseguridad y privacidad.</p>
+                <div class="pillar-header"><div class="pillar-bullet"></div><span>Modelos seguros</span></div>
+                <p class="pillar-desc">Arquitectura de IA bajo estrictos controles de ciberseguridad y privacidad RGPD.</p>
             </div>
             <div class="pillar-card">
-                <div class="pillar-header">
-                    <div class="pillar-bullet"></div>
-                    <span>Escala Inmediata</span>
-                </div>
-                <p class="pillar-desc">Monitorización permanente de conductos que crecen con el flujo de transacciones de tu negocio.</p>
+                <div class="pillar-header"><div class="pillar-bullet"></div><span>Escala inmediata</span></div>
+                <p class="pillar-desc">Infraestructura que crece con el volumen de transacciones de tu negocio, sin fricciones.</p>
             </div>
         </div>
     </div>
     
-    <!-- ── STREAMING_CHUNK: Rendering the Problem Section... ── -->
     <!-- EL PROBLEMA -->
     <section id="problema" class="s-cream">
         <div class="si-wrap">
@@ -631,7 +606,6 @@
         </div>
     </section>
     
-    <!-- ── STREAMING_CHUNK: Setting up key metrics elements... ── -->
     <!-- MÉTRICAS -->
     <section class="s-dark2">
         <div class="si-wrap">
@@ -639,21 +613,36 @@
             <h2 class="sh2-d rv d1">Números que importan</h2>
             <p class="sh2-sub-d rv d2">No trabajamos para entregar software. Trabajamos para que veas un antes y un después en tus operaciones.</p>
             <div class="met-grid">
-                <div class="met-card rv d1"><div class="met-v">30<span>%</span></div><div class="met-l">de tiempo recuperado de media en el primer trimestre</div></div>
-                <div class="met-card rv d2"><div class="met-v">−94<span>%</span></div><div class="met-l">de errores en procesos que antes eran manuales</div></div>
-                <div class="met-card rv d3"><div class="met-v">3<span>×</span></div><div class="met-l">más velocidad en la ejecución de flujos operativos</div></div>
-                <div class="met-card rv d4"><div class="met-v">8h<span>/sem</span></div><div class="met-l">ahorradas de media por cada persona del equipo</div></div>
+                <div class="met-card rv d1">
+                    <div class="met-v">30<span>%</span></div>
+                    <div class="met-l">de tiempo recuperado en los primeros 90 días</div>
+                    <div class="met-note">Media entre clientes 2025–2026</div>
+                </div>
+                <div class="met-card rv d2">
+                    <div class="met-v">−94<span>%</span></div>
+                    <div class="met-l">de errores en procesos antes manuales</div>
+                    <div class="met-note">Medido en producción</div>
+                </div>
+                <div class="met-card rv d3">
+                    <div class="met-v">3<span>×</span></div>
+                    <div class="met-l">más velocidad en la ejecución de flujos operativos</div>
+                    <div class="met-note">Comparado con el proceso previo</div>
+                </div>
+                <div class="met-card rv d4">
+                    <div class="met-v">8h<span>/sem</span></div>
+                    <div class="met-l">ahorradas de media por persona del equipo</div>
+                    <div class="met-note">Media entre clientes 2025–2026</div>
+                </div>
             </div>
         </div>
     </section>
     
-    <!-- ── STREAMING_CHUNK: Designing the Steps grid... ── -->
     <!-- ENFOQUE -->
     <section id="enfoque" class="s-dark">
         <div class="si-wrap">
             <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Nuestro enfoque</span></div>
             <h2 class="sh2-d rv d1">Tres pasos. Sin fricción.</h2>
-            <p class="sh2-sub-d rv d2">No instalamos una herramienta y nos vamos. Construimos la arquitectura completa de tu operation.</p>
+            <p class="sh2-sub-d rv d2">No instalamos una herramienta y nos vamos. Construimos la arquitectura completa de tu operación.</p>
             <div class="enf-grid">
                 <div class="enf-card rv d1">
                     <div class="enf-n">01</div>
@@ -677,7 +666,6 @@
         </div>
     </section>
     
-    <!-- ── STREAMING_CHUNK: Setting up Services block... ── -->
     <!-- SERVICIOS -->
     <section id="soluciones" class="s-dark2">
         <div class="si-wrap">
@@ -704,65 +692,85 @@
         </div>
     </section>
     
-    <!-- ── STREAMING_CHUNK: Setting up Philosophy layout... ── -->
     <!-- FILOSOFÍA -->
     <section id="filosofia" class="s-cream">
         <div class="si-wrap">
             <div class="eyerow er-l rv" style="justify-content:center"><div class="eyerow-line"></div><span class="eyerow-txt">Filosofía</span><div class="eyerow-line"></div></div>
             <div class="fil-wrap">
                 <blockquote class="fil-q rv d1">"El valor no está en la tarea ejecutada.<br>Está en el tiempo que <em>nunca más tendrás que gastar en ella.</em>"</blockquote>
-                <p class="fil-b rv d2">Stratiums nace con una convicción sencilla: el trabajo no debería depender de que alguien esté mirando. Construimos sistemas que trabajan mientras tu equipo piensa, crea y decide. No vendemos automatización. Devolvemos tiempo.</p>
+                <p class="fil-b rv d2">Stratiums nació en julio de 2025 con una convicción sencilla: el trabajo no debería depender de que alguien esté mirando. Construimos sistemas que trabajan mientras tu equipo piensa, crea y decide. No vendemos automatización. Devolvemos tiempo.</p>
             </div>
         </div>
     </section>
+
+    <!-- LOGO STRIP / SECTORES -->
+    <div class="logos-section rv">
+        <div class="logos-inner">
+            <p class="logos-label">Sectores en los que ya trabajamos</p>
+            <div class="logos-grid">
+                <div class="logo-pill">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    Farmacéutico
+                </div>
+                <div class="logo-pill">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+                    Finanzas
+                </div>
+                <div class="logo-pill">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+                    Logística
+                </div>
+                <div class="logo-pill">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                    Legal
+                </div>
+                <div class="logo-pill">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
+                    Consultoría
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <!-- ── STREAMING_CHUNK: Rendering the slider snap layout... ── -->
-    <!-- REVIEWS SLIDER -->
+    <!-- REVIEWS -->
     <section id="opiniones" class="rev-section">
         <div class="rev-head">
             <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Opiniones</span></div>
             <h2 class="sh2-d rv d1">Lo que dicen quienes ya trabajan así</h2>
             <p class="sh2-sub-d rv d2">De sectores distintos, con el mismo resultado.</p>
         </div>
-    
         <div class="rev-slider-wrap rv d3">
             <div class="rev-track" id="rev-track">
-                <!-- 1 Farmacéutica -->
                 <div class="rev-card">
                     <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
                     <p class="rev-q">"Recibíamos facturas de proveedores en tres formatos distintos. Ahora el sistema las lee, las valida y las registra solo. Hemos eliminado casi todos los errores de conciliación."</p>
                     <div class="rev-sep"></div>
                     <div><div class="rev-name">Elena Puigdomènech</div><div class="rev-role">Técnica de administración · Sector farmacéutico</div></div>
                 </div>
-                <!-- 2 Clínica -->
                 <div class="rev-card">
                     <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
                     <p class="rev-q">"El envío de historiales clínicos entre departamentos era manual y tardaba horas. Ahora ocurre de forma automática en cuanto se actualiza el registro. Nadie tiene que hacer nada."</p>
                     <div class="rev-sep"></div>
                     <div><div class="rev-name">Rafael Montoya</div><div class="rev-role">Coordinador de sistemas · Laboratorio clínico</div></div>
                 </div>
-                <!-- 3 Logística -->
                 <div class="rev-card">
                     <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
                     <p class="rev-q">"Gestionamos miles de pedidos al mes. La conciliación era un dolor de cabeza semanal. Ahora ocurre sola, y tenemos visibilidad de todo en tiempo real."</p>
                     <div class="rev-sep"></div>
                     <div><div class="rev-name">Carlos Rondón</div><div class="rev-role">Gerente de operaciones · Distribución</div></div>
                 </div>
-                <!-- 4 Administración -->
                 <div class="rev-card">
                     <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
                     <p class="rev-q">"Mi equipo de administración recuperó casi dos días a la semana. Ahora están en cosas que realmente hacen avanzar el negocio."</p>
                     <div class="rev-sep"></div>
                     <div><div class="rev-name">Marta Soldevila</div><div class="rev-role">Directora financiera · Consultoría</div></div>
                 </div>
-                <!-- 5 Fintech -->
                 <div class="rev-card">
                     <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
                     <p class="rev-q">"Intentamos hacerlo con un perfil interno antes de contactarlos. No es lo mismo. Stratiums trajo una metodología que no hubiéramos desarrollado solos."</p>
                     <div class="rev-sep"></div>
                     <div><div class="rev-name">Tomás Echeverría</div><div class="rev-role">Responsable técnico · Fintech</div></div>
                 </div>
-                <!-- 6 Legal -->
                 <div class="rev-card">
                     <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
                     <p class="rev-q">"Entienden el negocio antes de tocar nada. No te venden tecnología, te resuelven un problema real. Eso se nota desde la primera reunión."</p>
@@ -770,12 +778,101 @@
                     <div><div class="rev-name">Beatriz Fuentes</div><div class="rev-role">Socia gerente · Despacho jurídico</div></div>
                 </div>
             </div>
-    <!-- ── FOOTER ── -->
+        </div>
+        <div class="rev-controls">
+            <button class="rev-btn" id="rev-prev" aria-label="Anterior">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="rev-btn" id="rev-next" aria-label="Siguiente">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <div class="rev-dots" id="rev-dots"></div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-inner">
+            <div class="contact-left rv">
+                <div class="eyerow er-d"><div class="eyerow-line"></div><span class="eyerow-txt">Contacto</span></div>
+                <h2 class="sh2-d" style="margin-top:.8rem">¿Hablamos de tu operación?</h2>
+                <p class="contact-tagline">Cuéntanos brevemente qué proceso te quita más tiempo. Te respondemos en menos de 24 horas con una valoración inicial, sin compromiso.</p>
+                <div class="contact-info">
+                    <div class="contact-info-item"><div class="contact-info-dot"></div>Auditoría inicial gratuita</div>
+                    <div class="contact-info-item"><div class="contact-info-dot"></div>Respuesta en menos de 24 horas</div>
+                    <div class="contact-info-item"><div class="contact-info-dot"></div>Sin compromisos ni permanencia</div>
+                    <div class="contact-info-item"><div class="contact-info-dot"></div><a href="mailto:equipo@stratiums.com" style="color:var(--mutedD);transition:color .2s" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='var(--mutedD)'">equipo@stratiums.com</a></div>
+                </div>
+            </div>
+            <div class="contact-form rv d2" id="contact-form-wrap">
+                <div id="form-fields">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-name">Nombre</label>
+                            <input type="text" id="f-name" placeholder="Tu nombre" autocomplete="given-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="f-company">Empresa</label>
+                            <input type="text" id="f-company" placeholder="Nombre de la empresa" autocomplete="organization">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="f-email">Email de trabajo</label>
+                        <input type="email" id="f-email" placeholder="tu@empresa.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="f-sector">Sector</label>
+                        <select id="f-sector">
+                            <option value="" disabled selected>Selecciona tu sector</option>
+                            <option>Farmacéutico / Sanidad</option>
+                            <option>Logística / Distribución</option>
+                            <option>Finanzas / Fintech</option>
+                            <option>Legal / Consultoría</option>
+                            <option>Industria / Manufactura</option>
+                            <option>Tecnología / SaaS</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="f-problem">¿Qué proceso quieres automatizar?</label>
+                        <textarea id="f-problem" placeholder="Ej: Conciliación de facturas, seguimiento de leads, generación de informes mensuales..."></textarea>
+                    </div>
+                    <button class="btn-submit" id="btn-submit">
+                        Enviar consulta
+                        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </button>
+                    <p class="form-privacy">Tratamos tus datos según el RGPD. Solo los usamos para responderte.</p>
+                </div>
+                <div class="form-success" id="form-success">
+                    <div class="form-success-icon">
+                        <svg width="26" height="26" fill="none" stroke="#28CA41" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h3>Recibido</h3>
+                    <p>Hemos recibido tu mensaje. Te contactamos en menos de 24 horas con una primera valoración.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+        <div class="cta-in">
+            <h2 class="cta-h2">¿Listo para recuperar tu tiempo?</h2>
+            <p class="cta-sub">Agenda una sesión de 30 minutos. Te mostramos exactamente qué podríamos automatizar en tu operación y cuánto tiempo recuperarías.</p>
+            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-white">
+                Agendar sesión gratuita
+                <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <p class="cta-note">Sin compromiso · Respuesta en menos de 24 h</p>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
     <footer>
         <div class="foot-in">
             <div>
                 <div class="foot-brand">STRATIUMS</div>
-                <div class="foot-copy">© 2026 Stratiums Corporation. Todos los derechos reservados.</div>
+                <div class="foot-copy">© 2026 Stratiums Corporation · Fundada en julio de 2025 · Barcelona, España</div>
             </div>
             <div class="foot-ls">
                 <button class="fl" id="legal-foot">Legal & Privacidad</button>
@@ -785,7 +882,7 @@
         </div>
     </footer>
     
-    <!-- ── MODAL LEGAL ── -->
+    <!-- MODAL LEGAL -->
     <div class="modal-ov" id="legal-modal" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="modal-box">
             <div class="modal-hd">
@@ -794,46 +891,36 @@
             </div>
             <div class="modal-bd">
                 <h2>Política de Privacidad y Protección de Datos (RGPD)</h2>
-                <div class="m-mono">CUMPLIMIENTO DE MARCOS RGPD (UE) Y LOPDGDD ESPAÑOLA · JUNIO 2026</div>
+                <div class="m-mono">CUMPLIMIENTO RGPD (UE) Y LOPDGDD ESPAÑOLA · VIGENTE DESDE JULIO 2025</div>
                 <p>En <strong>Stratiums Corporation</strong>, la confidencialidad, la seguridad técnica y la gobernanza de la información son prioridades absolutas. De acuerdo con el Reglamento General de Protección de Datos (Reglamento UE 2016/679) y la Ley Orgánica 3/2018 (LOPDGDD), nuestra relación jurídica principal con el cliente se constituye bajo la figura de <strong>Encargado del Tratamiento (Art. 28 del RGPD)</strong>, asumiendo el cliente el papel de Responsable del Tratamiento.</p>
-                
                 <h4>1. Minimización de Datos e Integraciones API (OAuth)</h4>
-                <p>Nuestras arquitecturas de automatización operan estrictamente bajo el principio de minimización de datos en memoria:</p>
+                <p>Nuestras arquitecturas de automatización operan bajo el principio de minimización de datos en memoria:</p>
                 <ul>
-                    <li><strong>Políticas de Uso Limitado de Google:</strong> Declaramos explícitamente que la transferencia, tratamiento y almacenamiento de los datos obtenidos de las APIs de Google por parte de Stratiums cumplen rigurosamente con la política de <em>Google API Services User Data Policy</em>, incluyendo las restricciones de uso limitado (Limited Use requirements).</li>
-                    <li><strong>Conexiones Seguras:</strong> Todos los flujos y llamadas a APIs se ejecutan a través de canales cifrados TLS 1.3. Los tokens de autenticación de su ERP, CRM o base de datos se almacenan en repositorios encriptados con cifrado AES-256.</li>
+                    <li><strong>Políticas de Uso Limitado de Google:</strong> La transferencia y almacenamiento de datos obtenidos de las APIs de Google cumplen con la <em>Google API Services User Data Policy</em>, incluyendo las restricciones de uso limitado.</li>
+                    <li><strong>Conexiones seguras:</strong> Todos los flujos se ejecutan a través de canales cifrados TLS 1.3. Los tokens de autenticación se almacenan con cifrado AES-256.</li>
                 </ul>
-
-                <h4>2. Declaración de Cumplimiento de la Ley de IA de la UE (EU AI Act)</h4>
-                <p>Stratiums Corporation diseña sistemas transparentes y éticos adaptados al marco normativo vigente:</p>
+                <h4>2. Declaración de Cumplimiento del EU AI Act</h4>
                 <ul>
-                    <li><strong>Evaluación de Riesgo:</strong> Nuestros agentes autónomos de decisión se clasifican como sistemas de <em>Riesgo Mínimo o Nulo</em>. No empleamos algoritmos orientados a la vigilancia masiva, puntuación social o manipulación de la conducta humana.</li>
-                    <li><strong>Garantía de Supervisión Humana:</strong> Toda automatización compleja basada en modelos de lenguaje masivo (LLMs) incorpora un sistema de registro lógico (audit log) que detalla el razonamiento secuencial del sistema para que pueda ser revisado o anulado en cualquier momento por su equipo.</li>
+                    <li><strong>Evaluación de riesgo:</strong> Nuestros agentes de decisión se clasifican como sistemas de <em>Riesgo Mínimo o Nulo</em>. No empleamos algoritmos de vigilancia masiva ni puntuación social.</li>
+                    <li><strong>Supervisión humana:</strong> Toda automatización con LLMs incorpora un sistema de audit log que detalla el razonamiento del sistema para revisión o anulación en cualquier momento.</li>
                 </ul>
-
                 <div class="m-hr"></div>
-
                 <h2>Términos de Servicio y Acuerdos de Nivel (SLA)</h2>
-                <div class="m-mono">CONDICIONES OPERATIVAS · JUNIO 2026</div>
-                
-                <h4>1. Delimitación de Propiedad Intelectual</h4>
-                <p>El diseño de cada flujo se rige por un marco de transparencia:</p>
+                <div class="m-mono">CONDICIONES OPERATIVAS · VIGENTE DESDE JULIO 2025</div>
+                <h4>1. Propiedad Intelectual</h4>
                 <ul>
-                    <li>El cliente retiene la propiedad absoluta sobre sus datos de negocio, lógica comercial e información procesada a lo largo del flujo.</li>
-                    <li>Stratiums Corporation conserva la propiedad intelectual de sus motores de integración propietarios, algoritmos y plantillas genéricas de automatización diseñadas por nuestra firma.</li>
+                    <li>El cliente retiene la propiedad absoluta sobre sus datos de negocio y lógica comercial.</li>
+                    <li>Stratiums Corporation conserva la propiedad intelectual de sus motores de integración, algoritmos y plantillas de automatización propios.</li>
                 </ul>
-                
-                <h4>2. Garantías de Disponibilidad y SLA</h4>
-                <p>Establecemos unos límites claros de mutua responsabilidad:</p>
+                <h4>2. Garantías de Disponibilidad (SLA)</h4>
                 <ul>
-                    <li><strong>Disponibilidad de Orquestación:</strong> Nos comprometemos a mantener un uptime del 99.9% en nuestra infraestructura de monitorización y servidores de ejecución de tareas.</li>
-                    <li><strong>Límites de Terceras Partes:</strong> No asumimos responsabilidad alguna por fallos operativos, restricciones de cuotas (rate-limiting) o interrupciones imprevistas del servicio originadas por proveedores externos ajenos a nuestro control directo (por ejemplo, caídas repentinas de Microsoft Azure, OpenAI, Salesforce o Google Cloud).</li>
+                    <li><strong>Disponibilidad:</strong> Nos comprometemos a un uptime del 99.9% en nuestra infraestructura de orquestación y ejecución.</li>
+                    <li><strong>Límites de terceros:</strong> No asumimos responsabilidad por interrupciones originadas en proveedores externos ajenos a nuestro control (Microsoft Azure, OpenAI, Salesforce, Google Cloud).</li>
                 </ul>
-
-                <div class="m-cbox font-sans">
-                    <strong>Cumplimiento Normativo y Privacidad:</strong><br>
+                <div class="m-cbox">
+                    <strong>Contacto legal y privacidad:</strong><br>
                     <a href="mailto:equipo@stratiums.com">equipo@stratiums.com</a><br>
-                    Stratiums Corporation, Barcelona, España.
+                    Stratiums Corporation · Barcelona, España · Fundada en julio de 2025
                 </div>
             </div>
         </div>
@@ -850,18 +937,14 @@
     })(document,"script");
     </script>
     
-    <!-- ── STREAMING_CHUNK: Orchestrating layout JS interactions... ── -->
     <!-- SCRIPT UI -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
     
-        // 1. REVEAL AL HACER SCROLL
+        // 1. REVEAL SCROLL
         const rvEls = document.querySelectorAll('.rv');
         const obs = new IntersectionObserver(entries => entries.forEach(e => {
-            if(e.isIntersecting) {
-                e.target.classList.add('on');
-                obs.unobserve(e.target); // Solo animar la primera vez para mejor UX
-            }
+            if(e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
         }), { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         rvEls.forEach(el => obs.observe(el));
     
@@ -869,7 +952,7 @@
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40), { passive: true });
     
-        // 3. MENU MÓVIL CLÁSICO Y ANIMACIÓN DEL BOTÓN DE 3 RAYAS
+        // 3. MENU MÓVIL
         const mobBtn = document.getElementById('mob-btn');
         const mobMenu = document.getElementById('mob-menu');
         if (mobBtn && mobMenu) {
@@ -887,17 +970,14 @@
             });
         }
     
-        // 4. SMOOTH SCROLL PARA ANCLAS
+        // 4. SMOOTH SCROLL
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 const id = a.getAttribute('href');
                 if (id !== '#') {
                     e.preventDefault();
                     const target = document.querySelector(id);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        history.replaceState(null, '', ' ');
-                    }
+                    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', ' '); }
                 }
             });
         });
@@ -912,7 +992,6 @@
         modal?.addEventListener('click', e => { if (e.target === modal) closeM(); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeM(); });
     
-        // ── STREAMING_CHUNK: Running live pipeline console loops... ──
         // 6. PIPELINE ANIMATION
         const steps = document.querySelectorAll('.pl-step');
         const pbF = document.getElementById('pb-f');
@@ -939,19 +1018,15 @@
             s.classList.add('active');
             ic.className = 'si r';
             ic.innerHTML = '<svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>';
-            
             const pct = Math.round(((cur + 0.5) / steps.length) * 100);
             pbF.style.width = pct + '%'; pbP.textContent = pct + '%';
-            
             setTimeout(() => {
                 ic.className = 'si s';
                 ic.innerHTML = '<svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>';
                 s.querySelector('.st').textContent = times[cur];
                 s.classList.remove('active'); s.classList.add('done');
-                
                 const fp = Math.round(((cur + 1) / steps.length) * 100);
                 pbF.style.width = fp + '%'; pbP.textContent = fp + '%';
-                
                 cur++; setTimeout(tick, 200);
             }, 750 + Math.random() * 500);
         }
@@ -960,39 +1035,76 @@
         const pw = document.getElementById('pipeline-widget');
         if (pw) plObs.observe(pw);
     
-        // ── STREAMING_CHUNK: Initializing snap slider dots synchronization... ──
-        // 7. REVIEWS SLIDER (CSS Scroll Snap con controles nativos y puntos)
+        // 7. REVIEWS SLIDER — completamente funcional
         const track = document.getElementById('rev-track');
         const dotsEl = document.getElementById('rev-dots');
-        const cards = track.querySelectorAll('.rev-card');
+        const cards = track ? track.querySelectorAll('.rev-card') : [];
         
-        // Crear puntos automáticamente
         cards.forEach((_, i) => {
             const dot = document.createElement('div');
             dot.className = 'rev-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Testimonio ' + (i+1));
             dot.addEventListener('click', () => {
                 cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             });
             dotsEl.appendChild(dot);
         });
 
-        // Sincronizar puntos con el deslizamiento nativo (swipe/scroll)
-        track.addEventListener('scroll', () => {
-            const cardWidth = cards[0].offsetWidth + 20; 
-            let index = Math.round(track.scrollLeft / cardWidth);
-            
-            dotsEl.querySelectorAll('.rev-dot').forEach((d, i) => {
-                d.classList.toggle('active', i === index);
-            });
-        }, { passive: true });
+        if (track) {
+            track.addEventListener('scroll', () => {
+                if (!cards.length) return;
+                const cardWidth = cards[0].offsetWidth + 20;
+                const index = Math.min(Math.round(track.scrollLeft / cardWidth), cards.length - 1);
+                dotsEl.querySelectorAll('.rev-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+            }, { passive: true });
+        }
 
-        // Controles de botones
         document.getElementById('rev-prev')?.addEventListener('click', () => {
-            track.scrollBy({ left: -(cards[0].offsetWidth + 20), behavior: 'smooth' });
+            if (cards.length) track.scrollBy({ left: -(cards[0].offsetWidth + 20), behavior: 'smooth' });
         });
         document.getElementById('rev-next')?.addEventListener('click', () => {
-            track.scrollBy({ left: (cards[0].offsetWidth + 20), behavior: 'smooth' });
+            if (cards.length) track.scrollBy({ left: (cards[0].offsetWidth + 20), behavior: 'smooth' });
         });
+
+        // 8. FORMULARIO DE CONTACTO
+        const btnSubmit = document.getElementById('btn-submit');
+        const formSuccess = document.getElementById('form-success');
+        const formFields = document.getElementById('form-fields');
+
+        if (btnSubmit) {
+            btnSubmit.addEventListener('click', () => {
+                const name = document.getElementById('f-name').value.trim();
+                const email = document.getElementById('f-email').value.trim();
+                const problem = document.getElementById('f-problem').value.trim();
+
+                if (!name || !email || !problem) {
+                    // Simple validation highlight
+                    [['f-name', name], ['f-email', email], ['f-problem', problem]].forEach(([id, val]) => {
+                        const el = document.getElementById(id);
+                        if (!val) {
+                            el.style.borderColor = 'rgba(239,68,68,.5)';
+                            el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+                        }
+                    });
+                    return;
+                }
+
+                // Mailto fallback (reemplazable por fetch a un endpoint)
+                const subject = encodeURIComponent('Nueva consulta - ' + name);
+                const body = encodeURIComponent(
+                    'Nombre: ' + name + '\n' +
+                    'Empresa: ' + (document.getElementById('f-company').value.trim() || '—') + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Sector: ' + (document.getElementById('f-sector').value || '—') + '\n\n' +
+                    'Proceso a automatizar:\n' + problem
+                );
+                window.location.href = 'mailto:equipo@stratiums.com?subject=' + subject + '&body=' + body;
+
+                // Mostrar confirmación
+                formFields.style.display = 'none';
+                formSuccess.classList.add('show');
+            });
+        }
     });
     </script>
 </body>
