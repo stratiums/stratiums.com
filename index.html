@@ -1089,16 +1089,27 @@
                     return;
                 }
 
-                // Mailto fallback (reemplazable por fetch a un endpoint)
-                const subject = encodeURIComponent('Nueva consulta - ' + name);
-                const body = encodeURIComponent(
-                    'Nombre: ' + name + '\n' +
-                    'Empresa: ' + (document.getElementById('f-company').value.trim() || '—') + '\n' +
-                    'Email: ' + email + '\n' +
-                    'Sector: ' + (document.getElementById('f-sector').value || '—') + '\n\n' +
-                    'Proceso a automatizar:\n' + problem
-                );
-                window.location.href = 'mailto:equipo@stratiums.com?subject=' + subject + '&body=' + body;
+                btnSubmit.disabled = true;
+btnSubmit.textContent = 'Enviando...';
+
+try {
+    await fetch('https://n8n.srv903631.hstgr.cloud/webhook/formulario-web', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nombre:   name,
+            empresa:  document.getElementById('f-company').value.trim() || '—',
+            email:    email,
+            sector:   document.getElementById('f-sector').value || '—',
+            problema: problem
+        })
+    });
+} catch (err) {
+    btnSubmit.disabled = false;
+    btnSubmit.textContent = 'Enviar consulta';
+    alert('Error al enviar. Escríbenos a equipo@stratiums.com');
+    return;
+}
 
                 // Mostrar confirmación
                 formFields.style.display = 'none';
