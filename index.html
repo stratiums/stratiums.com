@@ -5,472 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="theme-color" content="#0A0A0A">
     <title>Stratiums Corporation | Automatización e Inteligencia Artificial</title>
-    
     <meta name="description" content="Sistemas de automatización con IA que eliminan el trabajo manual y recuperan el 30% del tiempo de tu equipo.">
     <link rel="canonical" href="https://stratiums.com/">
     <meta name="robots" content="index, follow">
-    
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
-    
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stratiums Corporation | Automatización e Inteligencia Artificial">
     <meta property="og:description" content="Sistemas de automatización con IA que eliminan el trabajo manual y recuperan el 30% del tiempo de tu equipo.">
     <meta property="og:image" content="https://stratiums.com/logo.png">
     <meta property="og:url" content="https://stratiums.com/">
-    
-    <!-- Schema.org Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Stratiums Corporation",
-      "url": "https://stratiums.com",
-      "logo": "https://stratiums.com/logo.png",
-      "foundingDate": "2025-07",
-      "description": "Sistemas de automatización con IA para empresas. Eliminamos el trabajo manual y devolvemos tiempo a tu equipo.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "equipo@stratiums.com",
-        "contactType": "customer service"
-      },
-      "sameAs": ["https://www.linkedin.com/company/stratiums-corporation/"]
-    }
-    </script>
-
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Stratiums Corporation","url":"https://stratiums.com","logo":"https://stratiums.com/logo.png","foundingDate":"2025-07","description":"Sistemas de automatización con IA para empresas. Eliminamos el trabajo manual y devolvemos tiempo a tu equipo.","contactPoint":{"@type":"ContactPoint","email":"equipo@stratiums.com","contactType":"customer service"},"sameAs":["https://www.linkedin.com/company/stratiums-corporation/"]}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.chatwoot.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.chatwoot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://app.chatwoot.com; connect-src 'self' https://app.chatwoot.com wss://app.chatwoot.com https://n8n.srv903631.hstgr.cloud; frame-src 'self' https://app.chatwoot.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.chatwoot.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.chatwoot.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://app.chatwoot.com https://cdn.worldvectorlogo.com; connect-src 'self' https://app.chatwoot.com wss://app.chatwoot.com https://n8n.srv903631.hstgr.cloud; frame-src 'self' https://app.chatwoot.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Permissions-Policy" content="content='camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=()'">
-    
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0A0A0A;
-            color: #fff;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; }
-        button { cursor: pointer; font-family: inherit; }
-        
-        :root {
-            --dark:   #0A0A0A;
-            --dark2:  #111111;
-            --dark3:  #181818;
-            --dark4:  #202020;
-            --cream:  #F4F1E8;
-            --cream2: #E8E4D8;
-            --accent: #2563EB;
-            --accent2:#3B82F6;
-            --muted:  #6B7280;
-            --mutedD: #9CA3AF;
-            --bD: rgba(255,255,255,0.06);
-            --bL: rgba(0,0,0,0.07);
-        }
-
-        @media(max-width: 768px) {
-            body { padding-bottom: 76px; }
-        }
-        
-        .rv { 
-            opacity: 0; 
-            transform: translateY(24px); 
-            transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); 
-        }
-        .rv.on { opacity: 1; transform: none; }
-        .rv.d1 { transition-delay: .1s; } 
-        .rv.d2 { transition-delay: .2s; } 
-        .rv.d3 { transition-delay: .3s; } 
-        .rv.d4 { transition-delay: .4s; }
-        @media (prefers-reduced-motion: reduce) {
-            .rv { opacity: 1; transform: none; transition: none; }
-        }
-        
-        /* NAV */
-        #nav {
-            position: fixed; top: 0; width: 100%; z-index: 50;
-            background: rgba(10,10,10,.88);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--bD);
-            transition: background .3s, box-shadow .3s;
-        }
-        #nav.sc { 
-            background: rgba(10,10,10,.98); 
-            box-shadow: 0 4px 40px rgba(0,0,0,.5); 
-        }
-        .nav-w { 
-            max-width: 1280px; margin: 0 auto; padding: 0 2rem; 
-            display: flex; justify-content: space-between; align-items: center; height: 70px; 
-        }
-        @media(max-width: 480px) { .nav-w { padding: 0 1.25rem; } }
-        
-        .nav-logo { display: flex; align-items: center; gap: 10px; }
-        .nav-logo img { height: 34px; width: auto; opacity: .92; }
-        .nl-t { display: flex; flex-direction: column; }
-        .nl-m { font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; color: #fff; letter-spacing: .06em; line-height: 1; }
-        .nl-s { font-family: 'JetBrains Mono', monospace; font-size: .5rem; color: var(--mutedD); letter-spacing: .22em; text-transform: uppercase; margin-top: 3px; }
-        
-        .nav-ls { display: flex; align-items: center; gap: 2.2rem; }
-        .nla { font-size: .76rem; font-weight: 500; color: var(--mutedD); letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
-        .nla:hover { color: #fff; }
-        .ndiv { width: 1px; height: 14px; background: var(--bD); }
-        .btn-nav { display: inline-flex; align-items: center; gap: 7px; padding: .52rem 1.3rem; background: var(--accent); color: #fff; font-size: .76rem; font-weight: 600; border-radius: 6px; transition: all .25s; }
-        .btn-nav:hover { background: var(--accent2); box-shadow: 0 8px 28px rgba(37,99,235,.38); transform: translateY(-1px); }
-        
-        .mob-btn { 
-            display: none; 
-            background: none; 
-            border: none; 
-            color: #fff; 
-            padding: 8px; 
-            z-index: 100;
-        }
-        .hamburger-svg { transition: transform 0.3s ease; }
-        .hamburger-svg line {
-            transition: transform 0.3s ease, opacity 0.2s ease;
-            transform-origin: center;
-        }
-        
-        @media(max-width: 768px) {
-            .nav-ls { display: none; }
-            .mob-btn { display: flex; }
-        }
-        
-        #nav.open-menu .line-mid { opacity: 0; }
-        #nav.open-menu .line-top { transform: translateY(6px) rotate(45deg); }
-        #nav.open-menu .line-bot { transform: translateY(-6px) rotate(-45deg); }
-        
-        #mob-menu { 
-            display: none; position: absolute; top: 100%; left: 0; right: 0; 
-            background: var(--dark2); border-bottom: 1px solid var(--bD); padding: 1.25rem 1.5rem 1.75rem; 
-            box-shadow: 0 20px 40px rgba(0,0,0,.6);
-        }
-        #mob-menu.open { display: block; animation: slideDown 0.3s ease; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        #mob-menu a, #mob-menu button { 
-            display: block; padding: .88rem 0; font-family: 'Playfair Display', serif; font-size: 1.1rem; 
-            color: #fff; border: none; border-bottom: 1px solid var(--bD); background: none; 
-            width: 100%; text-align: left; transition: padding-left 0.3s;
-        }
-        #mob-menu a:hover, #mob-menu button:hover { padding-left: 8px; color: var(--accent2); }
-        .mob-cta { 
-            display: block; text-align: center; margin-top: 1.25rem; padding: .88rem !important; 
-            background: var(--accent) !important; color: #fff !important; border-radius: 8px; 
-            font-family: 'Inter', sans-serif !important; font-size: .9rem !important; font-weight: 600; border-bottom: none !important; 
-        }
-        
-        /* HERO */
-        .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 2rem 80px; position: relative; overflow: hidden; }
-        @media(max-width: 480px) { .hero { padding: 110px 1.25rem 60px; } }
-        .hero-grid { 
-            position: absolute; inset: 0; 
-            background-image: linear-gradient(var(--bD) 1px,transparent 1px),linear-gradient(90deg,var(--bD) 1px,transparent 1px); 
-            background-size: 56px 56px; 
-            mask-image: radial-gradient(ellipse 85% 85% at 50% 40%,#000 10%,transparent 100%); 
-            -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 40%,#000 10%,transparent 100%); 
-        }
-        .hero-glow { 
-            position: absolute; top: 15%; right: 5%; width: 560px; height: 560px; 
-            background: radial-gradient(circle,rgba(37,99,235,.1) 0%,transparent 70%); pointer-events: none; 
-        }
-        .hero-in { 
-            max-width: 1280px; margin: 0 auto; width: 100%; display: grid; 
-            grid-template-columns: 1.12fr 0.88fr; gap: 64px; align-items: center; position: relative; z-index: 1; 
-        }
-        @media(max-width: 1024px) { .hero-in { grid-template-columns: 1fr; gap: 48px; } }
-        
-        .eyepill { display: inline-flex; align-items: center; gap: 9px; padding: 5px 14px; margin-bottom: 2rem; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.18); border-radius: 100px; }
-        .ep-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .4; box-shadow: 0 0 8px var(--accent); } }
-        .ep-txt { font-family: 'JetBrains Mono', monospace; font-size: .66rem; color: var(--accent2); letter-spacing: .1em; text-transform: uppercase; }
-        
-        .hero-h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); font-weight: 700; line-height: 1.08; letter-spacing: -.025em; color: #fff; margin-bottom: 1.5rem; }
-        .hero-h1 em { font-style: italic; color: var(--mutedD); }
-        .hero-sub { font-size: 1.02rem; color: var(--mutedD); line-height: 1.8; font-weight: 300; max-width: 485px; margin-bottom: 2.5rem; }
-        
-        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: .9rem 2rem; background: var(--accent); color: #fff; font-size: .88rem; font-weight: 600; border-radius: 8px; transition: all .3s; }
-        .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 14px 38px rgba(37,99,235,.42); }
-        .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: .9rem 2rem; background: transparent; color: var(--mutedD); font-size: .88rem; font-weight: 500; border-radius: 8px; border: 1px solid var(--bD); transition: all .3s; }
-        .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
-        
-        .hero-proof { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--bD); flex-wrap: wrap; }
-        .hp-v { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 700; color: #fff; line-height: 1; }
-        .hp-l { font-size: .68rem; color: var(--mutedD); margin-top: 5px; letter-spacing: .04em; }
-
-        /* PIPELINE */
-        .pipeline-wrap { width: 100%; max-width: 460px; justify-self: center; }
-        @media(max-width: 1024px) { .pipeline-wrap { max-width: 100%; } }
-        .pipeline { 
-            background: var(--dark2); border: 1px solid var(--bD); border-radius: 14px; 
-            overflow: hidden; font-family: 'JetBrains Mono', monospace; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); width: 100%;
-        }
-        .pl-hd { display: flex; align-items: center; gap: 7px; padding: 13px 18px; background: var(--dark3); border-bottom: 1px solid var(--bD); }
-        .mac { width: 10px; height: 10px; border-radius: 50%; }
-        .mac-r { background: #FF5F57; } .mac-y { background: #FFBD2E; } .mac-g { background: #28CA41; }
-        .pl-title { font-size: .63rem; color: var(--mutedD); margin-left: 7px; letter-spacing: .05em; }
-        .pl-body { padding: 18px; }
-        @media(max-width: 480px) { .pl-body { padding: 14px; } }
-        .pl-step { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--bD); opacity: .28; transition: opacity .45s; }
-        .pl-step:last-child { border-bottom: none; }
-        .pl-step.active { opacity: 1; transform: scale(1.01); transition: all 0.3s; }
-        .pl-step.done { opacity: .62; }
-        .si { width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .66rem; font-weight: 700; margin-top: 1px; }
-        .si.p { background: var(--dark4); color: var(--mutedD); }
-        .si.r { background: rgba(37,99,235,.18); color: var(--accent2); box-shadow: 0 0 10px rgba(37,99,235,.3); }
-        .si.s { background: rgba(40,202,65,.13); color: #28CA41; }
-        .sl { font-size: .7rem; color: #fff; line-height: 1; margin-bottom: 4px; }
-        .ss { font-size: .61rem; color: var(--mutedD); line-height: 1.4; word-break: break-all; }
-        .st { margin-left: auto; font-size: .59rem; color: var(--mutedD); flex-shrink: 0; }
-        .pl-ft { padding: 14px 18px; background: var(--dark3); border-top: 1px solid var(--bD); display: flex; align-items: center; gap: 12px; }
-        .pf-l { font-size: .59rem; color: var(--mutedD); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
-        .pb-w { flex: 1; height: 3px; background: var(--bD); border-radius: 2px; overflow: hidden; }
-        .pb-f { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; width: 0%; transition: width .4s ease; }
-        .pf-p { font-size: .66rem; color: var(--accent2); font-weight: 500; min-width: 25px; text-align: right; }
-        
-        /* TRUST PILLARS */
-        .trust-pillars { background: var(--dark2); border-top: 1px solid var(--bD); border-bottom: 1px solid var(--bD); padding: 3rem 2rem; }
-        @media(max-width: 480px) { .trust-pillars { padding: 2.25rem 1.25rem; } }
-        .pillars-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
-        @media (max-width: 1024px) { .pillars-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; } }
-        @media (max-width: 600px) { .pillars-inner { grid-template-columns: 1fr; gap: 1.5rem; } }
-        .pillar-card { display: flex; flex-direction: column; gap: 8px; }
-        .pillar-header { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
-        .pillar-bullet { width: 4px; height: 4px; background: var(--accent2); border-radius: 50%; box-shadow: 0 0 6px var(--accent2); flex-shrink: 0; }
-        .pillar-desc { font-size: 0.8rem; color: var(--mutedD); line-height: 1.5; font-weight: 300; }
-        
-        /* SECTIONS */
-        .s-dark { background: var(--dark); color: #fff; }
-        .s-dark2 { background: var(--dark2); color: #fff; }
-        .s-cream { background: var(--cream); color: var(--dark); }
-        .si-wrap { max-width: 1280px; margin: 0 auto; padding: 100px 2rem; }
-        @media(max-width: 768px) { .si-wrap { padding: 68px 1.5rem; } }
-        
-        .eyerow { display: flex; align-items: center; gap: 10px; margin-bottom: 1.1rem; }
-        .eyerow-line { width: 22px; height: 1px; }
-        .eyerow-txt { font-family: 'JetBrains Mono', monospace; font-size: .66rem; letter-spacing: .15em; text-transform: uppercase; }
-        .er-d .eyerow-line { background: var(--bD); } .er-d .eyerow-txt { color: var(--mutedD); }
-        .er-l .eyerow-line { background: rgba(0,0,0,.13); } .er-l .eyerow-txt { color: var(--muted); }
-        
-        .sh2-d { font-size: clamp(1.9rem, 3.8vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -.022em; }
-        .sh2-l { font-size: clamp(1.9rem, 3.8vw, 3.3rem); font-weight: 700; color: var(--dark); line-height: 1.1; letter-spacing: -.022em; }
-        .sh2-sub-d { font-size: .95rem; color: var(--mutedD); margin-top: .7rem; line-height: 1.78; font-weight: 300; max-width: 550px; }
-        .sh2-sub-l { font-size: .95rem; color: var(--muted); margin-top: .7rem; line-height: 1.78; font-weight: 300; max-width: 550px; }
-        
-        /* BEFORE/AFTER */
-        .ad-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; border-radius: 16px; overflow: hidden; border: 1px solid var(--cream2); box-shadow: 0 20px 40px rgba(0,0,0,.04); }
-        @media(max-width: 768px) { .ad-grid { grid-template-columns: 1fr; } }
-        .ad-col { padding: 46px 40px; }
-        @media(max-width: 768px) { .ad-col { padding: 30px 22px; } }
-        .ad-b { background: var(--cream); }
-        .ad-a { background: var(--dark); color: #fff; }
-        .ad-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: .6rem; padding: 5px 12px; border-radius: 4px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.35rem; font-weight: 600; }
-        .t-b { background: rgba(0,0,0,.06); color: var(--muted); }
-        .t-a { background: rgba(37,99,235,.14); color: var(--accent2); }
-        .ad-h3-b { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--dark); margin-bottom: .85rem; }
-        .ad-h3-a { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: .85rem; }
-        .ad-p-b { font-size: .88rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
-        .ad-p-a { font-size: .88rem; color: var(--mutedD); line-height: 1.85; font-weight: 300; margin-bottom: 1.5rem; }
-        .ad-list { list-style: none; }
-        .ad-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; font-size: .85rem; border-top: 1px solid; transition: transform 0.2s; }
-        .ad-item:hover { transform: translateX(3px); }
-        .ad-item-b { color: var(--muted); border-top-color: var(--cream2); }
-        .ad-item-a { color: rgba(255,255,255,.8); border-top-color: var(--bD); }
-        .ad-item:first-child { border-top: none; }
-        .ad-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
-        
-        /* METRICS */
-        .met-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--bD); border: 1px solid var(--bD); border-radius: 16px; overflow: hidden; margin-top: 52px; }
-        @media(max-width: 1024px) { .met-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media(max-width: 480px) { .met-grid { grid-template-columns: 1fr; } }
-        .met-card { background: var(--cream); padding: 42px 34px; text-align: center; transition: background 0.3s; }
-        .met-card:hover { background: #fff; }
-        @media(max-width: 768px) { .met-card { padding: 30px 22px; } }
-        .met-v { font-family: 'Playfair Display', serif; font-size: clamp(2.3rem, 4vw, 3.5rem); font-weight: 700; color: var(--dark); line-height: 1; }
-        .met-v span { font-size: .52em; color: var(--accent); }
-        .met-l { font-size: .8rem; color: var(--muted); margin-top: 10px; line-height: 1.55; font-weight: 400; }
-        .met-note { font-size: .68rem; color: var(--muted); margin-top: 6px; font-style: italic; opacity: .7; }
-        
-        /* ENFOQUE */
-        .enf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bD); border: 1px solid var(--bD); border-radius: 16px; overflow: hidden; margin-top: 52px; }
-        @media(max-width: 768px) { .enf-grid { grid-template-columns: 1fr; } }
-        .enf-card { background: var(--dark2); padding: 44px 38px; position: relative; transition: background .3s; }
-        .enf-card:hover { background: var(--dark3); }
-        @media(max-width: 768px) { .enf-card { padding: 30px 22px; } }
-        .enf-n { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 700; color: rgba(255,255,255,.035); line-height: 1; position: absolute; top: 20px; right: 26px; transition: color 0.3s; }
-        .enf-card:hover .enf-n { color: rgba(255,255,255,.06); }
-        .enf-icon { width: 42px; height: 42px; background: rgba(37,99,235,.1); border: 1px solid rgba(37,99,235,.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--accent2); transition: transform 0.3s; }
-        .enf-card:hover .enf-icon { transform: scale(1.1); }
-        .enf-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: .78rem; }
-        .enf-p { font-size: .85rem; color: var(--mutedD); line-height: 1.85; font-weight: 300; }
-        
-        /* SERVICIOS */
-        .srv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 52px; }
-        @media(max-width: 1024px) { .srv-grid { grid-template-columns: 1fr 1fr; } }
-        @media(max-width: 640px) { .srv-grid { grid-template-columns: 1fr; } }
-        .srv-card { background: var(--dark2); border: 1px solid var(--bD); border-radius: 14px; padding: 36px 32px; position: relative; overflow: hidden; transition: all .4s cubic-bezier(.22,1,.36,1); }
-        .srv-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0; transition: opacity .4s; }
-        .srv-card:hover { transform: translateY(-6px); border-color: rgba(37,99,235,.22); box-shadow: 0 28px 60px rgba(0,0,0,.44); background: var(--dark3); }
-        .srv-card:hover::after { opacity: 1; }
-        .srv-icon { width: 46px; height: 46px; background: rgba(37,99,235,.1); border: 1px solid rgba(37,99,235,.16); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent2); margin-bottom: 1.7rem; transition: background 0.3s, color 0.3s; }
-        .srv-card:hover .srv-icon { background: var(--accent); color: #fff; }
-        .srv-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: .75rem; }
-        .srv-p { font-size: .85rem; color: var(--mutedD); line-height: 1.82; font-weight: 300; }
-        
-        /* FILOSOFIA */
-        .fil-wrap { max-width: 760px; margin: 0 auto; text-align: center; padding: 0 1rem; }
-        .fil-q { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 400; color: var(--dark); line-height: 1.3; margin: 2rem 0; letter-spacing: -.01em; }
-        .fil-q em { font-style: italic; color: var(--muted); }
-        .fil-b { font-size: .95rem; color: var(--muted); line-height: 1.95; font-weight: 300; }
-
-        /* CLIENTES LOGO STRIP */
-        .logos-section { background: var(--dark); border-top: 1px solid var(--bD); border-bottom: 1px solid var(--bD); padding: 2.5rem 2rem; }
-        .logos-inner { max-width: 1280px; margin: 0 auto; }
-        .logos-label { font-family: 'JetBrains Mono', monospace; font-size: .6rem; color: var(--mutedD); letter-spacing: .18em; text-transform: uppercase; text-align: center; margin-bottom: 1.8rem; }
-        .logos-grid { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
-        .logo-pill { 
-            display: flex; align-items: center; gap: 8px;
-            padding: 10px 22px; border: 1px solid var(--bD); border-radius: 8px;
-            font-family: 'Playfair Display', serif; font-size: .9rem; font-weight: 700; 
-            color: rgba(255,255,255,.35); letter-spacing: .05em;
-            transition: all .3s;
-        }
-        .logo-pill:hover { color: rgba(255,255,255,.65); border-color: rgba(255,255,255,.12); }
-        .logo-sector { font-family: 'Inter', sans-serif; font-size: .62rem; color: var(--mutedD); font-weight: 300; letter-spacing: .06em; opacity: .7; }
-        
-        /* REVIEWS */
-        .rev-section { background: var(--dark); padding: 100px 0; }
-        @media(max-width: 768px) { .rev-section { padding: 68px 0; } }
-        .rev-head { max-width: 1280px; margin: 0 auto; padding: 0 2rem 52px; }
-        .rev-slider-wrap { position: relative; width: 100%; }
-        .rev-track { 
-            display: flex; gap: 20px; padding: 0 2rem; 
-            overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; 
-            scrollbar-width: none; -ms-overflow-style: none;
-        }
-        .rev-track::-webkit-scrollbar { display: none; }
-        .rev-card {
-            flex: 0 0 380px; scroll-snap-align: center;
-            background: var(--dark2); border: 1px solid var(--bD);
-            border-radius: 14px; padding: 34px 30px;
-            display: flex; flex-direction: column; gap: 1.2rem;
-            transition: transform 0.3s ease, border-color 0.3s;
-        }
-        .rev-card:hover { border-color: rgba(37,99,235,.22); }
-        @media(max-width: 480px) { .rev-card { flex: 0 0 300px; } }
-        .rev-stars { display: flex; gap: 3px; }
-        .rev-star { color: #F59E0B; font-size: .85rem; }
-        .rev-q { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; line-height: 1.6; font-style: italic; flex: 1; }
-        .rev-sep { width: 22px; height: 1px; background: var(--bD); }
-        .rev-name { font-size: .85rem; font-weight: 600; color: #fff; }
-        .rev-role { font-size: .75rem; color: var(--mutedD); font-weight: 400; margin-top: 3px; }
-        .rev-controls { display: flex; gap: 10px; margin-top: 36px; padding: 0 2rem; max-width: 1280px; margin-left: auto; margin-right: auto; align-items: center; }
-        .rev-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--dark2); border: 1px solid var(--bD); color: var(--mutedD); display: flex; align-items: center; justify-content: center; transition: all .25s; flex-shrink: 0; }
-        .rev-btn:hover { background: var(--dark3); border-color: rgba(255,255,255,.14); color: #fff; }
-        .rev-dots { display: flex; align-items: center; gap: 6px; margin-left: 4px; }
-        .rev-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--bD); transition: all .3s; cursor: pointer; }
-        .rev-dot.active { width: 20px; border-radius: 3px; background: var(--accent); }
-
-        /* CONTACT FORM SECTION */
-        .contact-section { background: var(--dark2); border-top: 1px solid var(--bD); }
-        .contact-inner { max-width: 1280px; margin: 0 auto; padding: 100px 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-        @media(max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
-        @media(max-width: 768px) { .contact-inner { padding: 68px 1.5rem; } }
-        .contact-left { }
-        .contact-label { font-family: 'JetBrains Mono', monospace; font-size: .68rem; letter-spacing: .04em; }
-        .contact-tagline { font-size: .95rem; color: var(--mutedD); line-height: 1.7; margin-top: 1rem; font-weight: 300; max-width: 400px; }
-        .contact-info { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
-        .contact-info-item { display: flex; align-items: center; gap: 12px; font-size: .85rem; color: var(--mutedD); }
-        .contact-info-dot { width: 6px; height: 6px; background: var(--accent2); border-radius: 50%; flex-shrink: 0; }
-
-        .contact-form { background: var(--dark3); border: 1px solid var(--bD); border-radius: 16px; padding: 40px 36px; }
-        @media(max-width: 480px) { .contact-form { padding: 28px 20px; } }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: .74rem; font-weight: 500; color: var(--mutedD); margin-bottom: 8px; letter-spacing: .04em; text-transform: uppercase; }
-        .form-group input,
-        .form-group select,
-        .form-group textarea { 
-            width: 100%; background: var(--dark4); border: 1px solid rgba(255,255,255,.08); 
-            border-radius: 8px; padding: 12px 16px; color: #fff; font-family: 'Inter', sans-serif; 
-            font-size: .9rem; font-weight: 300; transition: border-color .2s, box-shadow .2s;
-            outline: none; appearance: none; -webkit-appearance: none;
-        }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder { color: rgba(255,255,255,.22); }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus { border-color: rgba(37,99,235,.5); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
-        .form-group select { cursor: pointer; color: rgba(255,255,255,.7); }
-        .form-group select option { background: var(--dark3); }
-        .form-group textarea { resize: vertical; min-height: 100px; }
-        .btn-submit { 
-            width: 100%; padding: 1rem; background: var(--accent); color: #fff; 
-            font-size: .9rem; font-weight: 600; border: none; border-radius: 8px; 
-            transition: all .3s; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;
-        }
-        .btn-submit:hover { background: var(--accent2); box-shadow: 0 12px 32px rgba(37,99,235,.38); transform: translateY(-1px); }
-        .form-privacy { font-size: .7rem; color: var(--mutedD); text-align: center; margin-top: 14px; line-height: 1.5; opacity: .7; }
-        .form-success { display: none; text-align: center; padding: 3rem 2rem; }
-        .form-success.show { display: block; }
-        .form-success-icon { width: 56px; height: 56px; background: rgba(40,202,65,.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
-        .form-success h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; margin-bottom: .5rem; }
-        .form-success p { font-size: .88rem; color: var(--mutedD); line-height: 1.7; }
-        
-        /* CTA BAND */
-        .cta-band { background: var(--accent); padding: 88px 2rem; text-align: center; position: relative; overflow: hidden; }
-        .cta-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.06) 0%, transparent 55%); }
-        .cta-in { position: relative; z-index: 1; }
-        .cta-h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.85rem, 3.5vw, 2.9rem); color: #fff; font-weight: 700; margin-bottom: .88rem; }
-        .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.85); margin-bottom: 2.5rem; font-weight: 300; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-        .btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 1.1rem 2.8rem; background: #fff; color: var(--accent); font-size: .95rem; font-weight: 700; border-radius: 8px; transition: all .3s; }
-        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(0,0,0,.22); }
-        .cta-note { font-size: .76rem; color: rgba(255,255,255,.55); margin-top: 1.2rem; }
-        
-        /* FOOTER */
-        footer { background: #050505; color: #fff; padding: 60px 2rem 40px; border-top: 1px solid var(--bD); }
-        .foot-in { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
-        .foot-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: .05em; }
-        .foot-copy { font-size: .68rem; color: var(--mutedD); margin-top: 8px; letter-spacing: .07em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
-        .foot-ls { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
-        .fl { font-size: .8rem; color: var(--mutedD); background: none; border: none; transition: color .2s; }
-        .fl:hover { color: #fff; }
-        
-        /* MODAL */
-        .modal-ov { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.78); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: all .35s; }
-        .modal-ov.open { opacity: 1; visibility: visible; }
-        .modal-box { background: var(--cream); color: var(--dark); width: 100%; max-width: 700px; max-height: 86vh; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transform: scale(.97); transition: transform .35s cubic-bezier(.22,1,.36,1); border: 1px solid var(--cream2); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
-        .modal-ov.open .modal-box { transform: scale(1); }
-        .modal-hd { display: flex; justify-content: space-between; align-items: center; padding: 20px 28px; border-bottom: 1px solid var(--cream2); background: #fff; }
-        .modal-ttl { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--dark); }
-        .modal-cl { background: rgba(0,0,0,0.05); border: none; color: var(--muted); padding: 8px; border-radius: 8px; transition: all .2s; }
-        .modal-cl:hover { background: rgba(0,0,0,0.1); color: var(--dark); }
-        .modal-bd { padding: 32px 28px; overflow-y: auto; font-size: .88rem; line-height: 1.85; color: var(--muted); }
-        .modal-bd h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 6px; }
-        .modal-bd h4 { font-size: .85rem; font-weight: 600; color: var(--dark); margin-top: 1.5rem; margin-bottom: 6px; }
-        .modal-bd ul { padding-left: 1.2rem; margin: .5rem 0 1rem; }
-        .modal-bd ul li { margin-bottom: 6px; }
-        .m-mono { font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--muted); letter-spacing: .08em; margin-bottom: 1rem; }
-        .m-hr { border: none; border-top: 1px solid var(--cream2); margin: 2rem 0; }
-        .m-cbox { background: #fff; padding: 20px; border-radius: 10px; margin-top: 1.5rem; font-size: .85rem; border: 1px solid var(--cream2); }
-        .m-cbox a { color: var(--accent); font-weight: 500; }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        html{scroll-behavior:smooth;}
+        body{font-family:'Inter',sans-serif;background:#0A0A0A;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;}
+        a{text-decoration:none;}
+        button{cursor:pointer;font-family:inherit;}
+        :root{--dark:#0A0A0A;--dark2:#111111;--dark3:#181818;--dark4:#202020;--cream:#F4F1E8;--cream2:#E8E4D8;--accent:#2563EB;--accent2:#3B82F6;--muted:#6B7280;--mutedD:#9CA3AF;--bD:rgba(255,255,255,0.06);--bL:rgba(0,0,0,0.07);}
+        @media(max-width:768px){body{padding-bottom:76px;}}
+        .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+        .rv.on{opacity:1;transform:none;}.rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}.rv.d4{transition-delay:.4s;}
+        @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+        #nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(10,10,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bD);transition:background .3s,box-shadow .3s;}
+        #nav.sc{background:rgba(10,10,10,.98);box-shadow:0 4px 40px rgba(0,0,0,.5);}
+        .nav-w{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:70px;}
+        @media(max-width:480px){.nav-w{padding:0 1.25rem;}}
+        .nav-logo{display:flex;align-items:center;gap:10px;}.nav-logo img{height:34px;width:auto;opacity:.92;}
+        .nl-t{display:flex;flex-direction:column;}.nl-m{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:#fff;letter-spacing:.06em;line-height:1;}.nl-s{font-family:'JetBrains Mono',monospace;font-size:.5rem;color:var(--mutedD);letter-spacing:.22em;text-transform:uppercase;margin-top:3px;}
+        .nav-ls{display:flex;align-items:center;gap:2.2rem;}.nla{font-size:.76rem;font-weight:500;color:var(--mutedD);letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}.nla:hover{color:#fff;}
+        .ndiv{width:1px;height:14px;background:var(--bD);}
+        .btn-nav{display:inline-flex;align-items:center;gap:7px;padding:.52rem 1.3rem;background:var(--accent);color:#fff;font-size:.76rem;font-weight:600;border-radius:6px;transition:all .25s;}.btn-nav:hover{background:var(--accent2);box-shadow:0 8px 28px rgba(37,99,235,.38);transform:translateY(-1px);}
+        .mob-btn{display:none;background:none;border:none;color:#fff;padding:8px;z-index:100;}
+        .hamburger-svg{transition:transform 0.3s ease;}.hamburger-svg line{transition:transform 0.3s ease,opacity 0.2s ease;transform-origin:center;}
+        @media(max-width:768px){.nav-ls{display:none;}.mob-btn{display:flex;}}
+        #nav.open-menu .line-mid{opacity:0;}#nav.open-menu .line-top{transform:translateY(6px) rotate(45deg);}#nav.open-menu .line-bot{transform:translateY(-6px) rotate(-45deg);}
+        #mob-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--dark2);border-bottom:1px solid var(--bD);padding:1.25rem 1.5rem 1.75rem;box-shadow:0 20px 40px rgba(0,0,0,.6);}
+        #mob-menu.open{display:block;animation:slideDown 0.3s ease;}
+        @keyframes slideDown{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+        #mob-menu a,#mob-menu button{display:block;padding:.88rem 0;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;border:none;border-bottom:1px solid var(--bD);background:none;width:100%;text-align:left;transition:padding-left 0.3s;}
+        #mob-menu a:hover,#mob-menu button:hover{padding-left:8px;color:var(--accent2);}
+        .mob-cta{display:block;text-align:center;margin-top:1.25rem;padding:.88rem !important;background:var(--accent) !important;color:#fff !important;border-radius:8px;font-family:'Inter',sans-serif !important;font-size:.9rem !important;font-weight:600;border-bottom:none !important;}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
+        @media(max-width:480px){.hero{padding:110px 1.25rem 60px;}}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--bD) 1px,transparent 1px),linear-gradient(90deg,var(--bD) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 85% 85% at 50% 40%,#000 10%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 85% 85% at 50% 40%,#000 10%,transparent 100%);}
+        .hero-glow{position:absolute;top:15%;right:5%;width:560px;height:560px;background:radial-gradient(circle,rgba(37,99,235,.1) 0%,transparent 70%);pointer-events:none;}
+        .hero-in{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.12fr 0.88fr;gap:64px;align-items:center;position:relative;z-index:1;}
+        @media(max-width:1024px){.hero-in{grid-template-columns:1fr;gap:48px;}}
+        .eyepill{display:inline-flex;align-items:center;gap:9px;padding:5px 14px;margin-bottom:2rem;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.18);border-radius:100px;}
+        .ep-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 2s ease-in-out infinite;}
+        @keyframes blink{0%,100%{opacity:1;}50%{opacity:.4;box-shadow:0 0 8px var(--accent);}}
+        .ep-txt{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--accent2);letter-spacing:.1em;text-transform:uppercase;}
+        .hero-h1{font-size:clamp(2.4rem,5vw,4.4rem);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:1.5rem;}.hero-h1 em{font-style:italic;color:var(--mutedD);}
+        .hero-sub{font-size:1.02rem;color:var(--mutedD);line-height:1.8;font-weight:300;max-width:485px;margin-bottom:2.5rem;}
+        .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
+        .hero-microcopy{font-size:.75rem;color:var(--mutedD);margin-top:.9rem;letter-spacing:.02em;opacity:.75;}
+        .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:.9rem 2rem;background:var(--accent);color:#fff;font-size:.88rem;font-weight:600;border-radius:8px;transition:all .3s;}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 14px 38px rgba(37,99,235,.42);}
+        .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:.9rem 2rem;background:transparent;color:var(--mutedD);font-size:.88rem;font-weight:500;border-radius:8px;border:1px solid var(--bD);transition:all .3s;}.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04);}
+        .hero-proof{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--bD);flex-wrap:wrap;}
+        .hp-v{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;color:#fff;line-height:1;}.hp-l{font-size:.68rem;color:var(--mutedD);margin-top:5px;letter-spacing:.04em;}
+        .pipeline-wrap{width:100%;max-width:460px;justify-self:center;}@media(max-width:1024px){.pipeline-wrap{max-width:100%;}}
+        .pipeline{background:var(--dark2);border:1px solid var(--bD);border-radius:14px;overflow:hidden;font-family:'JetBrains Mono',monospace;box-shadow:0 20px 40px rgba(0,0,0,0.5);width:100%;}
+        .pl-hd{display:flex;align-items:center;gap:7px;padding:13px 18px;background:var(--dark3);border-bottom:1px solid var(--bD);}
+        .mac{width:10px;height:10px;border-radius:50%;}.mac-r{background:#FF5F57;}.mac-y{background:#FFBD2E;}.mac-g{background:#28CA41;}
+        .pl-title{font-size:.63rem;color:var(--mutedD);margin-left:7px;letter-spacing:.05em;}
+        .pl-body{padding:18px;}@media(max-width:480px){.pl-body{padding:14px;}}
+        .pl-step{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--bD);opacity:.28;transition:opacity .45s;}.pl-step:last-child{border-bottom:none;}.pl-step.active{opacity:1;transform:scale(1.01);transition:all 0.3s;}.pl-step.done{opacity:.62;}
+        .si{width:26px;height:26px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:700;margin-top:1px;}
+        .si.p{background:var(--dark4);color:var(--mutedD);}.si.r{background:rgba(37,99,235,.18);color:var(--accent2);box-shadow:0 0 10px rgba(37,99,235,.3);}.si.s{background:rgba(40,202,65,.13);color:#28CA41;}
+        .sl{font-size:.7rem;color:#fff;line-height:1;margin-bottom:4px;}.ss{font-size:.61rem;color:var(--mutedD);line-height:1.4;word-break:break-all;}.st{margin-left:auto;font-size:.59rem;color:var(--mutedD);flex-shrink:0;}
+        .pl-ft{padding:14px 18px;background:var(--dark3);border-top:1px solid var(--bD);display:flex;align-items:center;gap:12px;}
+        .pf-l{font-size:.59rem;color:var(--mutedD);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+        .pb-w{flex:1;height:3px;background:var(--bD);border-radius:2px;overflow:hidden;}.pb-f{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;width:0%;transition:width .4s ease;}
+        .pf-p{font-size:.66rem;color:var(--accent2);font-weight:500;min-width:25px;text-align:right;}
+        .trust-pillars{background:var(--dark2);border-top:1px solid var(--bD);border-bottom:1px solid var(--bD);padding:3rem 2rem;}@media(max-width:480px){.trust-pillars{padding:2.25rem 1.25rem;}}
+        .pillars-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem;}@media(max-width:1024px){.pillars-inner{grid-template-columns:repeat(2,1fr);gap:2rem;}}@media(max-width:600px){.pillars-inner{grid-template-columns:1fr;gap:1.5rem;}}
+        .pillar-card{display:flex;flex-direction:column;gap:8px;}.pillar-header{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px;}.pillar-bullet{width:4px;height:4px;background:var(--accent2);border-radius:50%;box-shadow:0 0 6px var(--accent2);flex-shrink:0;}.pillar-desc{font-size:0.8rem;color:var(--mutedD);line-height:1.5;font-weight:300;}
+        .s-dark{background:var(--dark);color:#fff;}.s-dark2{background:var(--dark2);color:#fff;}.s-cream{background:var(--cream);color:var(--dark);}
+        .si-wrap{max-width:1280px;margin:0 auto;padding:100px 2rem;}@media(max-width:768px){.si-wrap{padding:68px 1.5rem;}}
+        .eyerow{display:flex;align-items:center;gap:10px;margin-bottom:1.1rem;}.eyerow-line{width:22px;height:1px;}.eyerow-txt{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;}
+        .er-d .eyerow-line{background:var(--bD);}.er-d .eyerow-txt{color:var(--mutedD);}.er-l .eyerow-line{background:rgba(0,0,0,.13);}.er-l .eyerow-txt{color:var(--muted);}
+        .sh2-d{font-size:clamp(1.9rem,3.8vw,3.3rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.022em;}.sh2-l{font-size:clamp(1.9rem,3.8vw,3.3rem);font-weight:700;color:var(--dark);line-height:1.1;letter-spacing:-.022em;}
+        .sh2-sub-d{font-size:.95rem;color:var(--mutedD);margin-top:.7rem;line-height:1.78;font-weight:300;max-width:550px;}.sh2-sub-l{font-size:.95rem;color:var(--muted);margin-top:.7rem;line-height:1.78;font-weight:300;max-width:550px;}
+        .ad-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;border-radius:16px;overflow:hidden;border:1px solid var(--cream2);box-shadow:0 20px 40px rgba(0,0,0,.04);}@media(max-width:768px){.ad-grid{grid-template-columns:1fr;}}
+        .ad-col{padding:46px 40px;}@media(max-width:768px){.ad-col{padding:30px 22px;}}.ad-b{background:var(--cream);}.ad-a{background:var(--dark);color:#fff;}
+        .ad-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:5px 12px;border-radius:4px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.35rem;font-weight:600;}
+        .t-b{background:rgba(0,0,0,.06);color:var(--muted);}.t-a{background:rgba(37,99,235,.14);color:var(--accent2);}
+        .ad-h3-b{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--dark);margin-bottom:.85rem;}.ad-h3-a{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:.85rem;}
+        .ad-p-b{font-size:.88rem;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:1.5rem;}.ad-p-a{font-size:.88rem;color:var(--mutedD);line-height:1.85;font-weight:300;margin-bottom:1.5rem;}
+        .ad-list{list-style:none;}.ad-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;font-size:.85rem;border-top:1px solid;transition:transform 0.2s;}.ad-item:hover{transform:translateX(3px);}
+        .ad-item-b{color:var(--muted);border-top-color:var(--cream2);}.ad-item-a{color:rgba(255,255,255,.8);border-top-color:var(--bD);}.ad-item:first-child{border-top:none;}
+        .ad-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+        .met-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bD);border:1px solid var(--bD);border-radius:16px;overflow:hidden;margin-top:52px;}@media(max-width:1024px){.met-grid{grid-template-columns:repeat(2,1fr);}}@media(max-width:480px){.met-grid{grid-template-columns:1fr;}}
+        .met-card{background:var(--cream);padding:42px 34px;text-align:center;transition:background 0.3s;}.met-card:hover{background:#fff;}@media(max-width:768px){.met-card{padding:30px 22px;}}
+        .met-v{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,4vw,3.5rem);font-weight:700;color:var(--dark);line-height:1;}.met-v span{font-size:.52em;color:var(--accent);}
+        .met-l{font-size:.8rem;color:var(--muted);margin-top:10px;line-height:1.55;font-weight:400;}.met-note{font-size:.68rem;color:var(--muted);margin-top:6px;font-style:italic;opacity:.7;}
+        .enf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bD);border:1px solid var(--bD);border-radius:16px;overflow:hidden;margin-top:52px;}@media(max-width:768px){.enf-grid{grid-template-columns:1fr;}}
+        .enf-card{background:var(--dark2);padding:44px 38px;position:relative;transition:background .3s;}.enf-card:hover{background:var(--dark3);}@media(max-width:768px){.enf-card{padding:30px 22px;}}
+        .enf-n{font-family:'Playfair Display',serif;font-size:3.8rem;font-weight:700;color:rgba(255,255,255,.035);line-height:1;position:absolute;top:20px;right:26px;transition:color 0.3s;}.enf-card:hover .enf-n{color:rgba(255,255,255,.06);}
+        .enf-icon{width:42px;height:42px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:var(--accent2);transition:transform 0.3s;}.enf-card:hover .enf-icon{transform:scale(1.1);}
+        .enf-h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#fff;margin-bottom:.78rem;}.enf-p{font-size:.85rem;color:var(--mutedD);line-height:1.85;font-weight:300;}
+        .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:52px;}@media(max-width:1024px){.srv-grid{grid-template-columns:1fr 1fr;}}@media(max-width:640px){.srv-grid{grid-template-columns:1fr;}}
+        .srv-card{background:var(--dark2);border:1px solid var(--bD);border-radius:14px;padding:36px 32px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.22,1,.36,1);}
+        .srv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .4s;}
+        .srv-card:hover{transform:translateY(-6px);border-color:rgba(37,99,235,.22);box-shadow:0 28px 60px rgba(0,0,0,.44);background:var(--dark3);}.srv-card:hover::after{opacity:1;}
+        .srv-icon{width:46px;height:46px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.16);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--accent2);margin-bottom:1.7rem;transition:background 0.3s,color 0.3s;}.srv-card:hover .srv-icon{background:var(--accent);color:#fff;}
+        .srv-h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#fff;margin-bottom:.75rem;}.srv-p{font-size:.85rem;color:var(--mutedD);line-height:1.82;font-weight:300;}
+        .fil-wrap{max-width:760px;margin:0 auto;text-align:center;padding:0 1rem;}.fil-q{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:400;color:var(--dark);line-height:1.3;margin:2rem 0;letter-spacing:-.01em;}.fil-q em{font-style:italic;color:var(--muted);}.fil-b{font-size:.95rem;color:var(--muted);line-height:1.95;font-weight:300;}
+        .logos-section{background:var(--dark);border-top:1px solid var(--bD);border-bottom:1px solid var(--bD);padding:2.5rem 2rem;}.logos-inner{max-width:1280px;margin:0 auto;}
+        .logos-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mutedD);letter-spacing:.18em;text-transform:uppercase;text-align:center;margin-bottom:1.8rem;}
+        .logos-grid{display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap;}
+        .logo-pill{display:flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--bD);border-radius:8px;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.03em;transition:all .3s;}.logo-pill:hover{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.12);}
+        .rev-section{background:var(--dark);padding:100px 0;}@media(max-width:768px){.rev-section{padding:68px 0;}}
+        .rev-head{max-width:1280px;margin:0 auto;padding:0 2rem 52px;}
+        .rev-track{display:flex;gap:20px;padding:0 2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;}.rev-track::-webkit-scrollbar{display:none;}
+        .rev-card{flex:0 0 380px;scroll-snap-align:center;background:var(--dark2);border:1px solid var(--bD);border-radius:14px;padding:34px 30px;display:flex;flex-direction:column;gap:1.2rem;transition:transform 0.3s ease,border-color 0.3s;}.rev-card:hover{border-color:rgba(37,99,235,.22);}@media(max-width:480px){.rev-card{flex:0 0 300px;}}
+        .rev-stars{display:flex;gap:3px;}.rev-star{color:#F59E0B;font-size:.85rem;}
+        .rev-q{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;line-height:1.6;font-style:italic;flex:1;}
+        .rev-sep{width:22px;height:1px;background:var(--bD);}.rev-name{font-size:.85rem;font-weight:600;color:#fff;}.rev-role{font-size:.75rem;color:var(--mutedD);font-weight:400;margin-top:3px;}
+        .rev-controls{display:flex;gap:10px;margin-top:36px;padding:0 2rem;max-width:1280px;margin-left:auto;margin-right:auto;align-items:center;}
+        .rev-btn{width:40px;height:40px;border-radius:50%;background:var(--dark2);border:1px solid var(--bD);color:var(--mutedD);display:flex;align-items:center;justify-content:center;transition:all .25s;flex-shrink:0;}.rev-btn:hover{background:var(--dark3);border-color:rgba(255,255,255,.14);color:#fff;}
+        .rev-dots{display:flex;align-items:center;gap:6px;margin-left:4px;}.rev-dot{width:6px;height:6px;border-radius:50%;background:var(--bD);transition:all .3s;cursor:pointer;}.rev-dot.active{width:20px;border-radius:3px;background:var(--accent);}
+        /* ROI CALCULATOR */
+        .roi-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;align-items:start;}
+        @media(max-width:860px){.roi-wrap{grid-template-columns:1fr;gap:2rem;}}
+        .roi-inputs{display:flex;flex-direction:column;gap:2rem;}
+        .roi-field label{font-size:.8rem;color:var(--muted);font-weight:500;}
+        .roi-field-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;gap:1rem;}
+        .roi-val{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--accent);font-weight:600;white-space:nowrap;}
+        .roi-field input[type=range]{width:100%;height:4px;border-radius:2px;appearance:none;-webkit-appearance:none;background:var(--cream2);outline:none;cursor:pointer;}
+        .roi-field input[type=range]::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid #fff;box-shadow:0 2px 8px rgba(37,99,235,.3);}
+        .roi-outputs{background:var(--dark);border-radius:16px;padding:2.2rem 2rem;color:#fff;}
+        .roi-out-top{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin-bottom:1.4rem;}
+        .roi-out-item{text-align:center;}
+        .roi-out-val{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:#fff;line-height:1;}
+        .roi-out-label{font-size:.7rem;color:var(--mutedD);margin-top:6px;letter-spacing:.03em;}
+        .roi-out-divider{width:1px;height:50px;background:rgba(255,255,255,.08);margin:0 auto;}
+        .roi-note{font-size:.72rem;color:var(--mutedD);line-height:1.6;text-align:center;border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;}
+        /* FAQ */
+        .faq-section{background:var(--dark);border-top:1px solid var(--bD);}
+        .faq-item{border-bottom:1px solid var(--bD);}
+        .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;background:none;border:none;color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;text-align:left;cursor:pointer;gap:1rem;transition:color .2s;}.faq-btn:hover{color:var(--accent2);}
+        .faq-icon{width:22px;height:22px;border:1px solid var(--bD);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;color:var(--mutedD);}
+        .faq-item.open .faq-icon{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg);}
+        .faq-body{display:none;padding-bottom:1.5rem;animation:fadeIn .3s ease;}.faq-item.open .faq-body{display:block;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+        .faq-body p{font-size:.9rem;color:var(--mutedD);line-height:1.85;font-weight:300;max-width:680px;}
+        .faq-item.open .faq-btn{color:var(--accent2);}
+        /* CONTACTO */
+        .contact-section{background:var(--dark2);border-top:1px solid var(--bD);}
+        .contact-inner{max-width:1280px;margin:0 auto;padding:100px 2rem;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}@media(max-width:900px){.contact-inner{grid-template-columns:1fr;gap:48px;}}@media(max-width:768px){.contact-inner{padding:68px 1.5rem;}}
+        .contact-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.04em;}.contact-tagline{font-size:.95rem;color:var(--mutedD);line-height:1.7;margin-top:1rem;font-weight:300;max-width:400px;}
+        .contact-info{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem;}.contact-info-item{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--mutedD);}.contact-info-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;flex-shrink:0;}
+        .contact-form{background:var(--dark3);border:1px solid var(--bD);border-radius:16px;padding:40px 36px;}@media(max-width:480px){.contact-form{padding:28px 20px;}}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}@media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+        .form-group{margin-bottom:20px;}.form-group label{display:block;font-size:.74rem;font-weight:500;color:var(--mutedD);margin-bottom:8px;letter-spacing:.04em;text-transform:uppercase;}
+        .form-group input,.form-group select,.form-group textarea{width:100%;background:var(--dark4);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px 16px;color:#fff;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:300;transition:border-color .2s,box-shadow .2s;outline:none;appearance:none;-webkit-appearance:none;}
+        .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.22);}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(37,99,235,.5);box-shadow:0 0 0 3px rgba(37,99,235,.12);}
+        .form-group select{cursor:pointer;color:rgba(255,255,255,.7);}.form-group select option{background:var(--dark3);}
+        .form-group textarea{resize:vertical;min-height:100px;}
+        .btn-submit{width:100%;padding:1rem;background:var(--accent);color:#fff;font-size:.9rem;font-weight:600;border:none;border-radius:8px;transition:all .3s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px;}.btn-submit:hover{background:var(--accent2);box-shadow:0 12px 32px rgba(37,99,235,.38);transform:translateY(-1px);}
+        .form-privacy{font-size:.7rem;color:var(--mutedD);text-align:center;margin-top:14px;line-height:1.5;opacity:.7;}
+        .form-success{display:none;text-align:center;padding:3rem 2rem;}.form-success.show{display:block;}
+        .form-success-icon{width:56px;height:56px;background:rgba(40,202,65,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;}
+        .form-success h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:.5rem;}.form-success p{font-size:.88rem;color:var(--mutedD);line-height:1.7;}
+        .cta-band{background:var(--accent);padding:88px 2rem;text-align:center;position:relative;overflow:hidden;}.cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,transparent 55%);}
+        .cta-in{position:relative;z-index:1;}.cta-h2{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.5vw,2.9rem);color:#fff;font-weight:700;margin-bottom:.88rem;}
+        .cta-sub{font-size:1.05rem;color:rgba(255,255,255,.85);margin-bottom:2.5rem;font-weight:300;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;}
+        .btn-white{display:inline-flex;align-items:center;gap:8px;padding:1.1rem 2.8rem;background:#fff;color:var(--accent);font-size:.95rem;font-weight:700;border-radius:8px;transition:all .3s;}.btn-white:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,0,0,.22);}
+        .cta-note{font-size:.76rem;color:rgba(255,255,255,.55);margin-top:1.2rem;}
+        footer{background:#050505;color:#fff;padding:60px 2rem 40px;border-top:1px solid var(--bD);}
+        .foot-in{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;}
+        .foot-brand{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;letter-spacing:.05em;}
+        .foot-copy{font-size:.68rem;color:var(--mutedD);margin-top:8px;letter-spacing:.07em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
+        .foot-ls{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}.fl{font-size:.8rem;color:var(--mutedD);background:none;border:none;transition:color .2s;}.fl:hover{color:#fff;}
+        .modal-ov{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:all .35s;}.modal-ov.open{opacity:1;visibility:visible;}
+        .modal-box{background:var(--cream);color:var(--dark);width:100%;max-width:700px;max-height:86vh;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transform:scale(.97);transition:transform .35s cubic-bezier(.22,1,.36,1);border:1px solid var(--cream2);box-shadow:0 40px 80px rgba(0,0,0,0.5);}.modal-ov.open .modal-box{transform:scale(1);}
+        .modal-hd{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid var(--cream2);background:#fff;}
+        .modal-ttl{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--dark);}
+        .modal-cl{background:rgba(0,0,0,0.05);border:none;color:var(--muted);padding:8px;border-radius:8px;transition:all .2s;}.modal-cl:hover{background:rgba(0,0,0,0.1);color:var(--dark);}
+        .modal-bd{padding:32px 28px;overflow-y:auto;font-size:.88rem;line-height:1.85;color:var(--muted);}
+        .modal-bd h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dark);margin-bottom:6px;}.modal-bd h4{font-size:.85rem;font-weight:600;color:var(--dark);margin-top:1.5rem;margin-bottom:6px;}
+        .modal-bd ul{padding-left:1.2rem;margin:.5rem 0 1rem;}.modal-bd ul li{margin-bottom:6px;}
+        .m-mono{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.08em;margin-bottom:1rem;}
+        .m-hr{border:none;border-top:1px solid var(--cream2);margin:2rem 0;}
+        .m-cbox{background:#fff;padding:20px;border-radius:10px;margin-top:1.5rem;font-size:.85rem;border:1px solid var(--cream2);}.m-cbox a{color:var(--accent);font-weight:500;}
     </style>
 </head>
 <body>
-    
-    <!-- NAV -->
     <nav id="nav">
         <div class="nav-w">
             <a href="#" class="nav-logo" aria-label="Inicio">
@@ -482,6 +214,7 @@
                 <a href="#problema" class="nla">El problema</a>
                 <a href="#enfoque" class="nla">Enfoque</a>
                 <a href="#soluciones" class="nla">Servicios</a>
+                <a href="#faq" class="nla">FAQ</a>
                 <a href="#opiniones" class="nla">Opiniones</a>
                 <a href="#contacto" class="nla">Contacto</a>
                 <div class="ndiv"></div>
@@ -502,13 +235,14 @@
             <a href="#problema">El problema</a>
             <a href="#enfoque">Enfoque</a>
             <a href="#soluciones">Servicios</a>
+            <a href="#faq">FAQ</a>
             <a href="#opiniones">Opiniones</a>
             <a href="#contacto">Contacto</a>
             <button id="legal-mob">Legal</button>
             <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="mob-cta">Agendar reunión →</a>
         </div>
     </nav>
-    
+
     <!-- HERO -->
     <section class="hero">
         <div class="hero-grid" aria-hidden="true"></div>
@@ -522,6 +256,7 @@
                     <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Quiero mi auditoría gratuita <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                     <a href="#problema" class="btn-ghost">Ver cómo funciona</a>
                 </div>
+                <p class="hero-microcopy rv d4">Análisis de 30 minutos de tus procesos actuales · Sin compromiso · Sin coste</p>
                 <div class="hero-proof rv d4">
                     <div><div class="hp-v">30<span style="font-size:1rem;color:var(--accent2)">%</span></div><div class="hp-l">Tiempo recuperado</div></div>
                     <div><div class="hp-v">−94<span style="font-size:1rem;color:var(--accent2)">%</span></div><div class="hp-l">Errores operativos</div></div>
@@ -530,10 +265,7 @@
             </div>
             <div class="rv d2 pipeline-wrap" id="pipeline-widget">
                 <div class="pipeline">
-                    <div class="pl-hd">
-                        <div class="mac mac-r"></div><div class="mac mac-y"></div><div class="mac mac-g"></div>
-                        <span class="pl-title">stratiums · pipeline · producción</span>
-                    </div>
+                    <div class="pl-hd"><div class="mac mac-r"></div><div class="mac mac-y"></div><div class="mac mac-g"></div><span class="pl-title">stratiums · pipeline · producción</span></div>
                     <div class="pl-body" id="pl-steps">
                         <div class="pl-step" data-i="0"><div class="si p">01</div><div><div class="sl">Recepción de datos</div><div class="ss">CRM → validación → cola</div></div><div class="st">—</div></div>
                         <div class="pl-step" data-i="1"><div class="si p">02</div><div><div class="sl">Clasificación IA</div><div class="ss">NLP · intención · prioridad</div></div><div class="st">—</div></div>
@@ -541,38 +273,22 @@
                         <div class="pl-step" data-i="3"><div class="si p">04</div><div><div class="sl">Ejecución & notificación</div><div class="ss">ERP · Slack · email · webhook</div></div><div class="st">—</div></div>
                         <div class="pl-step" data-i="4"><div class="si p">05</div><div><div class="sl">Auditoría & reporte</div><div class="ss">log · dashboard · 0 errores</div></div><div class="st">—</div></div>
                     </div>
-                    <div class="pl-ft">
-                        <span class="pf-l">Progreso</span>
-                        <div class="pb-w"><div class="pb-f" id="pb-f"></div></div>
-                        <span class="pf-p" id="pb-p">0%</span>
-                    </div>
+                    <div class="pl-ft"><span class="pf-l">Progreso</span><div class="pb-w"><div class="pb-f" id="pb-f"></div></div><span class="pf-p" id="pb-p">0%</span></div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- TRUST PILLARS -->
     <div class="trust-pillars">
         <div class="pillars-inner">
-            <div class="pillar-card">
-                <div class="pillar-header"><div class="pillar-bullet"></div><span>Precisión del 100%</span></div>
-                <p class="pillar-desc">Algoritmos deterministas que eliminan el error humano y consolidan reportes sin fallos.</p>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-header"><div class="pillar-bullet"></div><span>Integración de APIs</span></div>
-                <p class="pillar-desc">Sincronización robusta de CRM, ERP y bases de datos heredadas sin pérdida de paquetes.</p>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-header"><div class="pillar-bullet"></div><span>Modelos seguros</span></div>
-                <p class="pillar-desc">Arquitectura de IA bajo estrictos controles de ciberseguridad y privacidad RGPD.</p>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-header"><div class="pillar-bullet"></div><span>Escala inmediata</span></div>
-                <p class="pillar-desc">Infraestructura que crece con el volumen de transacciones de tu negocio, sin fricciones.</p>
-            </div>
+            <div class="pillar-card"><div class="pillar-header"><div class="pillar-bullet"></div><span>Precisión del 100%</span></div><p class="pillar-desc">Algoritmos deterministas que eliminan el error humano y consolidan reportes sin fallos.</p></div>
+            <div class="pillar-card"><div class="pillar-header"><div class="pillar-bullet"></div><span>Integración de APIs</span></div><p class="pillar-desc">Sincronización robusta de CRM, ERP y bases de datos heredadas sin pérdida de paquetes.</p></div>
+            <div class="pillar-card"><div class="pillar-header"><div class="pillar-bullet"></div><span>Modelos seguros</span></div><p class="pillar-desc">Arquitectura de IA bajo estrictos controles de ciberseguridad y privacidad RGPD.</p></div>
+            <div class="pillar-card"><div class="pillar-header"><div class="pillar-bullet"></div><span>Escala inmediata</span></div><p class="pillar-desc">Infraestructura que crece con el volumen de transacciones de tu negocio, sin fricciones.</p></div>
         </div>
     </div>
-    
+
     <!-- EL PROBLEMA -->
     <section id="problema" class="s-cream">
         <div class="si-wrap">
@@ -605,7 +321,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- MÉTRICAS -->
     <section class="s-dark2">
         <div class="si-wrap">
@@ -613,30 +329,54 @@
             <h2 class="sh2-d rv d1">Números que importan</h2>
             <p class="sh2-sub-d rv d2">No trabajamos para entregar software. Trabajamos para que veas un antes y un después en tus operaciones.</p>
             <div class="met-grid">
-                <div class="met-card rv d1">
-                    <div class="met-v">30<span>%</span></div>
-                    <div class="met-l">de tiempo recuperado en los primeros 90 días</div>
-                    <div class="met-note">Media entre clientes 2025–2026</div>
+                <div class="met-card rv d1"><div class="met-v">30<span>%</span></div><div class="met-l">de tiempo recuperado en los primeros 90 días</div><div class="met-note">Media entre clientes 2025–2026</div></div>
+                <div class="met-card rv d2"><div class="met-v">−94<span>%</span></div><div class="met-l">de errores en procesos antes manuales</div><div class="met-note">Medido en producción</div></div>
+                <div class="met-card rv d3"><div class="met-v">3<span>×</span></div><div class="met-l">más velocidad en la ejecución de flujos operativos</div><div class="met-note">Comparado con el proceso previo</div></div>
+                <div class="met-card rv d4"><div class="met-v">8h<span>/sem</span></div><div class="met-l">ahorradas de media por persona del equipo</div><div class="met-note">Media entre clientes 2025–2026</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA ROI -->
+    <section class="s-cream">
+        <div class="si-wrap">
+            <div class="eyerow er-l rv"><div class="eyerow-line"></div><span class="eyerow-txt">Calculadora de ahorro</span></div>
+            <h2 class="sh2-l rv d1">¿Cuánto te cuesta no automatizar?</h2>
+            <p class="sh2-sub-l rv d2">Mueve los controles y calcula el impacto real en tu operación.</p>
+            <div class="roi-wrap rv d3">
+                <div class="roi-inputs">
+                    <div class="roi-field">
+                        <div class="roi-field-header"><label>Personas afectadas en el equipo</label><span class="roi-val" id="r-team-label">10 personas</span></div>
+                        <input type="range" min="1" max="100" value="10" id="r-team" oninput="calcROI()">
+                    </div>
+                    <div class="roi-field">
+                        <div class="roi-field-header"><label>Horas semanales por persona en tareas repetitivas</label><span class="roi-val" id="r-hours-label">8 horas</span></div>
+                        <input type="range" min="1" max="30" value="8" id="r-hours" oninput="calcROI()">
+                    </div>
+                    <div class="roi-field">
+                        <div class="roi-field-header"><label>Coste medio de hora laboral (bruto empresa)</label><span class="roi-val" id="r-cost-label">25 €/h</span></div>
+                        <input type="range" min="10" max="100" value="25" id="r-cost" oninput="calcROI()">
+                    </div>
                 </div>
-                <div class="met-card rv d2">
-                    <div class="met-v">−94<span>%</span></div>
-                    <div class="met-l">de errores en procesos antes manuales</div>
-                    <div class="met-note">Medido en producción</div>
-                </div>
-                <div class="met-card rv d3">
-                    <div class="met-v">3<span>×</span></div>
-                    <div class="met-l">más velocidad en la ejecución de flujos operativos</div>
-                    <div class="met-note">Comparado con el proceso previo</div>
-                </div>
-                <div class="met-card rv d4">
-                    <div class="met-v">8h<span>/sem</span></div>
-                    <div class="met-l">ahorradas de media por persona del equipo</div>
-                    <div class="met-note">Media entre clientes 2025–2026</div>
+                <div class="roi-outputs">
+                    <div class="roi-out-top">
+                        <div class="roi-out-item">
+                            <div class="roi-out-val" id="r-monthly">1.386 h</div>
+                            <div class="roi-out-label">horas perdidas al mes</div>
+                        </div>
+                        <div class="roi-out-divider"></div>
+                        <div class="roi-out-item">
+                            <div class="roi-out-val" id="r-saving" style="color:var(--accent)">12.474 €</div>
+                            <div class="roi-out-label">ahorro anual estimado</div>
+                        </div>
+                    </div>
+                    <div class="roi-note">Estimación conservadora basada en recuperar el 30% del tiempo invertido en tareas manuales.</div>
+                    <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%;justify-content:center;margin-top:1.2rem;">Quiero recuperar ese tiempo <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- ENFOQUE -->
     <section id="enfoque" class="s-dark">
         <div class="si-wrap">
@@ -644,28 +384,13 @@
             <h2 class="sh2-d rv d1">Tres pasos. Sin fricción.</h2>
             <p class="sh2-sub-d rv d2">No instalamos una herramienta y nos vamos. Construimos la arquitectura completa de tu operación.</p>
             <div class="enf-grid">
-                <div class="enf-card rv d1">
-                    <div class="enf-n">01</div>
-                    <div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
-                    <h3 class="enf-h3">Diagnóstico real</h3>
-                    <p class="enf-p">Auditamos tus procesos actuales con detalle. Identificamos exactamente dónde se pierde tiempo y dinero, y cuál es el punto de mayor retorno.</p>
-                </div>
-                <div class="enf-card rv d2">
-                    <div class="enf-n">02</div>
-                    <div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-                    <h3 class="enf-h3">Construcción del sistema</h3>
-                    <p class="enf-p">Diseñamos e implementamos la arquitectura completa: integraciones, flujos de IA, reglas de decisión y capas de validación. Todo conectado, todo funcionando.</p>
-                </div>
-                <div class="enf-card rv d3">
-                    <div class="enf-n">03</div>
-                    <div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-                    <h3 class="enf-h3">Garantía y escala</h3>
-                    <p class="enf-p">Monitorizamos el rendimiento de cada flujo de forma continua. Si tu negocio crece, el sistema crece contigo. Si algo falla, lo sabemos antes que tú.</p>
-                </div>
+                <div class="enf-card rv d1"><div class="enf-n">01</div><div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div><h3 class="enf-h3">Diagnóstico real</h3><p class="enf-p">Auditamos tus procesos actuales con detalle. Identificamos exactamente dónde se pierde tiempo y dinero, y cuál es el punto de mayor retorno.</p></div>
+                <div class="enf-card rv d2"><div class="enf-n">02</div><div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div><h3 class="enf-h3">Construcción del sistema</h3><p class="enf-p">Diseñamos e implementamos la arquitectura completa: integraciones, flujos de IA, reglas de decisión y capas de validación. Todo conectado, todo funcionando.</p></div>
+                <div class="enf-card rv d3"><div class="enf-n">03</div><div class="enf-icon"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><h3 class="enf-h3">Garantía y escala</h3><p class="enf-p">Monitorizamos el rendimiento de cada flujo de forma continua. Si tu negocio crece, el sistema crece contigo. Si algo falla, lo sabemos antes que tú.</p></div>
             </div>
         </div>
     </section>
-    
+
     <!-- SERVICIOS -->
     <section id="soluciones" class="s-dark2">
         <div class="si-wrap">
@@ -673,25 +398,13 @@
             <h2 class="sh2-d rv d1">Lo que construimos</h2>
             <p class="sh2-sub-d rv d2">Cada proyecto es distinto. Estos son los pilares sobre los que trabajamos.</p>
             <div class="srv-grid">
-                <div class="srv-card rv d1">
-                    <div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-                    <h3 class="srv-h3">Automatización de procesos</h3>
-                    <p class="srv-p">Flujos que conectan tus herramientas y eliminan el trabajo manual repetitivo. Tus aplicaciones trabajan juntas, solas, sin errores.</p>
-                </div>
-                <div class="srv-card rv d2">
-                    <div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
-                    <h3 class="srv-h3">Integración de sistemas</h3>
-                    <p class="srv-p">Conectamos CRM, ERP y plataformas de datos para que todo hable entre sí en tiempo real, sin exportaciones ni copias manuales.</p>
-                </div>
-                <div class="srv-card rv d3">
-                    <div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-                    <h3 class="srv-h3">Agentes de IA</h3>
-                    <p class="srv-p">Sistemas que no solo siguen reglas, sino que leen, interpretan y deciden. Recepción de facturas, gestión de historiales, clasificación de incidencias.</p>
-                </div>
+                <div class="srv-card rv d1"><div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="srv-h3">Automatización de procesos</h3><p class="srv-p">Flujos que conectan tus herramientas y eliminan el trabajo manual repetitivo. Tus aplicaciones trabajan juntas, solas, sin errores.</p></div>
+                <div class="srv-card rv d2"><div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div><h3 class="srv-h3">Integración de sistemas</h3><p class="srv-p">Conectamos CRM, ERP y plataformas de datos para que todo hable entre sí en tiempo real, sin exportaciones ni copias manuales.</p></div>
+                <div class="srv-card rv d3"><div class="srv-icon"><svg width="21" height="21" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><h3 class="srv-h3">Agentes de IA</h3><p class="srv-p">Sistemas que no solo siguen reglas, sino que leen, interpretan y deciden. Recepción de facturas, gestión de historiales, clasificación de incidencias.</p></div>
             </div>
         </div>
     </section>
-    
+
     <!-- FILOSOFÍA -->
     <section id="filosofia" class="s-cream">
         <div class="si-wrap">
@@ -703,35 +416,37 @@
         </div>
     </section>
 
-    <!-- LOGO STRIP / SECTORES -->
+    <!-- INTEGRACIONES -->
     <div class="logos-section rv">
         <div class="logos-inner">
-            <p class="logos-label">Sectores en los que ya trabajamos</p>
+            <p class="logos-label">Compatible con las herramientas que ya usas</p>
             <div class="logos-grid">
-                <div class="logo-pill">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-                    Farmacéutico
-                </div>
-                <div class="logo-pill">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
-                    Finanzas
-                </div>
-                <div class="logo-pill">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
-                    Logística
-                </div>
-                <div class="logo-pill">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
-                    Legal
-                </div>
-                <div class="logo-pill">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
-                    Consultoría
-                </div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/hubspot.svg" alt="HubSpot" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">HubSpot</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" alt="Salesforce" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">Salesforce</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/google-workspace.svg" alt="Google Workspace" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">Google Workspace</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" alt="Slack" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">Slack</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/stripe-4.svg" alt="Stripe" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">Stripe</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/openai-2.svg" alt="OpenAI" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">OpenAI</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/microsoft-excel-2013.svg" alt="Excel" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">Excel</div>
+                <div class="logo-pill"><img src="https://cdn.worldvectorlogo.com/logos/gmail-icon.svg" alt="Gmail" width="18" height="18" style="opacity:.5;flex-shrink:0;filter:grayscale(1) brightness(2)">Gmail</div>
             </div>
         </div>
     </div>
-    
+
+    <!-- SECTORES -->
+    <div class="logos-section rv" style="background:var(--dark2);">
+        <div class="logos-inner">
+            <p class="logos-label">Sectores en los que ya trabajamos</p>
+            <div class="logos-grid">
+                <div class="logo-pill"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>Farmacéutico</div>
+                <div class="logo-pill"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>Finanzas</div>
+                <div class="logo-pill"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>Logística</div>
+                <div class="logo-pill"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>Legal</div>
+                <div class="logo-pill"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;opacity:.5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>Consultoría</div>
+            </div>
+        </div>
+    </div>
+
     <!-- REVIEWS -->
     <section id="opiniones" class="rev-section">
         <div class="rev-head">
@@ -741,52 +456,67 @@
         </div>
         <div class="rev-slider-wrap rv d3">
             <div class="rev-track" id="rev-track">
-                <div class="rev-card">
-                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
-                    <p class="rev-q">"Recibíamos facturas de proveedores en tres formatos distintos. Ahora el sistema las lee, las valida y las registra solo. Hemos eliminado casi todos los errores de conciliación."</p>
-                    <div class="rev-sep"></div>
-                    <div><div class="rev-name">Elena Puigdomènech</div><div class="rev-role">Técnica de administración · Sector farmacéutico</div></div>
-                </div>
-                <div class="rev-card">
-                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
-                    <p class="rev-q">"El envío de historiales clínicos entre departamentos era manual y tardaba horas. Ahora ocurre de forma automática en cuanto se actualiza el registro. Nadie tiene que hacer nada."</p>
-                    <div class="rev-sep"></div>
-                    <div><div class="rev-name">Rafael Montoya</div><div class="rev-role">Coordinador de sistemas · Laboratorio clínico</div></div>
-                </div>
-                <div class="rev-card">
-                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
-                    <p class="rev-q">"Gestionamos miles de pedidos al mes. La conciliación era un dolor de cabeza semanal. Ahora ocurre sola, y tenemos visibilidad de todo en tiempo real."</p>
-                    <div class="rev-sep"></div>
-                    <div><div class="rev-name">Carlos Rondón</div><div class="rev-role">Gerente de operaciones · Distribución</div></div>
-                </div>
-                <div class="rev-card">
-                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
-                    <p class="rev-q">"Mi equipo de administración recuperó casi dos días a la semana. Ahora están en cosas que realmente hacen avanzar el negocio."</p>
-                    <div class="rev-sep"></div>
-                    <div><div class="rev-name">Marta Soldevila</div><div class="rev-role">Directora financiera · Consultoría</div></div>
-                </div>
-                <div class="rev-card">
-                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
-                    <p class="rev-q">"Intentamos hacerlo con un perfil interno antes de contactarlos. No es lo mismo. Stratiums trajo una metodología que no hubiéramos desarrollado solos."</p>
-                    <div class="rev-sep"></div>
-                    <div><div class="rev-name">Tomás Echeverría</div><div class="rev-role">Responsable técnico · Fintech</div></div>
-                </div>
-                <div class="rev-card">
-                    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
-                    <p class="rev-q">"Entienden el negocio antes de tocar nada. No te venden tecnología, te resuelven un problema real. Eso se nota desde la primera reunión."</p>
-                    <div class="rev-sep"></div>
-                    <div><div class="rev-name">Beatriz Fuentes</div><div class="rev-role">Socia gerente · Despacho jurídico</div></div>
-                </div>
+                <div class="rev-card"><div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div><p class="rev-q">"Recibíamos facturas de proveedores en tres formatos distintos. Ahora el sistema las lee, las valida y las registra solo. Hemos eliminado casi todos los errores de conciliación."</p><div class="rev-sep"></div><div><div class="rev-name">Elena Puigdomènech</div><div class="rev-role">Técnica de administración · Sector farmacéutico</div></div></div>
+                <div class="rev-card"><div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div><p class="rev-q">"El envío de historiales clínicos entre departamentos era manual y tardaba horas. Ahora ocurre de forma automática en cuanto se actualiza el registro. Nadie tiene que hacer nada."</p><div class="rev-sep"></div><div><div class="rev-name">Rafael Montoya</div><div class="rev-role">Coordinador de sistemas · Laboratorio clínico</div></div></div>
+                <div class="rev-card"><div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div><p class="rev-q">"Gestionamos miles de pedidos al mes. La conciliación era un dolor de cabeza semanal. Ahora ocurre sola, y tenemos visibilidad de todo en tiempo real."</p><div class="rev-sep"></div><div><div class="rev-name">Carlos Rondón</div><div class="rev-role">Gerente de operaciones · Distribución</div></div></div>
+                <div class="rev-card"><div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div><p class="rev-q">"Mi equipo de administración recuperó casi dos días a la semana. Ahora están en cosas que realmente hacen avanzar el negocio."</p><div class="rev-sep"></div><div><div class="rev-name">Marta Soldevila</div><div class="rev-role">Directora financiera · Consultoría</div></div></div>
+                <div class="rev-card"><div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div><p class="rev-q">"Intentamos hacerlo con un perfil interno antes de contactarlos. No es lo mismo. Stratiums trajo una metodología que no hubiéramos desarrollado solos."</p><div class="rev-sep"></div><div><div class="rev-name">Tomás Echeverría</div><div class="rev-role">Responsable técnico · Fintech</div></div></div>
+                <div class="rev-card"><div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div><p class="rev-q">"Entienden el negocio antes de tocar nada. No te venden tecnología, te resuelven un problema real. Eso se nota desde la primera reunión."</p><div class="rev-sep"></div><div><div class="rev-name">Beatriz Fuentes</div><div class="rev-role">Socia gerente · Despacho jurídico</div></div></div>
             </div>
         </div>
         <div class="rev-controls">
-            <button class="rev-btn" id="rev-prev" aria-label="Anterior">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button class="rev-btn" id="rev-next" aria-label="Siguiente">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
+            <button class="rev-btn" id="rev-prev" aria-label="Anterior"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+            <button class="rev-btn" id="rev-next" aria-label="Siguiente"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
             <div class="rev-dots" id="rev-dots"></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section s-dark">
+        <div class="si-wrap">
+            <div class="eyerow er-d rv"><div class="eyerow-line"></div><span class="eyerow-txt">Preguntas frecuentes</span></div>
+            <h2 class="sh2-d rv d1">Resolvemos tus dudas</h2>
+            <p class="sh2-sub-d rv d2" style="margin-bottom:3rem;">Las preguntas que más nos hacen antes de empezar.</p>
+
+            <div class="faq-item rv">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>¿Con qué sistemas o herramientas podéis trabajar?</span>
+                    <div class="faq-icon"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"/></svg></div>
+                </button>
+                <div class="faq-body"><p>Prácticamente con cualquiera. Desde herramientas cotidianas como Google Workspace, Gmail, Slack o Excel, hasta plataformas más complejas como HubSpot, Salesforce, ERPs o bases de datos propias mediante APIs. Si tiene una API o permite integraciones, podemos automatizarlo.</p></div>
+            </div>
+
+            <div class="faq-item rv">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>¿Es seguro compartir el acceso a mis sistemas?</span>
+                    <div class="faq-icon"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"/></svg></div>
+                </button>
+                <div class="faq-body"><p>Sí. Trabajamos con autenticación OAuth encriptada: tus credenciales nunca se almacenan en texto plano y los datos fluyen directamente entre tus sistemas sin que terceros puedan interceptarlos. Todos nuestros flujos cumplen con el RGPD y operan bajo estrictos controles de acceso y trazabilidad.</p></div>
+            </div>
+
+            <div class="faq-item rv">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>¿Cuánto tiempo tarda en verse el resultado?</span>
+                    <div class="faq-icon"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"/></svg></div>
+                </button>
+                <div class="faq-body"><p>Una automatización puntual puede estar operativa en 48–72 horas. Para ecosistemas más complejos, el plazo habitual es de 2 a 4 semanas. Desde el primer día de funcionamiento tu equipo deja de hacer esa tarea manualmente.</p></div>
+            </div>
+
+            <div class="faq-item rv">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>¿Qué pasa si algo falla o una herramienta se actualiza?</span>
+                    <div class="faq-icon"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"/></svg></div>
+                </button>
+                <div class="faq-body"><p>Diseñamos los flujos con arquitecturas de tolerancia a fallos: reintentos automáticos, alertas y preservación de datos si un servicio externo cae. Con nuestro plan de mantenimiento, monitorizamos los sistemas 24/7 y corregimos cualquier anomalía antes de que afecte a tu operativa.</p></div>
+            </div>
+
+            <div class="faq-item rv">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    <span>¿Necesito conocimientos técnicos para trabajar con vosotros?</span>
+                    <div class="faq-icon"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"/></svg></div>
+                </button>
+                <div class="faq-body"><p>No. Tú nos describes cómo funciona tu negocio y nosotros lo traducimos a lógica operativa. No necesitas saber programar ni entender de APIs. Nuestro trabajo es exactamente ese: hacer que la tecnología se adapte a ti, no al revés.</p></div>
+            </div>
         </div>
     </section>
 
@@ -807,46 +537,20 @@
             <div class="contact-form rv d2" id="contact-form-wrap">
                 <div id="form-fields">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="f-name">Nombre</label>
-                            <input type="text" id="f-name" placeholder="Tu nombre" autocomplete="given-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="f-company">Empresa</label>
-                            <input type="text" id="f-company" placeholder="Nombre de la empresa" autocomplete="organization">
-                        </div>
+                        <div class="form-group"><label for="f-name">Nombre</label><input type="text" id="f-name" placeholder="Tu nombre" autocomplete="given-name"></div>
+                        <div class="form-group"><label for="f-company">Empresa</label><input type="text" id="f-company" placeholder="Nombre de la empresa" autocomplete="organization"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="f-email">Email de trabajo</label>
-                        <input type="email" id="f-email" placeholder="tu@empresa.com" autocomplete="email">
-                    </div>
+                    <div class="form-group"><label for="f-email">Email de trabajo</label><input type="email" id="f-email" placeholder="tu@empresa.com" autocomplete="email"></div>
                     <div class="form-group">
                         <label for="f-sector">Sector</label>
-                        <select id="f-sector">
-                            <option value="" disabled selected>Selecciona tu sector</option>
-                            <option>Farmacéutico / Sanidad</option>
-                            <option>Logística / Distribución</option>
-                            <option>Finanzas / Fintech</option>
-                            <option>Legal / Consultoría</option>
-                            <option>Industria / Manufactura</option>
-                            <option>Tecnología / SaaS</option>
-                            <option>Otro</option>
-                        </select>
+                        <select id="f-sector"><option value="" disabled selected>Selecciona tu sector</option><option>Farmacéutico / Sanidad</option><option>Logística / Distribución</option><option>Finanzas / Fintech</option><option>Legal / Consultoría</option><option>Industria / Manufactura</option><option>Tecnología / SaaS</option><option>Otro</option></select>
                     </div>
-                    <div class="form-group">
-                        <label for="f-problem">¿Qué proceso quieres automatizar?</label>
-                        <textarea id="f-problem" placeholder="Ej: Conciliación de facturas, seguimiento de leads, generación de informes mensuales..."></textarea>
-                    </div>
-                    <button class="btn-submit" id="btn-submit">
-                        Enviar consulta
-                        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </button>
+                    <div class="form-group"><label for="f-problem">¿Qué proceso quieres automatizar?</label><textarea id="f-problem" placeholder="Ej: Conciliación de facturas, seguimiento de leads, generación de informes mensuales..."></textarea></div>
+                    <button class="btn-submit" id="btn-submit">Enviar consulta <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
                     <p class="form-privacy">Tratamos tus datos según el RGPD. Solo los usamos para responderte.</p>
                 </div>
                 <div class="form-success" id="form-success">
-                    <div class="form-success-icon">
-                        <svg width="26" height="26" fill="none" stroke="#28CA41" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    </div>
+                    <div class="form-success-icon"><svg width="26" height="26" fill="none" stroke="#28CA41" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></div>
                     <h3>Recibido</h3>
                     <p>Hemos recibido tu mensaje. Te contactamos en menos de 24 horas con una primera valoración.</p>
                 </div>
@@ -859,20 +563,17 @@
         <div class="cta-in">
             <h2 class="cta-h2">¿Listo para recuperar tu tiempo?</h2>
             <p class="cta-sub">Agenda una sesión de 30 minutos. Te mostramos exactamente qué podríamos automatizar en tu operación y cuánto tiempo recuperarías.</p>
-            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-white">
-                Agendar sesión gratuita
-                <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
+            <a href="https://calendly.com/equipo-stratiums/30min" target="_blank" rel="noopener noreferrer" class="btn-white">Agendar sesión gratuita <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             <p class="cta-note">Sin compromiso · Respuesta en menos de 24 h</p>
         </div>
     </section>
-    
+
     <!-- FOOTER -->
     <footer>
         <div class="foot-in">
             <div>
                 <div class="foot-brand">STRATIUMS</div>
-                <div class="foot-copy">© 2026 Stratiums Corporation · Fundada en julio de 2025 · Barcelona, España</div>
+                <div class="foot-copy">© 2026 Stratiums Corporation · Fundada en julio de 2025 · Valencia, España</div>
             </div>
             <div class="foot-ls">
                 <button class="fl" id="legal-foot">Legal & Privacidad</button>
@@ -881,238 +582,127 @@
             </div>
         </div>
     </footer>
-    
+
     <!-- MODAL LEGAL -->
     <div class="modal-ov" id="legal-modal" aria-hidden="true" role="dialog" aria-modal="true">
         <div class="modal-box">
-            <div class="modal-hd">
-                <span class="modal-ttl">Garantías Jurídicas e Institucionales</span>
-                <button class="modal-cl" id="modal-cl" aria-label="Cerrar"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button>
-            </div>
+            <div class="modal-hd"><span class="modal-ttl">Garantías Jurídicas e Institucionales</span><button class="modal-cl" id="modal-cl" aria-label="Cerrar"><svg width="19" height="19" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
             <div class="modal-bd">
                 <h2>Política de Privacidad y Protección de Datos (RGPD)</h2>
                 <div class="m-mono">CUMPLIMIENTO RGPD (UE) Y LOPDGDD ESPAÑOLA · VIGENTE DESDE JULIO 2025</div>
                 <p>En <strong>Stratiums Corporation</strong>, la confidencialidad, la seguridad técnica y la gobernanza de la información son prioridades absolutas. De acuerdo con el Reglamento General de Protección de Datos (Reglamento UE 2016/679) y la Ley Orgánica 3/2018 (LOPDGDD), nuestra relación jurídica principal con el cliente se constituye bajo la figura de <strong>Encargado del Tratamiento (Art. 28 del RGPD)</strong>, asumiendo el cliente el papel de Responsable del Tratamiento.</p>
                 <h4>1. Minimización de Datos e Integraciones API (OAuth)</h4>
-                <p>Nuestras arquitecturas de automatización operan bajo el principio de minimización de datos en memoria:</p>
-                <ul>
-                    <li><strong>Políticas de Uso Limitado de Google:</strong> La transferencia y almacenamiento de datos obtenidos de las APIs de Google cumplen con la <em>Google API Services User Data Policy</em>, incluyendo las restricciones de uso limitado.</li>
-                    <li><strong>Conexiones seguras:</strong> Todos los flujos se ejecutan a través de canales cifrados TLS 1.3. Los tokens de autenticación se almacenan con cifrado AES-256.</li>
-                </ul>
+                <ul><li><strong>Políticas de Uso Limitado de Google:</strong> La transferencia y almacenamiento de datos obtenidos de las APIs de Google cumplen con la <em>Google API Services User Data Policy</em>, incluyendo las restricciones de uso limitado.</li><li><strong>Conexiones seguras:</strong> Todos los flujos se ejecutan a través de canales cifrados TLS 1.3. Los tokens de autenticación se almacenan con cifrado AES-256.</li></ul>
                 <h4>2. Declaración de Cumplimiento del EU AI Act</h4>
-                <ul>
-                    <li><strong>Evaluación de riesgo:</strong> Nuestros agentes de decisión se clasifican como sistemas de <em>Riesgo Mínimo o Nulo</em>. No empleamos algoritmos de vigilancia masiva ni puntuación social.</li>
-                    <li><strong>Supervisión humana:</strong> Toda automatización con LLMs incorpora un sistema de audit log que detalla el razonamiento del sistema para revisión o anulación en cualquier momento.</li>
-                </ul>
+                <ul><li><strong>Evaluación de riesgo:</strong> Nuestros agentes de decisión se clasifican como sistemas de <em>Riesgo Mínimo o Nulo</em>. No empleamos algoritmos de vigilancia masiva ni puntuación social.</li><li><strong>Supervisión humana:</strong> Toda automatización con LLMs incorpora un sistema de audit log que detalla el razonamiento del sistema para revisión o anulación en cualquier momento.</li></ul>
                 <div class="m-hr"></div>
                 <h2>Términos de Servicio y Acuerdos de Nivel (SLA)</h2>
                 <div class="m-mono">CONDICIONES OPERATIVAS · VIGENTE DESDE JULIO 2025</div>
                 <h4>1. Propiedad Intelectual</h4>
-                <ul>
-                    <li>El cliente retiene la propiedad absoluta sobre sus datos de negocio y lógica comercial.</li>
-                    <li>Stratiums Corporation conserva la propiedad intelectual de sus motores de integración, algoritmos y plantillas de automatización propios.</li>
-                </ul>
+                <ul><li>El cliente retiene la propiedad absoluta sobre sus datos de negocio y lógica comercial.</li><li>Stratiums Corporation conserva la propiedad intelectual de sus motores de integración, algoritmos y plantillas de automatización propios.</li></ul>
                 <h4>2. Garantías de Disponibilidad (SLA)</h4>
-                <ul>
-                    <li><strong>Disponibilidad:</strong> Nos comprometemos a un uptime del 99.9% en nuestra infraestructura de orquestación y ejecución.</li>
-                    <li><strong>Límites de terceros:</strong> No asumimos responsabilidad por interrupciones originadas en proveedores externos ajenos a nuestro control (Microsoft Azure, OpenAI, Salesforce, Google Cloud).</li>
-                </ul>
-                <div class="m-cbox">
-                    <strong>Contacto legal y privacidad:</strong><br>
-                    <a href="mailto:equipo@stratiums.com">equipo@stratiums.com</a><br>
-                    Stratiums Corporation · Barcelona, España · Fundada en julio de 2025
-                </div>
+                <ul><li><strong>Disponibilidad:</strong> Nos comprometemos a un uptime del 99.9% en nuestra infraestructura de orquestación y ejecución.</li><li><strong>Límites de terceros:</strong> No asumimos responsabilidad por interrupciones originadas en proveedores externos ajenos a nuestro control (Microsoft Azure, OpenAI, Salesforce, Google Cloud).</li></ul>
+                <div class="m-cbox"><strong>Contacto legal y privacidad:</strong><br><a href="mailto:equipo@stratiums.com">equipo@stratiums.com</a><br>Stratiums Corporation · Valencia, España · Fundada en julio de 2025</div>
             </div>
         </div>
     </div>
-    
+
     <!-- CHATWOOT -->
+    <script>(function(d,t){var B="https://app.chatwoot.com";var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=B+"/packs/js/sdk.js";g.async=true;s.parentNode.insertBefore(g,s);g.onload=function(){window.chatwootSDK.run({websiteToken:'A7doYQ7RPtQLAsfyCobUh3Ze',baseUrl:B});};})(document,"script");</script>
+
     <script>
-    (function(d,t){
-        var B="https://app.chatwoot.com";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=B+"/packs/js/sdk.js"; g.async=true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){ window.chatwootSDK.run({ websiteToken:'A7doYQ7RPtQLAsfyCobUh3Ze', baseUrl:B }); };
-    })(document,"script");
-    </script>
-    
-    <!-- SCRIPT UI -->
-    <script>
+    function calcROI() {
+        const team = parseInt(document.getElementById("r-team").value);
+        const hours = parseInt(document.getElementById("r-hours").value);
+        const cost = parseInt(document.getElementById("r-cost").value);
+        document.getElementById("r-team-label").textContent = team + (team === 1 ? " persona" : " personas");
+        document.getElementById("r-hours-label").textContent = hours + (hours === 1 ? " hora" : " horas");
+        document.getElementById("r-cost-label").textContent = cost + " €/h";
+        const monthly = Math.round(hours * 4.33 * team);
+        const saving = Math.round(monthly * 0.30 * cost * 12);
+        document.getElementById("r-monthly").textContent = monthly.toLocaleString("es-ES") + " h";
+        document.getElementById("r-saving").textContent = saving.toLocaleString("es-ES") + " €";
+    }
+    document.addEventListener("DOMContentLoaded", calcROI);
+    function toggleFaq(btn) {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-    
-        // 1. REVEAL SCROLL
         const rvEls = document.querySelectorAll('.rv');
-        const obs = new IntersectionObserver(entries => entries.forEach(e => {
-            if(e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
-        }), { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);} }), {threshold:0.1,rootMargin:"0px 0px -50px 0px"});
         rvEls.forEach(el => obs.observe(el));
-    
-        // 2. NAV SCROLL
+
         const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40), { passive: true });
-    
-        // 3. MENU MÓVIL
+        window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40), {passive:true});
+
         const mobBtn = document.getElementById('mob-btn');
         const mobMenu = document.getElementById('mob-menu');
-        if (mobBtn && mobMenu) {
-            mobBtn.addEventListener('click', () => {
-                const isOpen = mobMenu.classList.toggle('open');
-                nav.classList.toggle('open-menu', isOpen);
-                mobBtn.setAttribute('aria-expanded', isOpen);
-            });
-            mobMenu.querySelectorAll('a, button').forEach(el => {
-                el.addEventListener('click', () => {
-                    mobMenu.classList.remove('open');
-                    nav.classList.remove('open-menu');
-                    mobBtn.setAttribute('aria-expanded', 'false');
-                });
-            });
+        if(mobBtn && mobMenu){
+            mobBtn.addEventListener('click', () => { const isOpen=mobMenu.classList.toggle('open'); nav.classList.toggle('open-menu',isOpen); mobBtn.setAttribute('aria-expanded',isOpen); });
+            mobMenu.querySelectorAll('a, button').forEach(el => { el.addEventListener('click', () => { mobMenu.classList.remove('open'); nav.classList.remove('open-menu'); mobBtn.setAttribute('aria-expanded','false'); }); });
         }
-    
-        // 4. SMOOTH SCROLL
+
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const id = a.getAttribute('href');
-                if (id !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(id);
-                    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', ' '); }
-                }
-            });
+            a.addEventListener('click', e => { const id=a.getAttribute('href'); if(id!=='#'){ e.preventDefault(); const t=document.querySelector(id); if(t){t.scrollIntoView({behavior:'smooth',block:'start'}); history.replaceState(null,'',' ');} } });
         });
-    
-        // 5. MODAL LEGAL
+
         const modal = document.getElementById('legal-modal');
-        const openM  = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
+        const openM = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
         const closeM = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
         document.getElementById('legal-foot')?.addEventListener('click', openM);
         document.getElementById('legal-mob')?.addEventListener('click', () => { mobMenu?.classList.remove('open'); openM(); });
         document.getElementById('modal-cl')?.addEventListener('click', closeM);
-        modal?.addEventListener('click', e => { if (e.target === modal) closeM(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeM(); });
-    
-        // 6. PIPELINE ANIMATION
+        modal?.addEventListener('click', e => { if(e.target===modal) closeM(); });
+        document.addEventListener('keydown', e => { if(e.key==='Escape') closeM(); });
+
         const steps = document.querySelectorAll('.pl-step');
         const pbF = document.getElementById('pb-f');
         const pbP = document.getElementById('pb-p');
         const times = ['0.11s','0.74s','1.02s','0.28s','0.09s'];
-        let cur = 0, busy = false;
-    
-        function runPL() {
-            if (busy) return;
-            busy = true; cur = 0;
-            steps.forEach((s, i) => {
-                s.classList.remove('active','done');
-                const ic = s.querySelector('.si');
-                ic.className = 'si p'; ic.textContent = '0'+(i+1);
-                s.querySelector('.st').textContent = '—';
-            });
-            pbF.style.width = '0%'; pbP.textContent = '0%';
-            tick();
-        }
-    
-        function tick() {
-            if (cur >= steps.length) { busy = false; setTimeout(runPL, 3500); return; }
-            const s = steps[cur], ic = s.querySelector('.si');
-            s.classList.add('active');
-            ic.className = 'si r';
-            ic.innerHTML = '<svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>';
-            const pct = Math.round(((cur + 0.5) / steps.length) * 100);
-            pbF.style.width = pct + '%'; pbP.textContent = pct + '%';
-            setTimeout(() => {
-                ic.className = 'si s';
-                ic.innerHTML = '<svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>';
-                s.querySelector('.st').textContent = times[cur];
-                s.classList.remove('active'); s.classList.add('done');
-                const fp = Math.round(((cur + 1) / steps.length) * 100);
-                pbF.style.width = fp + '%'; pbP.textContent = fp + '%';
-                cur++; setTimeout(tick, 200);
-            }, 750 + Math.random() * 500);
-        }
-    
-        const plObs = new IntersectionObserver(e => { if (e[0].isIntersecting && !busy) setTimeout(runPL, 800); }, { threshold: 0.25 });
+        let cur=0, busy=false;
+        function runPL(){ if(busy) return; busy=true; cur=0; steps.forEach((s,i) => { s.classList.remove('active','done'); const ic=s.querySelector('.si'); ic.className='si p'; ic.textContent='0'+(i+1); s.querySelector('.st').textContent='—'; }); pbF.style.width='0%'; pbP.textContent='0%'; tick(); }
+        function tick(){ if(cur>=steps.length){ busy=false; setTimeout(runPL,3500); return; } const s=steps[cur],ic=s.querySelector('.si'); s.classList.add('active'); ic.className='si r'; ic.innerHTML='<svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>'; const pct=Math.round(((cur+0.5)/steps.length)*100); pbF.style.width=pct+'%'; pbP.textContent=pct+'%'; setTimeout(() => { ic.className='si s'; ic.innerHTML='<svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>'; s.querySelector('.st').textContent=times[cur]; s.classList.remove('active'); s.classList.add('done'); const fp=Math.round(((cur+1)/steps.length)*100); pbF.style.width=fp+'%'; pbP.textContent=fp+'%'; cur++; setTimeout(tick,200); }, 750+Math.random()*500); }
+        const plObs = new IntersectionObserver(e => { if(e[0].isIntersecting && !busy) setTimeout(runPL,800); }, {threshold:0.25});
         const pw = document.getElementById('pipeline-widget');
-        if (pw) plObs.observe(pw);
-    
-        // 7. REVIEWS SLIDER — completamente funcional
+        if(pw) plObs.observe(pw);
+
         const track = document.getElementById('rev-track');
         const dotsEl = document.getElementById('rev-dots');
         const cards = track ? track.querySelectorAll('.rev-card') : [];
-        
-        cards.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.className = 'rev-dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', 'Testimonio ' + (i+1));
-            dot.addEventListener('click', () => {
-                cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            });
-            dotsEl.appendChild(dot);
-        });
+        cards.forEach((_,i) => { const dot=document.createElement('div'); dot.className='rev-dot'+(i===0?' active':''); dot.setAttribute('aria-label','Testimonio '+(i+1)); dot.addEventListener('click', () => { cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }); dotsEl.appendChild(dot); });
+        if(track){ track.addEventListener('scroll', () => { if(!cards.length) return; const cw=cards[0].offsetWidth+20; const idx=Math.min(Math.round(track.scrollLeft/cw),cards.length-1); dotsEl.querySelectorAll('.rev-dot').forEach((d,i) => d.classList.toggle('active',i===idx)); }, {passive:true}); }
+        document.getElementById('rev-prev')?.addEventListener('click', () => { if(cards.length) track.scrollBy({left:-(cards[0].offsetWidth+20),behavior:'smooth'}); });
+        document.getElementById('rev-next')?.addEventListener('click', () => { if(cards.length) track.scrollBy({left:(cards[0].offsetWidth+20),behavior:'smooth'}); });
 
-        if (track) {
-            track.addEventListener('scroll', () => {
-                if (!cards.length) return;
-                const cardWidth = cards[0].offsetWidth + 20;
-                const index = Math.min(Math.round(track.scrollLeft / cardWidth), cards.length - 1);
-                dotsEl.querySelectorAll('.rev-dot').forEach((d, i) => d.classList.toggle('active', i === index));
-            }, { passive: true });
-        }
-
-        document.getElementById('rev-prev')?.addEventListener('click', () => {
-            if (cards.length) track.scrollBy({ left: -(cards[0].offsetWidth + 20), behavior: 'smooth' });
-        });
-        document.getElementById('rev-next')?.addEventListener('click', () => {
-            if (cards.length) track.scrollBy({ left: (cards[0].offsetWidth + 20), behavior: 'smooth' });
-        });
-
-        // 8. FORMULARIO DE CONTACTO
         const btnSubmit = document.getElementById('btn-submit');
         const formSuccess = document.getElementById('form-success');
         const formFields = document.getElementById('form-fields');
-
-        if (btnSubmit) {
-btnSubmit.addEventListener('click', async () => {                const name = document.getElementById('f-name').value.trim();
-                const email = document.getElementById('f-email').value.trim();
+        if(btnSubmit){
+            btnSubmit.addEventListener('click', async () => {
+                const name    = document.getElementById('f-name').value.trim();
+                const email   = document.getElementById('f-email').value.trim();
+                const company = document.getElementById('f-company').value.trim() || '—';
+                const sector  = document.getElementById('f-sector').value || '—';
                 const problem = document.getElementById('f-problem').value.trim();
-
-                if (!name || !email || !problem) {
-                    // Simple validation highlight
-                    [['f-name', name], ['f-email', email], ['f-problem', problem]].forEach(([id, val]) => {
-                        const el = document.getElementById(id);
-                        if (!val) {
-                            el.style.borderColor = 'rgba(239,68,68,.5)';
-                            el.addEventListener('input', () => el.style.borderColor = '', { once: true });
-                        }
-                    });
+                if(!name || !email || !problem){
+                    [['f-name',name],['f-email',email],['f-problem',problem]].forEach(([id,val]) => { const el=document.getElementById(id); if(!val){ el.style.borderColor='rgba(239,68,68,.5)'; el.addEventListener('input', () => el.style.borderColor='', {once:true}); } });
                     return;
                 }
-
-                btnSubmit.disabled = true;
-btnSubmit.textContent = 'Enviando...';
-
-try {
-    await fetch('https://n8n.srv903631.hstgr.cloud/webhook/formulario-web', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            nombre:   name,
-            empresa:  document.getElementById('f-company').value.trim() || '—',
-            email:    email,
-            sector:   document.getElementById('f-sector').value || '—',
-            problema: problem
-        })
-    });
-} catch (err) {
-    btnSubmit.disabled = false;
-    btnSubmit.textContent = 'Enviar consulta';
-    alert('Error al enviar. Escríbenos a equipo@stratiums.com');
-    return;
-}
-
-                // Mostrar confirmación
-                formFields.style.display = 'none';
-                formSuccess.classList.add('show');
+                btnSubmit.disabled=true; btnSubmit.textContent='Enviando...';
+                try {
+                    await fetch('https://n8n.srv903631.hstgr.cloud/webhook/formulario-web', {
+                        method:'POST', headers:{'Content-Type':'application/json'},
+                        body:JSON.stringify({nombre:name,empresa:company,email:email,sector:sector,problema:problem})
+                    });
+                    formFields.style.display='none'; formSuccess.classList.add('show');
+                } catch(err) {
+                    btnSubmit.disabled=false; btnSubmit.textContent='Enviar consulta';
+                    alert('Error al enviar. Escríbenos a equipo@stratiums.com');
+                }
             });
         }
     });
